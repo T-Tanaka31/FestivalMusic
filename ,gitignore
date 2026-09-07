@@ -1,0 +1,42 @@
+# Visual Studio
+.vs/
+*.VC.db
+*.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build Results
+Debug/
+Release/
+x64/
+x86/
+
+# Intermediate Files
+ipch/
+*.ipch
+*.obj
+*.pch
+*.idb
+*.ilk
+*.pdb
+*.tlog
+*.log
+*.tmp
+
+# Visual Studio Cache
+.vscode/
+
+# CMake
+out/
+build/
+CMakeFiles/
+CMakeCache.txt
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Git
+*.orig

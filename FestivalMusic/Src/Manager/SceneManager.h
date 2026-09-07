@@ -1,6 +1,9 @@
 #pragma once
+#include "../Scene/Scene.h"
+#include "../Enum/SceneType.h"
+
 class SceneManager {
-#pragma region シングルトンのデータ構造
+#pragma region singleton
 private:
 	static SceneManager* pInstance;
 
@@ -14,7 +17,7 @@ private:
 	/*
 	 *	@brief	デストラクタ
 	 */
-	~SceneManager() = default;
+	~SceneManager();
 
 public:
 	SceneManager(const SceneManager&) = delete;
@@ -43,5 +46,14 @@ public:		//	静的メンバ関数
 	 */
 	static void DestroyInstance();
 #pragma endregion
+
+private:
+	Scene* pScene;
+
+public:
+	void ChangeScene(SceneType sceneType);
+
+	void Update();
+	void Draw();
 };
 

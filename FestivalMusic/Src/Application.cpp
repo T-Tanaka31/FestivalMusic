@@ -5,15 +5,39 @@
 #include <memory>
 #include "Difinition/Constant.h"
 
+// 静的メンバ変数の初期化
+Application* Application::pInstance = nullptr;
+
+void Application::CreateInstance() {
+	pInstance = new Application();
+}
+
+Application* Application::GetInstance() {
+	if (pInstance == nullptr)
+		CreateInstance();
+
+	return pInstance;
+}
+
+void Application::DestroyInstance() {
+	if (pInstance != nullptr) {
+		delete pInstance;
+		pInstance = nullptr;
+	}
+}
+
 Application::Application() 
     : time(0)
-	, isGameEnd(true) {
+	, isGameEnd(true)
+	, pSceneManager(SceneManager::GetInstance()) {
 }
 
 int Application::Init() {
 	std::random_device rd;
 	std::mt19937_64 mt(rd());
     SRand(static_cast<int>(mt()));
+
+	pSceneManager->ChangeScene(SceneType::Title);
     return 0;
 }
 
@@ -64,6 +88,8 @@ int Application::DxLibInit() {
 }
 
 bool Application::Update() {
+
+
     return isGameEnd;
 }
 

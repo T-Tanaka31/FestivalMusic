@@ -31,62 +31,89 @@
     <Filter Include="ヘッダー ファイル\enum">
       <UniqueIdentifier>{e7654742-ab5f-4290-b177-a99027869e69}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameObject">
+      <UniqueIdentifier>{6ab4c629-e093-464f-b763-72eacfdb9963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject">
+      <UniqueIdentifier>{085208b8-6dfc-4ae2-8e10-ce5bec2bd6f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Player">
+      <UniqueIdentifier>{38a5ae36-ad5c-4a95-8a5e-f212b78d0e31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Enemy">
+      <UniqueIdentifier>{d9ec9917-e0a7-4d7b-abdb-b5a1cab508e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\Player">
+      <UniqueIdentifier>{8b466c1c-4977-468d-8acc-cbfa3b3657a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\Enemy">
+      <UniqueIdentifier>{b2fb4ba2-65ce-4a1d-b490-ea294e304ddd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Src\Application.cpp">
+    <ClCompile Include="Src\Application.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\main.cpp">
+    <ClCompile Include="Src\main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\Manager\SceneManager.cpp">
+    <ClCompile Include="Src\Manager\SceneManager.cpp">
       <Filter>ソース ファイル\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\Scene\TitleScene.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Scene\GameScene.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Src\Manager\InputManager.cpp">
+    <ClCompile Include="Src\Manager\InputManager.cpp">
       <Filter>ソース ファイル\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\Scene\ResultScene.cpp">
+    <ClCompile Include="Src\Scene\TitleScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene\GameScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene\ResultScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\GameObject.cpp">
+      <Filter>ソース ファイル\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\Application.h">
+    <ClInclude Include="Src\Application.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\Difinition\Constant.h">
+    <ClInclude Include="Src\Difinition\Colors.h">
       <Filter>ヘッダー ファイル\Difinition</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\Manager\SceneManager.h">
-      <Filter>ヘッダー ファイル\Manager</Filter>
+    <ClInclude Include="Src\Difinition\Constant.h">
+      <Filter>ヘッダー ファイル\Difinition</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\Scene\Scene.h">
+    <ClInclude Include="Src\Scene\GameScene.h">
       <Filter>ヘッダー ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\Enum\SceneType.h">
+    <ClInclude Include="Src\Manager\InputManager.h">
+      <Filter>ヘッダー ファイル\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\ResultScene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\Scene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Manager\SceneManager.h">
+      <Filter>ヘッダー ファイル\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Enum\SceneType.h">
       <Filter>ヘッダー ファイル\enum</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\Scene\TitleScene.h">
+    <ClInclude Include="Src\Scene\TitleScene.h">
       <Filter>ヘッダー ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\Scene\GameScene.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\Manager\InputManager.h">
-      <Filter>ヘッダー ファイル\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\Scene\ResultScene.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Src\Difinition\VectorDifines.h">
+    <ClInclude Include="Src\Difinition\VectorDifines.h">
       <Filter>ヘッダー ファイル\Difinition</Filter>
     </ClInclude>
-    <ClInclude Include="..\Src\Difinition\Colors.h">
+    <ClInclude Include="Src\GameObject\GameObject.h">
+      <Filter>ヘッダー ファイル\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Difinition\Macros.h">
       <Filter>ヘッダー ファイル\Difinition</Filter>
     </ClInclude>
   </ItemGroup>

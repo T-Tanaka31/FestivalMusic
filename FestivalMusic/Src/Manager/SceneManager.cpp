@@ -1,6 +1,8 @@
 #include "SceneManager.h"
+#include "InputManager.h"
 #include "../Scene/TitleScene.h"
 #include "../Scene/GameScene.h"
+#include "../Scene/ResultScene.h"
 // 静的メンバ変数の初期化
 SceneManager* SceneManager::pInstance = nullptr;
 
@@ -41,6 +43,7 @@ void SceneManager::ChangeScene(SceneType sceneType) {
 		pScene = new GameScene();
 		break;
 	case SceneType::Result:
+		pScene = new ResultScene();
 		break;
 	default:
 		break;
@@ -48,6 +51,12 @@ void SceneManager::ChangeScene(SceneType sceneType) {
 }
 
 void SceneManager::Update() {
+	InputManager::GetInstance()->Update();
+
+	if (InputManager::GetInstance()->IsMouseDown(MOUSE_INPUT_LEFT)) {
+		ChangeScene(SceneType::Game);
+	}
+
 	if (pScene) {
 		pScene->Update();
 	}

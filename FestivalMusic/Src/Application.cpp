@@ -88,12 +88,13 @@ int Application::DxLibInit() {
 }
 
 bool Application::Update() {
-
-
+	pSceneManager->Update();
+	
     return isGameEnd;
 }
 
 void Application::Render() {
+	pSceneManager->Draw();
 }
 
 void Application::ResourceDelete() {

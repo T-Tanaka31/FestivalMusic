@@ -1,0 +1,28 @@
+﻿  Application.cpp
+\Src\Application.cpp(1,1): error C1083: ソース ファイルを開けません。'..\Src\Application.cpp':No such file or directory
+  (ソース ファイル '/Src/Application.cpp' をコンパイルしています)
+  
+  main.cpp
+\Src\main.cpp(1,1): error C1083: ソース ファイルを開けません。'..\Src\main.cpp':No such file or directory
+  (ソース ファイル '/Src/main.cpp' をコンパイルしています)
+  
+  InputManager.cpp
+\Src\Manager\InputManager.cpp(1,1): error C1083: ソース ファイルを開けません。'..\Src\Manager\InputManager.cpp':No such file or directory
+  (ソース ファイル '/Src/Manager/InputManager.cpp' をコンパイルしています)
+  
+  SceneManager.cpp
+\Src\Manager\SceneManager.cpp(1,1): error C1083: ソース ファイルを開けません。'..\Src\Manager\SceneManager.cpp':No such file or directory
+  (ソース ファイル '/Src/Manager/SceneManager.cpp' をコンパイルしています)
+  
+  GameScene.cpp
+\Src\Scene\GameScene.cpp(1,1): error C1083: ソース ファイルを開けません。'..\Src\Scene\GameScene.cpp':No such file or directory
+  (ソース ファイル '/Src/Scene/GameScene.cpp' をコンパイルしています)
+  
+  ResultScene.cpp
+\Src\Scene\ResultScene.cpp(1,1): error C1083: ソース ファイルを開けません。'..\Src\Scene\ResultScene.cpp':No such file or directory
+  (ソース ファイル '/Src/Scene/ResultScene.cpp' をコンパイルしています)
+  
+  TitleScene.cpp
+\Src\Scene\TitleScene.cpp(1,1): error C1083: ソース ファイルを開けません。'..\Src\Scene\TitleScene.cpp':No such file or directory
+  (ソース ファイル '/Src/Scene/TitleScene.cpp' をコンパイルしています)
+  

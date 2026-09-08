@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="FestivalMusic/FestivalMusic.vcxproj" Id="a66504dd-13c5-4609-9fdb-c73ce447f96b" />
+  <Project Path="FestivalMusic.vcxproj" Id="a66504dd-13c5-4609-9fdb-c73ce447f96b" />
 </Solution>

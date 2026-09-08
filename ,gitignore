@@ -1,42 +1,36 @@
+# ビルド成果物
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.dylib
+*.mod
+*.smod
+*.lai
+*.la
+*.a
+*.exe
+*.out
+*.app
+
 # Visual Studio
 .vs/
-*.VC.db
-*.VC.opendb
-*.suo
 *.user
-*.userosscache
-*.sln.docstates
+*.suo
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+ipch/
 
-# Build Results
-Debug/
-Release/
+# ビルドフォルダ
 x64/
 x86/
+Release/
+Log.txt
+imgui.ini
 
-# Intermediate Files
-ipch/
-*.ipch
-*.obj
-*.pch
-*.idb
-*.ilk
-*.pdb
-*.tlog
-*.log
-*.tmp
-
-# Visual Studio Cache
-.vscode/
-
-# CMake
-out/
-build/
-CMakeFiles/
-CMakeCache.txt
-
-# Windows
-Thumbs.db
-Desktop.ini
-
-# Git
-*.orig

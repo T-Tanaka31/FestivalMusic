@@ -26,6 +26,7 @@
 *.sdf
 *.opensdf
 ipch/
+*.suo
 
 # ビルドフォルダ
 x64/

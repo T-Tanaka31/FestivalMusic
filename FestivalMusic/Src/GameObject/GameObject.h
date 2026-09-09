@@ -5,6 +5,8 @@
 class GameObject {
 protected:
 	bool isVisible;		//	表示フラグ
+	bool isAlive;		//	生存フラグ
+
 	VECTOR position;	//	座標
 	VECTOR rotation;	//	回転角
 	VECTOR scale;		//	拡縮率
@@ -12,6 +14,10 @@ protected:
 	MATRIX matrix;		//	変換行列
 
 	std::string tag;	//	タグ
+
+	int GraphHandle;	//	グラフィックハンドル
+
+	VECTOR velocity;	//	速度
 
 public:
 	/*
@@ -64,12 +70,12 @@ public:	//	Getterm,Setter
 	/*
 	 * @brief	座標を設定する
 	 */
-	inline void SetPosition(VECTOR _pos) { position = _pos; }
+	inline virtual void SetPosition(VECTOR _pos) { position = _pos; }
 
 	/*
 	 * @brief	座標を設定する
 	 */
-	inline void SetPosition(float _x, float _y, float _z) { position = VGet(_x, _y, _z); }
+	inline virtual void SetPosition(float _x, float _y, float _z) { position = VGet(_x, _y, _z); }
 
 	/*
 	 *	@brief	回転角を取得する
@@ -110,5 +116,66 @@ public:	//	Getterm,Setter
 	 *	@brief	タグを設定する
 	 */
 	inline void SetTag(std::string _tag) { tag = _tag; }
+
+	/*
+	 *	@brief	速度を取得する
+	 */
+	inline VECTOR GetVelocity() const { return velocity; }
+
+	/*
+	 *	@brief	速度を設定する
+	 */
+	inline void SetVelocity(VECTOR _vel) { velocity = _vel; }
+
+	/*
+	 *	@brief	速度を設定する
+	 */
+	inline void SetVelocity(float _x, float _y, float _z) { velocity = VGet(_x, _y, _z); }
+
+	/*
+	 *	@brief	速度を加算する
+	 */
+	inline void AddVelocity(VECTOR _vel) { velocity = VAdd(velocity, _vel); }
+
+	/*
+	 *	@brief	速度を加算する
+	 */
+	inline void AddVelocity(float _x, float _y, float _z) { velocity = VAdd(velocity, VGet(_x, _y, _z)); }
+
+	/*
+	 *	@brief	速度のX成分を加算する
+	 */
+	inline void AddVelocityX(float _x) { velocity.x += _x; }
+
+	/*
+	 *	@brief	速度のY成分を加算する
+	 */
+	inline void AddVelocityY(float _y) { velocity.y += _y; }
+
+	/*
+	 *	@brief	速度のZ成分を加算する
+	 */
+	inline void AddVelocityZ(float _z) { velocity.z += _z; }
+
+	/*
+	 *	@brief	グラフィックハンドルを取得する
+	 */
+	inline int GetGraphHandle() const { return GraphHandle; }
+
+	/*
+	 *	@brief	グラフィックハンドルを設定する
+	 */
+	inline void SetGraphHandle(int _handle) { GraphHandle = _handle; }
+
+	/*
+	 *	@brief	生存フラグを取得する
+	 */
+	inline bool IsAlive() const { return isAlive; }
+
+	/*
+	 *	@brief	生存フラグを設定する
+	 */
+	inline void SetAlive(bool _alive) { isAlive = _alive; }
+
 };
 

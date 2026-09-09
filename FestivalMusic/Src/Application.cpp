@@ -1,3 +1,4 @@
+#include "Manager/InputManager.h" 
 #include "Application.h"
 #include  <DxLib.h>
 #include <ioStream>
@@ -90,6 +91,9 @@ int Application::DxLibInit() {
 bool Application::Update() {
 	pSceneManager->Update();
 	
+	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_ESCAPE))
+		isGameEnd = true;
+
     return isGameEnd;
 }
 

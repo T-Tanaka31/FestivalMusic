@@ -1,6 +1,7 @@
 #pragma once
 #include "Scene.h"
 class TitleScene : public Scene {
+	int graphHandle;
 public:
 	TitleScene();
 	~TitleScene();

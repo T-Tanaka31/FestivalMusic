@@ -57,6 +57,14 @@ void SceneManager::Update() {
 		ChangeScene(SceneType::Game);
 	}
 
+	if (InputManager::GetInstance()->IsMouseDown(MOUSE_INPUT_RIGHT)) {
+		ChangeScene(SceneType::Result);
+	}
+
+	if (InputManager::GetInstance()->IsMouseDown(MOUSE_INPUT_MIDDLE)) {
+		ChangeScene(SceneType::Title);
+	}
+
 	if (pScene) {
 		pScene->Update();
 	}

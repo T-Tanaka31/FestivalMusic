@@ -9,14 +9,17 @@ Player::Player(VECTOR _pos, std::string _tag)
 	, jumpPower(10.0f)
 	, isGround(false)
 	, input(InputManager::GetInstance()) {
+	Start();
 }
 
 Player::~Player() {
 }
 
 void Player::Start() {
-	//	初期化処理
-	
+	SetCollider(new SquareCollider(
+		this,
+		VGet(50,50,0)
+	));
 }
 
 void Player::Update() {
@@ -39,7 +42,7 @@ void Player::Update() {
 		else {
 			velocity.y = -jumpPower;
 		}
-			isGround = false;
+		isGround = false;
 	}
 
 	velocity.y += gravity;
@@ -50,6 +53,8 @@ void Player::Update() {
 		velocity.y = 0.0f;
 		isGround = true;
 	}
+
+	pCollider->Update();
 }
 
 void Player::Render() {
@@ -62,9 +67,11 @@ void Player::Render() {
 	);
 
 	DrawString(
-	(int)position.x - 20,
-	(int)position.y - 40,
-	tag.c_str(),
-	COLOR_AMETHYST
+		(int)position.x - 20,
+		(int)position.y - 40,
+		tag.c_str(),
+		COLOR_AMETHYST
 	);
+
+	pCollider->Render();
 }

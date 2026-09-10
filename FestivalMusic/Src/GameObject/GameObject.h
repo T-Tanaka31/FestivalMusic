@@ -19,6 +19,8 @@ protected:
 
 	VECTOR velocity;	//	速度
 
+	class Collider* pCollider;	//	当たり判定
+
 public:
 	/*
 	 *	@brief	コンストラクタ
@@ -177,5 +179,14 @@ public:	//	Getterm,Setter
 	 */
 	inline void SetAlive(bool _alive) { isAlive = _alive; }
 
+	/*
+	 *	@brief	当たり判定の取得
+	 */
+	inline Collider* GetCollider() const { return pCollider; }
+
+	/*
+	 *	@brief	当たり判定の設定
+	 */
+	inline void SetCollider(Collider* _pCol) { pCollider = _pCol; }
 };
 

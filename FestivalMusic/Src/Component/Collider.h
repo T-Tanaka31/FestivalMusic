@@ -51,11 +51,12 @@ public:
 
 class SquareCollider : public Collider {
 private:
+	VECTOR size;
 	VECTOR minPoint;
 	VECTOR maxPoint;
 
 public:
-	SquareCollider(GameObject* _pObj, VECTOR _min, VECTOR _max);
+	SquareCollider(GameObject* obj,VECTOR _size);
 	~SquareCollider() = default;
 
 public:

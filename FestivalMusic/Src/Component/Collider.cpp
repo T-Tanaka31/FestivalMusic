@@ -1,16 +1,16 @@
 #include "Collider.h"
 #include "../Difinition/Colors.h"
 
-Collider::Collider(GameObject* _pObj) 
+Collider::Collider(GameObject* _pObj)
 	: isEnable(TRUE)
 	, pGameObject(_pObj)
-	, offset(VZero){
+	, offset(VZero) {
 }
 
-CircleCollider::CircleCollider(GameObject* _pObj, float _r) 
+CircleCollider::CircleCollider(GameObject* _pObj, float _r)
 	: Collider(_pObj)
 	, radius(_r)
-	, center(0){
+	, center(0) {
 }
 
 void CircleCollider::Update() {
@@ -35,20 +35,21 @@ void CircleCollider::Render() {
 #endif
 }
 
-SquareCollider::SquareCollider(GameObject* _pObj, VECTOR _min, VECTOR _max)
-	: Collider(_pObj) 
-	, minPoint(_min)
-	, maxPoint(_max){
+SquareCollider::SquareCollider(
+	GameObject* obj,
+	VECTOR _size
+)
+	: Collider(obj)
+	, size(_size) {
 }
-
 void SquareCollider::Update() {
 	VECTOR pos = pGameObject->GetPosition();
 
-	minPoint.x += pos.x;
-	minPoint.y += pos.y;
+	minPoint.x = pos.x - 25;
+	minPoint.y = pos.y - 25;
 
-	maxPoint.x += pos.x;
-	maxPoint.y += pos.y;
+	maxPoint.x = pos.x + 25;
+	maxPoint.y = pos.y + 25;
 }
 
 void SquareCollider::Render() {
@@ -57,7 +58,7 @@ void SquareCollider::Render() {
 		(int)minPoint.y,
 		(int)maxPoint.x,
 		(int)maxPoint.y,
-		COLOR_GREEN,
+		COLOR_RED,
 		FALSE
 	);
 }

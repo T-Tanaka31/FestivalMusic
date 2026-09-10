@@ -1,6 +1,7 @@
 #include "../../../Manager/InputManager.h"
 #include "../../../Difinition/Colors.h"
 #include "Player.h"
+#include "../../../Component/Collider.h"
 
 Player::Player(VECTOR _pos, std::string _tag)
 	: GameObject(_pos, _tag)
@@ -15,6 +16,7 @@ Player::~Player() {
 
 void Player::Start() {
 	//	初期化処理
+	
 }
 
 void Player::Update() {

@@ -7,7 +7,10 @@ GameObject::GameObject(VECTOR _pos, std::string _tag)
 	, scale(VOne)
 	, rotation(VZero)
 	, matrix(MGetIdent())
-	, tag(_tag) {
+	, tag(_tag)
+	, isAlive(TRUE)
+	, GraphHandle(0)
+	, velocity(VZero) {
 }
 
 GameObject::~GameObject() {

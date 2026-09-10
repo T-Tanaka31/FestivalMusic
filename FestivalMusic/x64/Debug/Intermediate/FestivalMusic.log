@@ -1,43 +1,4 @@
-﻿  Application.cpp
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Application.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(112,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(117,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(124,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(131,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Application.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\SceneManager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\GameObject.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Difinition\VectorDifines.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Difinition\Constant.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Application.cpp' をコンパイルしています)
-  
-  Collider.cpp
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\GameObject.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Component/Collider.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Difinition\VectorDifines.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Component/Collider.cpp' をコンパイルしています)
-  
-  Player.cpp
+﻿  Player.cpp
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Player\Player.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   (ソース ファイル 'Src/GameObject/Character/Player/Player.cpp' をコンパイルしています)
@@ -63,22 +24,9 @@ C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\G
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Difinition\VectorDifines.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   (ソース ファイル 'Src/GameObject/Character/Player/Player.cpp' をコンパイルしています)
   
-  main.cpp
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Application.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/main.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\SceneManager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/main.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\GameObject.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/main.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Difinition\VectorDifines.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/main.cpp' をコンパイルしています)
-  
   コード生成しています。
-  13 of 280 functions ( 4.6%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  1 of 330 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   FestivalMusic.vcxproj -> C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\FestivalMusic.exe

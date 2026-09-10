@@ -1,4 +1,7 @@
 #pragma once
+#include "../Component/Collider.h"
+#include <vector>
+
 class CollisionManager {
 private:
 	static CollisionManager* pInstance;
@@ -41,5 +44,14 @@ public:		//	静的メンバ関数
 	 *	@brief		自身のインスタンスを破棄する唯一の手段
 	 */
 	static void DestroyInstance();
+
+private:
+	std::vector<Collider*> colliders;
+
+public:
+	void AddCollider(Collider* col);
+	void RemoveCollider(Collider* col);
+
+	void CheckCollision();
 };
 

@@ -20,6 +20,7 @@ private:
 
 	const float GROUND_Y = 1000.0f;
 
+	bool isHit = false;
 public:
 	//	コンストラクタ
 	Player(VECTOR _pos = VZero, std::string _tag = "Player");

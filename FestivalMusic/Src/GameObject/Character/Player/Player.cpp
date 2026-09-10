@@ -55,6 +55,23 @@ void Player::Update() {
 	}
 
 	pCollider->Update();
+
+	pCollider->Update();
+
+	// テスト用エリア
+	VECTOR testMin = VGet(1000, 1000, 0);
+	VECTOR testMax = VGet(1200, 1200, 0);
+
+	// PlayerのCollider取得
+	SquareCollider* col = dynamic_cast<SquareCollider*>(pCollider);
+
+	if (col) {
+		isHit =
+			col->GetMinPoint().x < testMax.x &&
+			col->GetMaxPoint().x > testMin.x &&
+			col->GetMinPoint().y < testMax.y &&
+			col->GetMaxPoint().y > testMin.y;
+	}
 }
 
 void Player::Render() {
@@ -72,6 +89,25 @@ void Player::Render() {
 		tag.c_str(),
 		COLOR_AMETHYST
 	);
+
+	// テスト用矩形
+	DrawBox(
+		1000,
+		1000,
+		1200,
+		1200,
+		COLOR_BLUE,
+		FALSE
+	);
+
+	if (isHit) {
+		DrawString(
+			10,
+			10,
+			"HIT!",
+			COLOR_RED
+		);
+	}
 
 	pCollider->Render();
 }

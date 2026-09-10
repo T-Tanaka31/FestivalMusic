@@ -19,6 +19,7 @@ public:
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 
+	virtual bool IsHit(Collider* other) = 0;
 public:
 	inline bool IsEnable() const { return isEnable; }
 	inline void SetEnable(bool _v) { isEnable = _v; }
@@ -42,6 +43,7 @@ public:
 	void Update();
 	void Render();
 
+	bool IsHit(Collider* other) override;
 public:
 	inline VECTOR GetCenter() const { return center; }
 	inline float GetRadius() const { return radius; }
@@ -62,6 +64,8 @@ public:
 public:
 	void Update() override;
 	void Render() override;
+
+	bool IsHit(Collider* other) override;
 
 public:
 	inline VECTOR GetMaxPoint() const { return maxPoint; }

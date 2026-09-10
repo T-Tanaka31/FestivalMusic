@@ -35,6 +35,10 @@ void CircleCollider::Render() {
 #endif
 }
 
+bool CircleCollider::IsHit(Collider* other) {
+	return false;
+}
+
 SquareCollider::SquareCollider(
 	GameObject* obj,
 	VECTOR _size
@@ -42,6 +46,7 @@ SquareCollider::SquareCollider(
 	: Collider(obj)
 	, size(_size) {
 }
+
 void SquareCollider::Update() {
 	VECTOR pos = pGameObject->GetPosition();
 
@@ -61,4 +66,16 @@ void SquareCollider::Render() {
 		COLOR_RED,
 		FALSE
 	);
+}
+
+bool SquareCollider::IsHit(Collider* other) {
+	SquareCollider* sq = dynamic_cast<SquareCollider*>(other);
+
+	if (!sq) return false;
+
+	return
+		minPoint.x < sq->maxPoint.x &&
+		maxPoint.x > sq->minPoint.x &&
+		minPoint.y < sq->maxPoint.y &&
+		maxPoint.y > sq->minPoint.y;
 }

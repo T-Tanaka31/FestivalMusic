@@ -1,5 +1,8 @@
 #include "Collider.h"
 #include "../Difinition/Colors.h"
+#include "../Difinition/Constant.h"
+#include "../GameObject/Camera/Camera.h"
+#include "../Manager/CollisionManager.h"
 
 Collider::Collider(GameObject* _pObj)
 	: isEnable(TRUE)
@@ -45,24 +48,27 @@ SquareCollider::SquareCollider(
 )
 	: Collider(obj)
 	, size(_size) {
+	CollisionManager::GetInstance()->AddCollider(this);
 }
 
 void SquareCollider::Update() {
 	VECTOR pos = pGameObject->GetPosition();
 
-	minPoint.x = pos.x - 25;
-	minPoint.y = pos.y - 25;
+	minPoint.x = pos.x - size.x * 0.5f;
+	minPoint.y = pos.y - size.y * 0.5f;
 
-	maxPoint.x = pos.x + 25;
-	maxPoint.y = pos.y + 25;
+	maxPoint.x = pos.x + size.x * 0.5f;
+	maxPoint.y = pos.y + size.y * 0.5f;
 }
 
 void SquareCollider::Render() {
+	VECTOR camPos = Camera::main->GetPosition();
+
 	DrawBox(
-		(int)minPoint.x,
-		(int)minPoint.y,
-		(int)maxPoint.x,
-		(int)maxPoint.y,
+		(int)(minPoint.x - camPos.x + WINDOW_WIDTH / 2),
+		(int)(minPoint.y - camPos.y + WINDOW_HEIGHT / 2),
+		(int)(maxPoint.x - camPos.x + WINDOW_WIDTH / 2),
+		(int)(maxPoint.y - camPos.y + WINDOW_HEIGHT / 2),
 		COLOR_RED,
 		FALSE
 	);

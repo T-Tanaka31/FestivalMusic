@@ -2,6 +2,7 @@
 #include "../Difinition/VectorDifines.h"
 #include "../Difinition/Macros.h"
 #include <string>
+//#include "../Component/Collider.h"
 class GameObject {
 protected:
 	bool isVisible;		//	表示フラグ
@@ -91,7 +92,7 @@ public:	//	Getterm,Setter
 
 	/*
 	 *	@brief	変換行列を取得する
-	 */ 
+	 */
 	inline MATRIX GetMatrix() const { return matrix; }
 
 	/*
@@ -188,5 +189,13 @@ public:	//	Getterm,Setter
 	 *	@brief	当たり判定の設定
 	 */
 	inline void SetCollider(Collider* _pCol) { pCollider = _pCol; }
+
+public:	//	衝突判定
+	//	入ったとき
+	virtual void OnTriggerEnter(Collider* _pOther);
+	//	入っているとき
+	virtual void OnTriggerStay(Collider* _pOther);
+	//	出たとき
+	virtual void OnTriggerExit(Collider* _pOther);
 };
 

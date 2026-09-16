@@ -1,5 +1,6 @@
 #include "CollisionManager.h"
 #include "../Difinition/Colors.h"
+#include "../Utility/CollisionUtility.h"
 
 //	静的メンバ変数の初期化
 CollisionManager* CollisionManager::pInstance = nullptr;
@@ -24,18 +25,46 @@ void CollisionManager::DestroyInstance() {
 	}
 }
 
+void CollisionManager::AddCollider(Collider* col) {
+    colliders.push_back(col);
+}
+
 void CollisionManager::CheckCollision() {
-	for (int i = 0; i < colliders.size(); i++) {
-		for (int j = i + 1; j < colliders.size(); j++) {
-			if (colliders[i]->IsHit(colliders[j])) {
-				// 衝突時処理
-				DrawFormatString(
-					10,
-					10,
-					COLOR_WHITE,
-					"Collision!"
-				);
-			}
-		}
-	}
+    DrawFormatString(
+        10,
+        50,
+        COLOR_WHITE,
+        "Collider Count : %d",
+        colliders.size()
+    );
+
+    for (int i = 0; i < colliders.size(); i++) {
+        for (int j = i + 1; j < colliders.size(); j++) {
+            if (colliders[i]->IsHit(colliders[j])) {
+                SquareCollider* a =
+                    dynamic_cast<SquareCollider*>(colliders[i]);
+
+                SquareCollider* b =
+                    dynamic_cast<SquareCollider*>(colliders[j]);
+
+                if (!a || !b) {
+                    continue;
+                }
+
+                HitDirection dir =
+                    CollisionUtility::ResolveBoxCollision(a, b);
+
+                a->GetGameObject()->OnTriggerStay(colliders[j]);
+
+                // 必要なら逆方向も通知
+                b->GetGameObject()->OnTriggerStay(colliders[i]);
+            }
+        }
+    }
+}
+
+
+
+void CollisionManager::Clear() {
+    colliders.clear();
 }

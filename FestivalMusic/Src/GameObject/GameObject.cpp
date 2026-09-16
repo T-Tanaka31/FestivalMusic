@@ -42,3 +42,12 @@ void GameObject::Update() {
 	//	(交換法則は成り立たない)
 	matrix = MMult(MMult(mRotXYZ, mScale), mTranslate);
 }
+
+void GameObject::OnTriggerEnter(Collider* _pOther) {
+}
+
+void GameObject::OnTriggerStay(Collider* _pOther) {
+}
+
+void GameObject::OnTriggerExit(Collider* _pOther) {
+}

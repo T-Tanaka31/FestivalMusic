@@ -53,5 +53,7 @@ public:
 	void RemoveCollider(Collider* col);
 
 	void CheckCollision();
+
+	void Clear();
 };
 

@@ -1,17 +1,37 @@
 #pragma once
-#include "Scene.h"
+
+#include <vector>
 #include "../GameObject/Character/Player/Player.h"
+#include "Scene.h"
+class Camera;
+class Block;
+
 class GameScene : public Scene {
 private:
-	Player* player;
+    Player* player;
+    Camera* camera;
 
-	int graphHandle;
+    std::vector<Block*> blocks;
+
+    int graphHandle;
+
 public:
-	GameScene();
-	~GameScene();
+    GameScene();
+    ~GameScene();
 
-	void Init() override;
-	void Update() override;
-	void Draw() override;
+public:
+    void Init();
+    void Update();
+    void Draw();
+
+public:
+    void AddBlock(Block* block);
+
+    Player* GetPlayer() {
+        return player;
+    }
+
+    void SetPlayerPosition(VECTOR pos) {
+        player->SetPosition(pos);
+    }
 };
-

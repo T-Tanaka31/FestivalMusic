@@ -153,16 +153,22 @@
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\Component\Collider.cpp" />
+    <ClCompile Include="Src\GameObject\Camera\Camera.cpp" />
     <ClCompile Include="Src\GameObject\Character\Character.cpp" />
     <ClCompile Include="Src\GameObject\Character\Player\Player.cpp" />
     <ClCompile Include="Src\GameObject\GameObject.cpp" />
+    <ClCompile Include="Src\GameObject\MapObject\Block.cpp" />
+    <ClCompile Include="Src\GameObject\MapObject\Floor.cpp" />
+    <ClCompile Include="Src\GameObject\MapObject\Wall.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="Src\Manager\CollisionManager.cpp" />
     <ClCompile Include="Src\Manager\InputManager.cpp" />
     <ClCompile Include="Src\Manager\SceneManager.cpp" />
+    <ClCompile Include="Src\Map\MapLoader.cpp" />
     <ClCompile Include="Src\Scene\GameScene.cpp" />
     <ClCompile Include="Src\Scene\ResultScene.cpp" />
     <ClCompile Include="Src\Scene\TitleScene.cpp" />
+    <ClCompile Include="Src\Utility\CollisionUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Application.h" />
@@ -173,17 +179,24 @@
     <ClInclude Include="Src\Difinition\VectorDifines.h" />
     <ClInclude Include="Src\Enum\ColliderType.h" />
     <ClInclude Include="Src\Enum\Direction.h" />
+    <ClInclude Include="Src\Enum\HitDirection.h" />
     <ClInclude Include="Src\Enum\SceneType.h" />
+    <ClInclude Include="Src\GameObject\Camera\Camera.h" />
     <ClInclude Include="Src\GameObject\Character\Character.h" />
     <ClInclude Include="Src\GameObject\Character\Player\Player.h" />
     <ClInclude Include="Src\GameObject\GameObject.h" />
+    <ClInclude Include="Src\GameObject\MapObject\Block.h" />
+    <ClInclude Include="Src\GameObject\MapObject\Floor.h" />
+    <ClInclude Include="Src\GameObject\MapObject\Wall.h" />
     <ClInclude Include="Src\Manager\CollisionManager.h" />
     <ClInclude Include="Src\Manager\InputManager.h" />
     <ClInclude Include="Src\Manager\SceneManager.h" />
+    <ClInclude Include="Src\Map\MapLoader.h" />
     <ClInclude Include="Src\Scene\GameScene.h" />
     <ClInclude Include="Src\Scene\ResultScene.h" />
     <ClInclude Include="Src\Scene\Scene.h" />
     <ClInclude Include="Src\Scene\TitleScene.h" />
+    <ClInclude Include="Src\Utility\CollisionUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

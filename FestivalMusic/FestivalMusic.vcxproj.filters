@@ -61,6 +61,30 @@
     <Filter Include="ヘッダー ファイル\Component">
       <UniqueIdentifier>{2022848a-cb1a-4583-9ab4-18ff1c8cd459}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameObject\Camera">
+      <UniqueIdentifier>{284d2e4e-6d2a-4657-a22e-40cb4d6ecdd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\Camera">
+      <UniqueIdentifier>{44b91ed9-0c94-4d0c-b65e-9ac45f3b3997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\MapObject">
+      <UniqueIdentifier>{51857e61-286d-4cab-aea2-91e655e3f9bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Utility">
+      <UniqueIdentifier>{bc0fc332-b125-4dcc-85cd-9704bfb9e973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Utility">
+      <UniqueIdentifier>{c95a1eb0-a777-45f1-b06c-816c13411d98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Map">
+      <UniqueIdentifier>{79cb7880-fafa-43af-8526-3d922e2af711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\MapObject">
+      <UniqueIdentifier>{eb5752f6-d829-4c88-afc3-46ecad94f673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Map">
+      <UniqueIdentifier>{4247dc1d-67e3-4ed2-ab64-570144d350df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp">
@@ -98,6 +122,24 @@
     </ClCompile>
     <ClCompile Include="Src\Manager\CollisionManager.cpp">
       <Filter>ソース ファイル\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Camera\Camera.cpp">
+      <Filter>ソース ファイル\GameObject\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\MapObject\Floor.cpp">
+      <Filter>ソース ファイル\GameObject\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\MapObject\Wall.cpp">
+      <Filter>ソース ファイル\GameObject\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\CollisionUtility.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\MapObject\Block.cpp">
+      <Filter>ソース ファイル\GameObject\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Map\MapLoader.cpp">
+      <Filter>ソース ファイル\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +199,27 @@
     </ClInclude>
     <ClInclude Include="Src\Manager\CollisionManager.h">
       <Filter>ヘッダー ファイル\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Camera\Camera.h">
+      <Filter>ヘッダー ファイル\GameObject\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\Floor.h">
+      <Filter>ヘッダー ファイル\GameObject\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\Wall.h">
+      <Filter>ヘッダー ファイル\GameObject\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\CollisionUtility.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Enum\HitDirection.h">
+      <Filter>ヘッダー ファイル\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\Block.h">
+      <Filter>ヘッダー ファイル\GameObject\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Map\MapLoader.h">
+      <Filter>ヘッダー ファイル\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

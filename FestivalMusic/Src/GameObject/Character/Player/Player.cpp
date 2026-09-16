@@ -2,6 +2,8 @@
 #include "../../../Difinition/Colors.h"
 #include "Player.h"
 #include "../../../Component/Collider.h"
+#include "../../../Difinition/Constant.h"
+#include "../../Camera/Camera.h"
 
 Player::Player(VECTOR _pos, std::string _tag)
 	: GameObject(_pos, _tag)
@@ -18,20 +20,23 @@ Player::~Player() {
 void Player::Start() {
 	SetCollider(new SquareCollider(
 		this,
-		VGet(50,50,0)
+		VGet(50, 50, 0)
 	));
+	
 }
 
 void Player::Update() {
-	//	更新処理
-	//	入力処理
+	// 左移動
 	if (input->IsKey(KEY_INPUT_A)) {
 		position.x -= moveSpeed;
 	}
+
+	// 右移動
 	if (input->IsKey(KEY_INPUT_D)) {
 		position.x += moveSpeed;
 	}
 
+	// ジャンプ
 	if (input->IsKeyDown(KEY_INPUT_SPACE) && isGround) {
 		if (input->IsKey(KEY_INPUT_W)) {
 			velocity.y = -jumpPower * 1.4f;
@@ -42,12 +47,17 @@ void Player::Update() {
 		else {
 			velocity.y = -jumpPower;
 		}
+
 		isGround = false;
 	}
 
+	// 重力
 	velocity.y += gravity;
+
+	// 垂直移動
 	position.y += velocity.y;
 
+	// 仮地面
 	if (position.y >= GROUND_Y) {
 		position.y = GROUND_Y;
 		velocity.y = 0.0f;
@@ -55,59 +65,68 @@ void Player::Update() {
 	}
 
 	pCollider->Update();
-
-	pCollider->Update();
-
-	// テスト用エリア
-	VECTOR testMin = VGet(1000, 1000, 0);
-	VECTOR testMax = VGet(1200, 1200, 0);
-
-	// PlayerのCollider取得
-	SquareCollider* col = dynamic_cast<SquareCollider*>(pCollider);
-
-	if (col) {
-		isHit =
-			col->GetMinPoint().x < testMax.x &&
-			col->GetMaxPoint().x > testMin.x &&
-			col->GetMinPoint().y < testMax.y &&
-			col->GetMaxPoint().y > testMin.y;
-	}
 }
 
+
 void Player::Render() {
+	VECTOR camPos = Camera::main->GetPosition();
+
+	int drawX = (int)(position.x - camPos.x + WINDOW_WIDTH / 2);
+	int drawY = (int)(position.y - camPos.y + WINDOW_HEIGHT / 2);
+
 	DrawCircle(
-		(int)position.x,
-		(int)position.y,
+		drawX,
+		drawY,
 		20,
 		COLOR_MAROON,
 		TRUE
 	);
 
 	DrawString(
-		(int)position.x - 20,
-		(int)position.y - 40,
+		drawX - 20,
+		drawY - 40,
 		tag.c_str(),
 		COLOR_AMETHYST
 	);
 
-	// テスト用矩形
-	DrawBox(
-		1000,
-		1000,
-		1200,
-		1200,
-		COLOR_BLUE,
-		FALSE
-	);
+	pCollider->Render();
+}
+void Player::OnTriggerEnter(Collider* _pOther) {
 
-	if (isHit) {
-		DrawString(
-			10,
-			10,
-			"HIT!",
-			COLOR_RED
-		);
+}
+
+void Player::OnTriggerStay(Collider* other) {
+	if (other->GetGameObject()->GetTag() != "Block") {
+		return;
 	}
 
-	pCollider->Render();
+	SquareCollider* myCol =
+		dynamic_cast<SquareCollider*>(pCollider);
+
+	SquareCollider* blockCol =
+		dynamic_cast<SquareCollider*>(other);
+
+	if (!myCol || !blockCol) {
+		return;
+	}
+
+	float overlapTop =
+		myCol->GetMaxPoint().y -
+		blockCol->GetMinPoint().y;
+
+	// 上から落下していて
+	// めり込み量が小さい場合のみ接地
+	if (velocity.y >= 0.0f &&
+		overlapTop >= 0.0f &&
+		overlapTop < 5.0f) {
+		isGround = true;
+		velocity.y = 0.0f;
+	}
+}
+
+
+void Player::OnTriggerExit(Collider* _pOther) {
+	if (_pOther->GetGameObject()->GetTag() == "Block") {
+		isGround = false;
+	}
 }

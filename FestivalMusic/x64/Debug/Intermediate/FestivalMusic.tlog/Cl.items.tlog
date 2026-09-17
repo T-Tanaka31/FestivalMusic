@@ -11,8 +11,10 @@ C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\main.cpp;C:\
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\CollisionManager.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\CollisionManager.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\InputManager.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\SceneManager.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\SceneManager.obj
+C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\TimeManager.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\TimeManager.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Map\MapLoader.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\MapLoader.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Scene\GameScene.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\GameScene.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Scene\ResultScene.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\ResultScene.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Scene\TitleScene.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\TitleScene.obj
+C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\UI\Gauge.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Gauge.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Utility\CollisionUtility.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\CollisionUtility.obj

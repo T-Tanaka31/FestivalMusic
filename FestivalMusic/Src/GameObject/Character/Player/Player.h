@@ -1,7 +1,9 @@
 #pragma once
 #include "../../../Manager/InputManager.h"
-#include "../../GameObject.h"
-class Player : public GameObject {
+#include "../Character.h"
+#include "../../../UI/Gauge.h"
+
+class Player : public Character {
 private:
 	//	速度
 	float moveSpeed;
@@ -21,6 +23,18 @@ private:
 	const float GROUND_Y = 1000.0f;
 
 	bool isHit = false;
+
+#pragma region ゲージ関連
+	Gauge<int>* hpBar;
+	int hpBarPosX = 145;
+	int hpBarPosY = 100;
+	int hpBarWidth = 300;
+	int hpBarHeight = 25;
+	int uX = 100;
+	int uY = 100;
+	int lX = 100;
+	int lY = 70;
+#pragma endregion
 public:
 	//	コンストラクタ
 	Player(VECTOR _pos = VZero, std::string _tag = "Player");

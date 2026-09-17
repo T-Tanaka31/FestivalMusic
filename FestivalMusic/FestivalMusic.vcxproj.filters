@@ -85,6 +85,12 @@
     <Filter Include="ヘッダー ファイル\Map">
       <UniqueIdentifier>{4247dc1d-67e3-4ed2-ab64-570144d350df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\UI">
+      <UniqueIdentifier>{e4e2ca4c-555f-4fc6-b5e5-7b2e8359c038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\UI">
+      <UniqueIdentifier>{4298b3cf-cae0-4b8c-8b69-eb3c6884ca0e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp">
@@ -140,6 +146,12 @@
     </ClCompile>
     <ClCompile Include="Src\Map\MapLoader.cpp">
       <Filter>ソース ファイル\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Manager\TimeManager.cpp">
+      <Filter>ソース ファイル\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\UI\Gauge.cpp">
+      <Filter>ソース ファイル\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +232,12 @@
     </ClInclude>
     <ClInclude Include="Src\Map\MapLoader.h">
       <Filter>ヘッダー ファイル\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Manager\TimeManager.h">
+      <Filter>ヘッダー ファイル\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\UI\Gauge.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

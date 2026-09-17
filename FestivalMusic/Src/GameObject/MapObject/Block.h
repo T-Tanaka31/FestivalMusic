@@ -7,6 +7,8 @@ class Block : public GameObject {
 private:
     VECTOR size;
 
+    int graphHandle;
+
 public:
     Block(VECTOR pos, VECTOR size = VGet(200.0f, 200.0f, 0));
 

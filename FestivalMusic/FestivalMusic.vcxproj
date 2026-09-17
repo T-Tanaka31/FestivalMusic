@@ -164,10 +164,12 @@
     <ClCompile Include="Src\Manager\CollisionManager.cpp" />
     <ClCompile Include="Src\Manager\InputManager.cpp" />
     <ClCompile Include="Src\Manager\SceneManager.cpp" />
+    <ClCompile Include="Src\Manager\TimeManager.cpp" />
     <ClCompile Include="Src\Map\MapLoader.cpp" />
     <ClCompile Include="Src\Scene\GameScene.cpp" />
     <ClCompile Include="Src\Scene\ResultScene.cpp" />
     <ClCompile Include="Src\Scene\TitleScene.cpp" />
+    <ClCompile Include="Src\UI\Gauge.cpp" />
     <ClCompile Include="Src\Utility\CollisionUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -191,11 +193,13 @@
     <ClInclude Include="Src\Manager\CollisionManager.h" />
     <ClInclude Include="Src\Manager\InputManager.h" />
     <ClInclude Include="Src\Manager\SceneManager.h" />
+    <ClInclude Include="Src\Manager\TimeManager.h" />
     <ClInclude Include="Src\Map\MapLoader.h" />
     <ClInclude Include="Src\Scene\GameScene.h" />
     <ClInclude Include="Src\Scene\ResultScene.h" />
     <ClInclude Include="Src\Scene\Scene.h" />
     <ClInclude Include="Src\Scene\TitleScene.h" />
+    <ClInclude Include="Src\UI\Gauge.h" />
     <ClInclude Include="Src\Utility\CollisionUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

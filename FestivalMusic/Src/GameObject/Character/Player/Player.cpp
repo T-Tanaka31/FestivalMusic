@@ -6,7 +6,7 @@
 #include "../../Camera/Camera.h"
 
 Player::Player(VECTOR _pos, std::string _tag)
-	: GameObject(_pos, _tag)
+	: Character(_pos, _tag)
 	, moveSpeed(5.0f)
 	, jumpPower(10.0f)
 	, isGround(false)
@@ -22,6 +22,12 @@ void Player::Start() {
 		this,
 		VGet(50, 50, 0)
 	));
+	
+	maxHp = 100;
+	hp = maxHp;	
+
+	if (hpBar == nullptr)
+		hpBar = new Gauge(hp, maxHp, hpBarPosX, hpBarPosY, hpBarWidth, hpBarHeight);
 	
 }
 
@@ -57,14 +63,14 @@ void Player::Update() {
 	// 垂直移動
 	position.y += velocity.y;
 
-	// 仮地面
-	if (position.y >= GROUND_Y) {
-		position.y = GROUND_Y;
-		velocity.y = 0.0f;
-		isGround = true;
-	}
-
 	pCollider->Update();
+
+	if (input->IsKeyDown(KEY_INPUT_2)) {
+		Damage(this, 10 + def);
+	}
+	if (input->IsButtonDown(XINPUT_GAMEPAD_Y) || input->IsKeyDown(KEY_INPUT_1)) {
+		AddHp(maxHp / 10);
+	}
 }
 
 
@@ -90,6 +96,9 @@ void Player::Render() {
 	);
 
 	pCollider->Render();
+
+	DrawBox(hpBarPosX - 3, hpBarPosY - 3, hpBarPosX + hpBarWidth + 3, hpBarPosY + hpBarHeight + 3, COLOR_BLACK, true);
+	hpBar->Render();
 }
 void Player::OnTriggerEnter(Collider* _pOther) {
 

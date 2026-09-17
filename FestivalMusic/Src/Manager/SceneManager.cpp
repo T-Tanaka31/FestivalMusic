@@ -53,7 +53,7 @@ void SceneManager::ChangeScene(SceneType sceneType) {
 void SceneManager::Update() {
 	InputManager::GetInstance()->Update();
 
-	if (InputManager::GetInstance()->IsMouseDown(MOUSE_INPUT_LEFT)) {
+	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_RETURN)) {
 		ChangeScene(SceneType::Game);
 	}
 

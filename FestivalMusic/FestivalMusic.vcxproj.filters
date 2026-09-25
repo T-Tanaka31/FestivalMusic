@@ -91,6 +91,12 @@
     <Filter Include="ヘッダー ファイル\UI">
       <UniqueIdentifier>{4298b3cf-cae0-4b8c-8b69-eb3c6884ca0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameObject\Goal">
+      <UniqueIdentifier>{18e7501f-ce97-4908-9b84-4b220a6e1612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\Goal">
+      <UniqueIdentifier>{37e3ec79-b776-4b57-9a1c-fa350146c39c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp">
@@ -152,6 +158,12 @@
     </ClCompile>
     <ClCompile Include="Src\UI\Gauge.cpp">
       <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Goal\Goal.cpp">
+      <Filter>ソース ファイル\GameObject\Goal</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Character\Enemy\Enemy.cpp">
+      <Filter>ソース ファイル\GameObject\Character\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +250,12 @@
     </ClInclude>
     <ClInclude Include="Src\UI\Gauge.h">
       <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Goal\Goal.h">
+      <Filter>ヘッダー ファイル\GameObject\Goal</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Character\Enemy\Enemy.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

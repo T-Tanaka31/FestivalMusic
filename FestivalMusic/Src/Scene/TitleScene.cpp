@@ -1,6 +1,8 @@
 #include "TitleScene.h"
-#include <DxLib.h>
 #include "../Difinition/Constant.h"
+#include "../Manager/InputManager.h"
+#include "../Manager/SceneManager.h"
+#include <DxLib.h>
 
 TitleScene::TitleScene()
 	: graphHandle(0){
@@ -15,6 +17,9 @@ void TitleScene::Init() {
 }
 
 void TitleScene::Update() {
+	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_RETURN)) {
+		SceneManager::GetInstance()->ChangeScene(SceneType::Game);
+	}
 }
 
 void TitleScene::Draw() {

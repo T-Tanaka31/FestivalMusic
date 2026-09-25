@@ -12,6 +12,10 @@ protected:
 	int def;	//	防御力
 
 	float moveSpeed;	//	移動速度
+
+	//	重力加速度
+	float gravity = 0.5f;
+
 public:
 	Character(VECTOR _pos = VZero, std::string _tag = "");
 

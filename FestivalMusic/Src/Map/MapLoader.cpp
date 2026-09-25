@@ -5,6 +5,7 @@
 
 #include "../Scene/GameScene.h"
 #include "../GameObject/MapObject/Block.h"
+#include "../GameObject/Goal/Goal.h"
 
 bool MapLoader::Load(
 	const std::string& path,
@@ -31,43 +32,60 @@ bool MapLoader::Load(
 
 		int x = 0;
 
-        while (std::getline(ss, cell, ',')) {
-            try {
-                int value = std::stoi(cell);
+		while (std::getline(ss, cell, ',')) {
+			try {
+				int value = std::stoi(cell);
 
-                VECTOR pos = VGet(
-                    x * TILE_SIZE,
-                    y * TILE_SIZE,
-                    0);
+				VECTOR pos = VGet(
+					x * TILE_SIZE,
+					y * TILE_SIZE,
+					0);
 
-                switch (value) {
-                case 1:
-                    scene->AddBlock(
-                        new Block(
-                            pos,
-                            VGet(
-                                TILE_SIZE,
-                                TILE_SIZE,
-                                0)));
-                    break;
+				switch (value) {
+				case 1:
+					scene->AddBlock(
+						new Block(
+							pos,
+							VGet(
+								TILE_SIZE,
+								TILE_SIZE,
+								0)));
+					break;
 
-                case 2:
-                    scene->SetPlayerPosition(pos);
-                    break;
-                }
-            }
-            catch (...) {
-                MessageBoxA(
-                    NULL,
-                    cell.c_str(),
-                    "stoi Error",
-                    MB_OK);
+				case 2:
+					scene->SetPlayerPosition(pos);
+					break;
 
-                return false;
-            }
+				case 3:
+					scene->SetGoal(
+						new Goal(
+							pos,
+							VGet(
+								TILE_SIZE,
+								TILE_SIZE,
+								0)));
+					break;
 
-            x++;
-        }
+				case 4:
+					scene->AddEnemy(
+						new Enemy(
+							pos,
+							"Enemy"));
+					break;
+				}
+			}
+			catch (...) {
+				MessageBoxA(
+					NULL,
+					cell.c_str(),
+					"stoi Error",
+					MB_OK);
+
+				return false;
+			}
+
+			x++;
+		}
 
 		y++;
 	}

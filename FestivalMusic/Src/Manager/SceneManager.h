@@ -50,6 +50,10 @@ public:		//	静的メンバ関数
 private:
 	Scene* pScene;
 
+	SceneType nextScene;
+
+	bool isSceneChange;
+
 public:
 	void ChangeScene(SceneType sceneType);
 

@@ -1,8 +1,6 @@
 #pragma once
 #include "../GameObject.h"
 
-class SquareCollider;
-
 class Block : public GameObject {
 private:
     VECTOR size;

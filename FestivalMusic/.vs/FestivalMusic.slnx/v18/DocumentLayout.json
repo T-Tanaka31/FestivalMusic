@@ -3,28 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Enemy\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Enemy\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Goal\\Goal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Goal\\Goal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Map\\MapLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Map\\MapLoader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\GameScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\MapObject\\Block.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Enemy\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Enemy\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\MapObject\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\TitleScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\TitleScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\ResultScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\ResultScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -35,52 +79,63 @@
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\TimeManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\UI\\Gauge.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\UI\\Gauge.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Utility\\CollisionUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Enum\\ColliderType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Enum\\ColliderType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\InputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Component\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Component\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\CollisionManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\CollisionManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\crt\\src\\stl\\xthrow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\TitleScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\TitleScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\InputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\MapObject\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Goal\\Goal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Goal\\Goal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\MapObject\\Block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\GameScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\UI\\Gauge.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\UI\\Gauge.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Floor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -91,32 +146,12 @@
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\TitleScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Map\\MapLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Map\\MapLoader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Component\\Collider.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Component\\Collider.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Enum\\ColliderType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Enum\\ColliderType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Enum\\HitDirection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Enum\\HitDirection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Utility\\CollisionUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\CollisionManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -135,10 +170,6 @@
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\GameObject\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Component\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Component\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -151,24 +182,8 @@
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Difinition\\Macros.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Difinition\\Colors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Difinition\\Colors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Manager\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\ResultScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|solutionrelative:Src\\Scene\\ResultScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A66504DD-13C5-4609-9FDB-C73CE447F96B}|FestivalMusic.vcxproj|C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -190,11 +205,168 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 0,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.cpp",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Player\\Player.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.cpp",
+              "RelativeToolTip": "Src\\GameObject\\Character\\Player\\Player.cpp",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAQwNkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-09T02:25:06.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.h",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Player\\Player.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.h",
+              "RelativeToolTip": "Src\\GameObject\\Character\\Player\\Player.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-09T00:59:11.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameScene.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.cpp",
+              "RelativeDocumentMoniker": "Src\\Scene\\GameScene.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.cpp",
+              "RelativeToolTip": "Src\\Scene\\GameScene.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-07T04:43:46.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Goal.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Goal\\Goal.h",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Goal\\Goal.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Goal\\Goal.h",
+              "RelativeToolTip": "Src\\GameObject\\Goal\\Goal.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-24T00:45:19.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TimeManager.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.cpp",
+              "RelativeDocumentMoniker": "Src\\Manager\\TimeManager.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.cpp",
+              "RelativeToolTip": "Src\\Manager\\TimeManager.cpp",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvygAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-17T01:43:46.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MapLoader.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.cpp",
+              "RelativeDocumentMoniker": "Src\\Map\\MapLoader.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.cpp",
+              "RelativeToolTip": "Src\\Map\\MapLoader.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAADwv0gAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-24T01:28:03.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Block.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.cpp",
+              "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Block.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.cpp",
+              "RelativeToolTip": "Src\\GameObject\\MapObject\\Block.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAqwB4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-16T01:38:39.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "xthrow.cpp",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\crt\\src\\stl\\xthrow.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\crt\\src\\stl\\xthrow.cpp",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\crt\\src\\stl\\xthrow.cpp",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\crt\\src\\stl\\xthrow.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAmwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-24T01:52:24.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CollisionUtility.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.cpp",
+              "RelativeDocumentMoniker": "Src\\Utility\\CollisionUtility.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.cpp",
+              "RelativeToolTip": "Src\\Utility\\CollisionUtility.cpp",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAE4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-16T01:04:25.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TimeManager.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.h",
+              "RelativeDocumentMoniker": "Src\\Manager\\TimeManager.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.h",
+              "RelativeToolTip": "Src\\Manager\\TimeManager.h",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAADcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-17T01:24:25.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GameObject.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\GameObject.h",
+              "RelativeDocumentMoniker": "Src\\GameObject\\GameObject.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\GameObject.h",
+              "RelativeToolTip": "Src\\GameObject\\GameObject.h",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAUwMIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-08T01:40:29.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SceneManager.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.cpp",
+              "RelativeDocumentMoniker": "Src\\Manager\\SceneManager.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.cpp",
+              "RelativeToolTip": "Src\\Manager\\SceneManager.cpp",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwCMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-07T02:59:59.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Gauge.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\UI\\Gauge.h",
+              "RelativeDocumentMoniker": "Src\\UI\\Gauge.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\UI\\Gauge.h",
+              "RelativeToolTip": "Src\\UI\\Gauge.h",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwEEAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-17T01:58:10.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "Floor.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Floor.h",
               "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Floor.h",
@@ -206,97 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CollisionUtility.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.cpp",
-              "RelativeDocumentMoniker": "Src\\Utility\\CollisionUtility.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.cpp",
-              "RelativeToolTip": "Src\\Utility\\CollisionUtility.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-16T01:04:25.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.cpp",
-              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Player\\Player.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.cpp",
-              "RelativeToolTip": "Src\\GameObject\\Character\\Player\\Player.cpp",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAAAEgAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-09T02:25:06.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Gauge.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\UI\\Gauge.h",
-              "RelativeDocumentMoniker": "Src\\UI\\Gauge.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\UI\\Gauge.h",
-              "RelativeToolTip": "Src\\UI\\Gauge.h",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAwEEAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-17T01:58:10.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SceneManager.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.cpp",
-              "RelativeDocumentMoniker": "Src\\Manager\\SceneManager.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.cpp",
-              "RelativeToolTip": "Src\\Manager\\SceneManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-07T02:59:59.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TimeManager.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.cpp",
-              "RelativeDocumentMoniker": "Src\\Manager\\TimeManager.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.cpp",
-              "RelativeToolTip": "Src\\Manager\\TimeManager.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-17T01:43:46.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TimeManager.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.h",
-              "RelativeDocumentMoniker": "Src\\Manager\\TimeManager.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\TimeManager.h",
-              "RelativeToolTip": "Src\\Manager\\TimeManager.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-17T01:24:25.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "MapLoader.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.h",
-              "RelativeDocumentMoniker": "Src\\Map\\MapLoader.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.h",
-              "RelativeToolTip": "Src\\Map\\MapLoader.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-16T02:43:21.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 19,
               "Title": "CollisionUtility.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Utility\\CollisionUtility.h",
               "RelativeDocumentMoniker": "Src\\Utility\\CollisionUtility.h",
@@ -308,31 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Character.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.cpp",
-              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Character.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.cpp",
-              "RelativeToolTip": "Src\\GameObject\\Character\\Character.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-09T01:45:01.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "MapLoader.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.cpp",
-              "RelativeDocumentMoniker": "Src\\Map\\MapLoader.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.cpp",
-              "RelativeToolTip": "Src\\Map\\MapLoader.cpp",
-              "ViewState": "AgIAABMAAAAAAAAAAAAYwCMAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-16T02:48:46.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "Camera.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.h",
               "RelativeDocumentMoniker": "Src\\GameObject\\Camera\\Camera.h",
@@ -344,19 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GameScene.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.cpp",
-              "RelativeDocumentMoniker": "Src\\Scene\\GameScene.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.cpp",
-              "RelativeToolTip": "Src\\Scene\\GameScene.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-07T04:43:46.771Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "CollisionManager.cpp",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\CollisionManager.cpp",
               "RelativeDocumentMoniker": "Src\\Manager\\CollisionManager.cpp",
@@ -368,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 34,
               "Title": "Floor.cpp",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Floor.cpp",
               "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Floor.cpp",
@@ -380,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 38,
               "Title": "CollisionManager.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\CollisionManager.h",
               "RelativeDocumentMoniker": "Src\\Manager\\CollisionManager.h",
@@ -392,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 20,
               "Title": "ColliderType.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Enum\\ColliderType.h",
               "RelativeDocumentMoniker": "Src\\Enum\\ColliderType.h",
@@ -404,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 41,
               "Title": "GameObject.cpp",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\GameObject.cpp",
               "RelativeDocumentMoniker": "Src\\GameObject\\GameObject.cpp",
@@ -416,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 35,
               "Title": "TitleScene.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\TitleScene.h",
               "RelativeDocumentMoniker": "Src\\Scene\\TitleScene.h",
@@ -428,19 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "GameObject.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\GameObject.h",
-              "RelativeDocumentMoniker": "Src\\GameObject\\GameObject.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\GameObject.h",
-              "RelativeToolTip": "Src\\GameObject\\GameObject.h",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAkwJsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-08T01:40:29.837Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 36,
               "Title": "Collider.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Component\\Collider.h",
               "RelativeDocumentMoniker": "Src\\Component\\Collider.h",
@@ -452,31 +486,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 21,
               "Title": "Collider.cpp",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Component\\Collider.cpp",
               "RelativeDocumentMoniker": "Src\\Component\\Collider.cpp",
               "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Component\\Collider.cpp",
               "RelativeToolTip": "Src\\Component\\Collider.cpp",
-              "ViewState": "AgIAADoAAAAAAAAAAAAYwEgAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-10T01:22:49.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "TitleScene.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\TitleScene.cpp",
-              "RelativeDocumentMoniker": "Src\\Scene\\TitleScene.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\TitleScene.cpp",
-              "RelativeToolTip": "Src\\Scene\\TitleScene.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-07T03:12:52.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 43,
               "Title": "Constant.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Difinition\\Constant.h",
               "RelativeDocumentMoniker": "Src\\Difinition\\Constant.h",
@@ -488,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 44,
               "Title": "Macros.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Difinition\\Macros.h",
               "RelativeDocumentMoniker": "Src\\Difinition\\Macros.h",
@@ -500,19 +522,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 13,
               "Title": "ResultScene.cpp",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\ResultScene.cpp",
               "RelativeDocumentMoniker": "Src\\Scene\\ResultScene.cpp",
               "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\ResultScene.cpp",
               "RelativeToolTip": "Src\\Scene\\ResultScene.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-08T02:26:09.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "ResultScene.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\ResultScene.h",
               "RelativeDocumentMoniker": "Src\\Scene\\ResultScene.h",
@@ -524,31 +546,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "SceneManager.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.h",
-              "RelativeDocumentMoniker": "Src\\Manager\\SceneManager.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.h",
-              "RelativeToolTip": "Src\\Manager\\SceneManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-07T02:23:09.805Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 16,
               "Title": "Application.cpp",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.cpp",
               "RelativeDocumentMoniker": "Src\\Application.cpp",
               "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.cpp",
               "RelativeToolTip": "Src\\Application.cpp",
-              "ViewState": "AgIAAHQAAAAAAAAAAAD4v4sAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwCgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-07T03:18:41.705Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "Scene.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\Scene.h",
               "RelativeDocumentMoniker": "Src\\Scene\\Scene.h",
@@ -560,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 42,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\main.cpp",
               "RelativeDocumentMoniker": "Src\\main.cpp",
@@ -572,13 +582,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 24,
               "Title": "Application.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.h",
               "RelativeDocumentMoniker": "Src\\Application.h",
               "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Application.h",
               "RelativeToolTip": "Src\\Application.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-09-07T00:37:12.103Z"
             }
@@ -586,11 +596,168 @@
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 3,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Enemy\\Enemy.cpp",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Enemy\\Enemy.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Enemy\\Enemy.cpp",
+              "RelativeToolTip": "Src\\GameObject\\Character\\Enemy\\Enemy.cpp",
+              "ViewState": "AgIAADUAAAAAAAAAAADwv0wAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-24T03:06:33.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Enemy.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Enemy\\Enemy.h",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Enemy\\Enemy.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Enemy\\Enemy.h",
+              "RelativeToolTip": "Src\\GameObject\\Character\\Enemy\\Enemy.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-24T02:45:33.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Goal.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Goal\\Goal.cpp",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Goal\\Goal.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Goal\\Goal.cpp",
+              "RelativeToolTip": "Src\\GameObject\\Goal\\Goal.cpp",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvykAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-24T00:51:16.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MapLoader.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.h",
+              "RelativeDocumentMoniker": "Src\\Map\\MapLoader.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Map\\MapLoader.h",
+              "RelativeToolTip": "Src\\Map\\MapLoader.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-16T02:43:21.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Wall.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Wall.h",
+              "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Wall.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Wall.h",
+              "RelativeToolTip": "Src\\GameObject\\MapObject\\Wall.h",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-15T06:03:44.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Block.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.h",
+              "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Block.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.h",
+              "RelativeToolTip": "Src\\GameObject\\MapObject\\Block.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-16T01:34:38.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameScene.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.h",
+              "RelativeDocumentMoniker": "Src\\Scene\\GameScene.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.h",
+              "RelativeToolTip": "Src\\Scene\\GameScene.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-07T04:42:15.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TitleScene.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\TitleScene.cpp",
+              "RelativeDocumentMoniker": "Src\\Scene\\TitleScene.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\TitleScene.cpp",
+              "RelativeToolTip": "Src\\Scene\\TitleScene.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-07T03:12:52.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Character.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.h",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Character.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.h",
+              "RelativeToolTip": "Src\\GameObject\\Character\\Character.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-09T00:58:04.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SceneManager.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.h",
+              "RelativeDocumentMoniker": "Src\\Manager\\SceneManager.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\SceneManager.h",
+              "RelativeToolTip": "Src\\Manager\\SceneManager.h",
+              "ViewState": "AgIAACMAAAAAAAAAAAD4vzkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-07T02:23:09.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.cpp",
+              "RelativeDocumentMoniker": "Src\\GameObject\\Camera\\Camera.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.cpp",
+              "RelativeToolTip": "Src\\GameObject\\Camera\\Camera.cpp",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-15T01:51:59.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "InputManager.cpp",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.cpp",
+              "RelativeDocumentMoniker": "Src\\Manager\\InputManager.cpp",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.cpp",
+              "RelativeToolTip": "Src\\Manager\\InputManager.cpp",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-08T02:25:25.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "InputManager.h",
+              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.h",
+              "RelativeDocumentMoniker": "Src\\Manager\\InputManager.h",
+              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.h",
+              "RelativeToolTip": "Src\\Manager\\InputManager.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAD4vysAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-09T02:52:19.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
               "Title": "HitDirection.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Enum\\HitDirection.h",
               "RelativeDocumentMoniker": "Src\\Enum\\HitDirection.h",
@@ -602,109 +769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Wall.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Wall.h",
-              "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Wall.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Wall.h",
-              "RelativeToolTip": "Src\\GameObject\\MapObject\\Wall.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-15T06:03:44.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Camera.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.cpp",
-              "RelativeDocumentMoniker": "Src\\GameObject\\Camera\\Camera.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Camera\\Camera.cpp",
-              "RelativeToolTip": "Src\\GameObject\\Camera\\Camera.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAkwBYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-15T01:51:59.181Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.h",
-              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Player\\Player.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Player\\Player.h",
-              "RelativeToolTip": "Src\\GameObject\\Character\\Player\\Player.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-09T00:59:11.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "InputManager.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.h",
-              "RelativeDocumentMoniker": "Src\\Manager\\InputManager.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.h",
-              "RelativeToolTip": "Src\\Manager\\InputManager.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-09T02:52:19.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Character.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.h",
-              "RelativeDocumentMoniker": "Src\\GameObject\\Character\\Character.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\Character\\Character.h",
-              "RelativeToolTip": "Src\\GameObject\\Character\\Character.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-09T00:58:04.872Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "InputManager.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.cpp",
-              "RelativeDocumentMoniker": "Src\\Manager\\InputManager.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Manager\\InputManager.cpp",
-              "RelativeToolTip": "Src\\Manager\\InputManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-08T02:25:25.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Block.cpp",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.cpp",
-              "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Block.cpp",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.cpp",
-              "RelativeToolTip": "Src\\GameObject\\MapObject\\Block.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-16T01:38:39.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Block.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.h",
-              "RelativeDocumentMoniker": "Src\\GameObject\\MapObject\\Block.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\GameObject\\MapObject\\Block.h",
-              "RelativeToolTip": "Src\\GameObject\\MapObject\\Block.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-16T01:34:38.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 45,
               "Title": "Colors.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Difinition\\Colors.h",
               "RelativeDocumentMoniker": "Src\\Difinition\\Colors.h",
@@ -716,19 +781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "GameScene.h",
-              "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.h",
-              "RelativeDocumentMoniker": "Src\\Scene\\GameScene.h",
-              "ToolTip": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Scene\\GameScene.h",
-              "RelativeToolTip": "Src\\Scene\\GameScene.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvyQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-07T04:42:15.144Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 40,
               "Title": "Direction.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Enum\\Direction.h",
               "RelativeDocumentMoniker": "Src\\Enum\\Direction.h",
@@ -740,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 48,
               "Title": "VectorDifines.h",
               "DocumentMoniker": "C:\\Users\\student2\\Desktop\\\u5C31\u6D3B\u7528\\FestivalMusic\\FestivalMusic\\Src\\Difinition\\VectorDifines.h",
               "RelativeDocumentMoniker": "Src\\Difinition\\VectorDifines.h",

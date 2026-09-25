@@ -3,10 +3,18 @@
 #include "../Character.h"
 #include "../../../UI/Gauge.h"
 
+enum class AnimState {
+	Idle,
+	Walk,
+	Run,
+	Jump,
+	Attack,
+	Damage,
+	Victory
+};
+
 class Player : public Character {
 private:
-	//	速度
-	float moveSpeed;
 
 	//	ジャンプ力
 	float jumpPower;
@@ -17,12 +25,16 @@ private:
 	//	入力マネージャー
 	InputManager* input;
 
-	//	重力加速度
-	float gravity = 0.5f;
-
 	const float GROUND_Y = 1000.0f;
 
 	bool isHit = false;
+
+	int images[84];
+
+	AnimState animState;
+
+	int frame;
+	int animTimer;
 
 #pragma region ゲージ関連
 	Gauge<int>* hpBar;

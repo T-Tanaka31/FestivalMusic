@@ -6,9 +6,11 @@
 
 Collider::Collider(GameObject* _pObj)
 	: isEnable(TRUE)
+	, isTrigger(FALSE)
 	, pGameObject(_pObj)
 	, offset(VZero) {
 }
+
 
 CircleCollider::CircleCollider(GameObject* _pObj, float _r)
 	: Collider(_pObj)
@@ -52,13 +54,24 @@ SquareCollider::SquareCollider(
 }
 
 void SquareCollider::Update() {
+
+	if (!isEnable) {
+		return;
+	}
+
 	VECTOR pos = pGameObject->GetPosition();
 
-	minPoint.x = pos.x - size.x * 0.5f;
-	minPoint.y = pos.y - size.y * 0.5f;
+	minPoint.x =
+		pos.x + offset.x - size.x * 0.5f;
 
-	maxPoint.x = pos.x + size.x * 0.5f;
-	maxPoint.y = pos.y + size.y * 0.5f;
+	minPoint.y =
+		pos.y + offset.y - size.y * 0.5f;
+
+	maxPoint.x =
+		pos.x + offset.x + size.x * 0.5f;
+
+	maxPoint.y =
+		pos.y + offset.y + size.y * 0.5f;
 }
 
 void SquareCollider::Render() {
@@ -75,9 +88,21 @@ void SquareCollider::Render() {
 }
 
 bool SquareCollider::IsHit(Collider* other) {
-	SquareCollider* sq = dynamic_cast<SquareCollider*>(other);
 
-	if (!sq) return false;
+	if (!isEnable) {
+		return false;
+	}
+
+	SquareCollider* sq =
+		dynamic_cast<SquareCollider*>(other);
+
+	if (!sq) {
+		return false;
+	}
+
+	if (!sq->IsEnable()) {
+		return false;
+	}
 
 	return
 		minPoint.x < sq->maxPoint.x &&

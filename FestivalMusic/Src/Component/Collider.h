@@ -9,6 +9,7 @@ protected:
 	bool isEnable;
 	GameObject* pGameObject;
 	VECTOR offset;
+	bool isTrigger;
 
 public:
 	Collider(GameObject* _pObj);
@@ -29,6 +30,14 @@ public:
 	inline void SetOffset(VECTOR _o) { offset = _o; }
 
 	virtual ColliderType GetType() const = 0;
+
+	inline bool IsTrigger() const {
+		return isTrigger;
+	}
+
+	inline void SetTrigger(bool _isTrigger) {
+		isTrigger = _isTrigger;
+	}
 };
 
 class CircleCollider : public Collider {

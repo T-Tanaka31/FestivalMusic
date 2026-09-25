@@ -1,6 +1,7 @@
 #include "../../../Manager/InputManager.h"
 #include "../../../Difinition/Colors.h"
 #include "Player.h"
+#include "../Enemy/Enemy.h"
 #include "../../../Component/Collider.h"
 #include "../../../Difinition/Constant.h"
 #include "../../Camera/Camera.h"
@@ -13,133 +14,266 @@ Player::Player(VECTOR _pos, std::string _tag)
 	, input(InputManager::GetInstance())
 	, animState(AnimState::Idle)
 	, frame(0)
-	, animTimer(0) {
+	, animTimer(0)
+	, isRight(true)
+	, isAttacking(false)
+	, attackHit(false)
+	, attackTimer(0)
+	, attackCooldown(0)
+	, attackCollider(nullptr) {
 	moveSpeed = 5.0f;
 	Start();
 }
-
 Player::~Player() {
+
 }
 
 void Player::Start() {
+
 	SetCollider(new SquareCollider(
 		this,
 		VGet(50, 50, 0)
 	));
 
+// 攻撃用Collider
+attackCollider = new SquareCollider(
+	this,
+	VGet(100, 60, 0)
+);
+
+// 攻撃Colliderは押し返しを発生させない
+attackCollider->SetTrigger(true);
+
+attackCollider->SetEnable(false);
+
+
 	LoadDivGraph(
-	"Res/Player_fixed_11frames.png",
-	77,     // 11 × 7
-	11,     // 横11
-	7,      // 縦7
-	128,
-	128,
-	images
+		"Res/Player_fixed_11frames.png",
+		77,
+		11,
+		7,
+		128,
+		128,
+		images
 	);
 
 	maxHp = 100;
 	hp = maxHp;
 
 	if (hpBar == nullptr)
-		hpBar = new Gauge(hp, maxHp, hpBarPosX, hpBarPosY, hpBarWidth, hpBarHeight);
-
+		hpBar = new Gauge(
+			hp,
+			maxHp,
+			hpBarPosX,
+			hpBarPosY,
+			hpBarWidth,
+			hpBarHeight
+		);
 }
 
 void Player::Update() {
-	// 左移動
-	if (input->IsKey(KEY_INPUT_A)) {
-		position.x -= moveSpeed;
+	// ========================================
+	// 攻撃クールタイム
+	// ========================================
+
+	if (attackCooldown > 0) {
+		attackCooldown--;
 	}
 
-	// 右移動
-	if (input->IsKey(KEY_INPUT_D)) {
-		position.x += moveSpeed;
-	}
 
-	// ジャンプ
-	if (input->IsKeyDown(KEY_INPUT_SPACE) && isGround) {
-		if (input->IsKey(KEY_INPUT_W)) {
-			velocity.y = -jumpPower * 1.4f;
-		}
-		else if (input->IsKey(KEY_INPUT_S)) {
-			velocity.y = -jumpPower / 1.4f;
-		}
-		else {
-			velocity.y = -jumpPower;
-		}
+	// ========================================
+	// 攻撃
+	// ========================================
 
-		isGround = false;
-	}
+	if (input->IsKeyDown(KEY_INPUT_J) &&
+		attackCooldown <= 0 &&
+		!isAttacking) {
 
-	// --------------------------------
-	// アニメーション状態を決定
-	// --------------------------------
+		isAttacking = true;
+		attackHit = false;
 
-	AnimState newState;
-
-	if (!isGround) {
-		newState = AnimState::Jump;
-	}
-	else if (
-		input->IsKey(KEY_INPUT_A) ||
-		input->IsKey(KEY_INPUT_D)) {
-
-		newState = AnimState::Walk;
-	}
-	else {
-		newState = AnimState::Idle;
-	}
-
-	// アニメーションが切り替わったら
-	// 最初のフレームから再生
-	if (animState != newState) {
-		animState = newState;
+		attackTimer = 0;
 		frame = 0;
 		animTimer = 0;
+
+		animState = AnimState::Attack;
+
+		attackCooldown = 20;
 	}
 
-	// --------------------------------
-	// アニメーション更新
-	// --------------------------------
 
-	animTimer++;
-	if (animTimer >= 6) {
-		animTimer = 0;
+	// ========================================
+	// 攻撃中
+	// ========================================
 
-		frame++;
+	if (isAttacking) {
 
-		if (frame >= 11) {
+		attackTimer++;
+
+		// 攻撃アニメーション
+		animTimer++;
+
+		if (animTimer >= 4) {
+			animTimer = 0;
+
+			frame++;
+
+			// 12フレーム再生したら終了
+			if (frame >= 12) {
+				frame = 0;
+				isAttacking = false;
+				attackHit = false;
+				animState = AnimState::Idle;
+				animTimer = 0;
+			}
+		}
+
+		// 攻撃中は移動させない
+	}
+	else {
+
+		// ========================================
+		// 左移動
+		// ========================================
+
+		if (input->IsKey(KEY_INPUT_A)) {
+			position.x -= moveSpeed;
+			isRight = false;
+		}
+
+
+		// ========================================
+		// 右移動
+		// ========================================
+
+		if (input->IsKey(KEY_INPUT_D)) {
+			position.x += moveSpeed;
+			isRight = true;
+		}
+
+
+		// ========================================
+		// ジャンプ
+		// ========================================
+
+		if (input->IsKeyDown(KEY_INPUT_SPACE) && isGround) {
+
+			if (input->IsKey(KEY_INPUT_W)) {
+				velocity.y = -jumpPower * 1.4f;
+			}
+			else if (input->IsKey(KEY_INPUT_S)) {
+				velocity.y = -jumpPower / 1.4f;
+			}
+			else {
+				velocity.y = -jumpPower;
+			}
+
+			isGround = false;
+		}
+
+
+		// ========================================
+		// アニメーション状態
+		// ========================================
+
+		AnimState newState;
+
+		if (!isGround) {
+			newState = AnimState::Jump;
+		}
+		else if (
+			input->IsKey(KEY_INPUT_A) ||
+			input->IsKey(KEY_INPUT_D)) {
+
+			newState = AnimState::Walk;
+		}
+		else {
+			newState = AnimState::Idle;
+		}
+
+
+		if (animState != newState) {
+
+			animState = newState;
+
 			frame = 0;
+			animTimer = 0;
+		}
+
+
+		// 通常アニメーション
+		animTimer++;
+
+		if (animTimer >= 6) {
+
+			animTimer = 0;
+
+			frame++;
+
+			if (frame >= 12) {
+				frame = 0;
+			}
 		}
 	}
 
-	// --------------------------------
+
+	// ========================================
 	// 重力
-	// --------------------------------
+	// ========================================
 
 	velocity.y += gravity;
 
-	// 垂直移動
 	position.y += velocity.y;
 
-	// Collider更新
+	// ========================================
+	// 攻撃Collider
+	// ========================================
+
+	if (isAttacking &&
+		frame >= 4 &&
+		frame <= 7) {
+
+		attackCollider->SetEnable(true);
+
+		if (isRight) {
+			attackCollider->SetOffset(
+				VGet(75, 0, 0)
+			);
+		}
+		else {
+			attackCollider->SetOffset(
+				VGet(-75, 0, 0)
+			);
+		}
+	}
+	else {
+		attackCollider->SetEnable(false);
+	}
+
+	attackCollider->Update();
+
+	// ========================================
+	// Collider
+	// ========================================
+
 	pCollider->Update();
 
-	// --------------------------------
-	// HP処理
-	// --------------------------------
+
+	// ========================================
+	// その他
+	// ========================================
 
 	if (input->IsKeyDown(KEY_INPUT_2)) {
 		Damage(this, 10 + def);
 	}
 
-	if (input->IsButtonDown(XINPUT_GAMEPAD_Y) ||
+	if (
+		input->IsButtonDown(XINPUT_GAMEPAD_Y) ||
 		input->IsKeyDown(KEY_INPUT_1)) {
 
 		AddHp(maxHp / 10);
 	}
 }
-
 void Player::Render() {
 	VECTOR camPos = Camera::main->GetPosition();
 
@@ -149,39 +283,46 @@ void Player::Render() {
 	int drawY =
 		(int)(position.y - camPos.y + WINDOW_HEIGHT / 2);
 
-	// --------------------------------
-	// アニメーション画像番号
-	// --------------------------------
 
 	int imageIndex = 0;
 
 	switch (animState) {
-
 	case AnimState::Idle:
-		imageIndex = frame;          // 0～10
+		// 1行目
+		imageIndex = frame;
 		break;
 
 	case AnimState::Walk:
-		imageIndex = 22 + frame;     // 3行目
+		// 3行目
+		imageIndex = 24 + frame;
 		break;
 
 	case AnimState::Jump:
-		imageIndex = 33 + frame;     // 4行目
+		// 4行目
+		imageIndex = 36 + frame;
+		break;
+
+	case AnimState::Attack:
+		// 5行目
+		imageIndex = 48 + frame;
 		break;
 	}
 
-	// --------------------------------
-	// キャラクター描画
-	// --------------------------------
 
-	DrawRotaGraph(
+	DrawRotaGraph3(
 		drawX,
 		drawY,
+		64,
+		64,
+		0.5,
 		0.5,
 		0.0,
 		images[imageIndex],
-		TRUE
+		TRUE,
+		isRight ? FALSE : TRUE,
+		FALSE
 	);
+
 
 	DrawString(
 		drawX - 20,
@@ -190,10 +331,10 @@ void Player::Render() {
 		COLOR_AMETHYST
 	);
 
-	// Collider
+
 	pCollider->Render();
 
-	// HPバー
+
 	DrawBox(
 		hpBarPosX - 3,
 		hpBarPosY - 3,
@@ -203,17 +344,72 @@ void Player::Render() {
 		true
 	);
 
+	if (attackCollider->IsEnable()) {
+		attackCollider->Render();
+	}
+
 	hpBar->Render();
 }
+
 void Player::OnTriggerEnter(Collider* _pOther) {
 
 }
-
 void Player::OnTriggerStay(Collider* other) {
+	// ========================================
+	// Goal
+	// ========================================
 
 	if (other->GetGameObject()->GetTag() == "Goal") {
-		SceneManager::GetInstance()->ChangeScene(SceneType::Result);
+
+		SceneManager::GetInstance()->ChangeScene(
+			SceneType::Result
+		);
+
+		return;
 	}
+
+
+	// ========================================
+	// Enemy
+	// ========================================
+
+	if (other->GetGameObject()->GetTag() == "Enemy") {
+
+		if (!isAttacking) {
+			return;
+		}
+
+		if (attackHit) {
+			return;
+		}
+
+		Enemy* enemy =
+			dynamic_cast<Enemy*>(
+				other->GetGameObject()
+			);
+
+		printfDx(
+			"Tag = %s / EnemyPtr = %p\n",
+			other->GetGameObject()->GetTag().c_str(),
+			enemy
+		);
+
+		if (enemy != nullptr) {
+
+			printfDx("TakeDamage CALL\n");
+
+			enemy->TakeDamage(5);
+
+			attackHit = true;
+		}
+
+	}
+	
+
+
+	// ========================================
+	// Block
+	// ========================================
 
 	if (other->GetGameObject()->GetTag() == "Block") {
 
@@ -231,18 +427,15 @@ void Player::OnTriggerStay(Collider* other) {
 			myCol->GetMaxPoint().y -
 			blockCol->GetMinPoint().y;
 
-		// 上から落下していて
-		// めり込み量が小さい場合のみ接地
 		if (velocity.y >= 0.0f &&
 			overlapTop >= 0.0f &&
 			overlapTop < 5.0f) {
+
 			isGround = true;
 			velocity.y = 0.0f;
 		}
 	}
 }
-
-
 void Player::OnTriggerExit(Collider* _pOther) {
 	if (_pOther->GetGameObject()->GetTag() == "Block") {
 		isGround = false;

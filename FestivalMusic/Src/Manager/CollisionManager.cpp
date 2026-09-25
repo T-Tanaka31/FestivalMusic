@@ -40,25 +40,34 @@ void CollisionManager::CheckCollision() {
 
     for (int i = 0; i < colliders.size(); i++) {
         for (int j = i + 1; j < colliders.size(); j++) {
-            if (colliders[i]->IsHit(colliders[j])) {
-                SquareCollider* a =
-                    dynamic_cast<SquareCollider*>(colliders[i]);
+			if (colliders[i]->IsHit(colliders[j])) {
 
-                SquareCollider* b =
-                    dynamic_cast<SquareCollider*>(colliders[j]);
+				SquareCollider* a =
+					dynamic_cast<SquareCollider*>(colliders[i]);
 
-                if (!a || !b) {
-                    continue;
-                }
+				SquareCollider* b =
+					dynamic_cast<SquareCollider*>(colliders[j]);
 
-                HitDirection dir =
-                    CollisionUtility::ResolveBoxCollision(a, b);
+				if (!a || !b) {
+					continue;
+				}
 
-                a->GetGameObject()->OnTriggerStay(colliders[j]);
+				// ==============================
+				// 物理衝突
+				// ==============================
 
-                // 必要なら逆方向も通知
-                b->GetGameObject()->OnTriggerStay(colliders[i]);
-            }
+				if (!a->IsTrigger() && !b->IsTrigger()) {
+					CollisionUtility::ResolveBoxCollision(a, b);
+				}
+
+				// ==============================
+				// 衝突通知
+				// ==============================
+
+				a->GetGameObject()->OnTriggerStay(colliders[j]);
+
+				b->GetGameObject()->OnTriggerStay(colliders[i]);
+			}
         }
     }
 }

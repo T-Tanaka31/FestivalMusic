@@ -50,36 +50,79 @@ void GameScene::Init() {
 }
 
 void GameScene::Update() {
+
 	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_RETURN)) {
 		SceneManager::GetInstance()->ChangeScene(SceneType::Game);
 	}
+
+	// プレイヤーは常に更新
 	player->Update();
 
+	// カメラの中心位置
+	VECTOR camPos = camera->GetPosition();
+
+	// 800 x 600 の画面範囲
+	float screenLeft = camPos.x - WINDOW_WIDTH * 0.5f;
+	float screenRight = camPos.x + WINDOW_WIDTH;
+	float screenTop = camPos.y - WINDOW_HEIGHT * 0.5f;
+	float screenBottom = camPos.y + WINDOW_HEIGHT;
+
+	// Block
 	for (Block* block : blocks) {
-		block->Update();
+
+		VECTOR pos = block->GetPosition();
+
+		if (pos.x >= screenLeft &&
+			pos.x <= screenRight &&
+			pos.y >= screenTop &&
+			pos.y <= screenBottom) {
+
+			block->Update();
+		}
 	}
 
+	// Enemy
 	for (Enemy* enemy : enemies) {
-		enemy->Update();
+
+		VECTOR pos = enemy->GetPosition();
+
+		if (pos.x >= screenLeft &&
+			pos.x <= screenRight &&
+			pos.y >= screenTop &&
+			pos.y <= screenBottom) {
+
+			enemy->Update();
+		}
 	}
 
-	goal->Update();
+	// Goal
+	if (goal != nullptr) {
+
+		VECTOR pos = goal->GetPosition();
+
+		if (pos.x >= screenLeft &&
+			pos.x <= screenRight &&
+			pos.y >= screenTop &&
+			pos.y <= screenBottom) {
+
+			goal->Update();
+		}
+	}
 
 	camera->Update();
 
-	CollisionManager::GetInstance()
-		->CheckCollision();
+	// Collider同士の衝突判定
+	CollisionManager::GetInstance()->CheckCollision();
 }
-
 void GameScene::Draw() {
-	for (Block* block : blocks) {
+	for (Block* block : blocks){
 		block->Render();
 	}
 	for (Enemy* enemy : enemies) {
-		enemy->Render();
+		enemy->Render(); 
 	}
-	goal->Render();
-	player->Render();
+	
+	goal->Render(); player->Render();
 }
 
 void GameScene::AddBlock(
@@ -88,5 +131,7 @@ void GameScene::AddBlock(
 }
 
 void GameScene::AddEnemy(Enemy* enemy) {
+	enemy->SetPlayer(player);
+
 	enemies.push_back(enemy);
 }

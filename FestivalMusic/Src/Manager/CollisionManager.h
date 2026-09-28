@@ -55,5 +55,7 @@ public:
 	void CheckCollision();
 
 	void Clear();
+
+	void RemoveColliders(GameObject* obj);
 };
 

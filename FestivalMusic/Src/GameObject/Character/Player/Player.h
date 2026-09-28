@@ -94,6 +94,8 @@ public:
 		isGround = value;
 	}
 
+	void TakeDamage(int damage);
+
 
 	// ==============================
 	// 攻撃関連

@@ -61,11 +61,10 @@ void GameScene::Update() {
 	// カメラの中心位置
 	VECTOR camPos = camera->GetPosition();
 
-	// 800 x 600 の画面範囲
-	float screenLeft = camPos.x - WINDOW_WIDTH * 0.5f;
-	float screenRight = camPos.x + WINDOW_WIDTH;
-	float screenTop = camPos.y - WINDOW_HEIGHT * 0.5f;
-	float screenBottom = camPos.y + WINDOW_HEIGHT;
+	float screenLeft = camPos.x - CAMERA_WIDTH * 0.5f;
+	float screenRight = camPos.x + CAMERA_WIDTH;
+	float screenTop = camPos.y - CAMERA_HEIGHT * 0.32f;
+	float screenBottom = camPos.y + CAMERA_HEIGHT;
 
 	// Block
 	for (Block* block : blocks) {
@@ -82,16 +81,34 @@ void GameScene::Update() {
 	}
 
 	// Enemy
-	for (Enemy* enemy : enemies) {
+	for (auto it = enemies.begin(); it != enemies.end(); ) {
+		Enemy* enemy = *it;
 
 		VECTOR pos = enemy->GetPosition();
 
-		if (pos.x >= screenLeft &&
+		// 死亡中は必ず更新
+		if (enemy->IsDying()) {
+			enemy->Update();
+		}
+		// 通常時は画面内だけ更新
+		else if (
+			pos.x >= screenLeft &&
 			pos.x <= screenRight &&
 			pos.y >= screenTop &&
 			pos.y <= screenBottom) {
-
 			enemy->Update();
+		}
+
+		// 死亡アニメーション終了後に削除
+		if (enemy->IsDead()) {
+			CollisionManager::GetInstance()->RemoveColliders(enemy);
+
+			delete enemy;
+
+			it = enemies.erase(it);
+		}
+		else {
+			++it;
 		}
 	}
 
@@ -115,13 +132,13 @@ void GameScene::Update() {
 	CollisionManager::GetInstance()->CheckCollision();
 }
 void GameScene::Draw() {
-	for (Block* block : blocks){
+	for (Block* block : blocks) {
 		block->Render();
 	}
 	for (Enemy* enemy : enemies) {
-		enemy->Render(); 
+		enemy->Render();
 	}
-	
+
 	goal->Render(); player->Render();
 }
 

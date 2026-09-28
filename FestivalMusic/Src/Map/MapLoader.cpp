@@ -7,9 +7,12 @@
 #include "../GameObject/MapObject/Block.h"
 #include "../GameObject/Goal/Goal.h"
 
+int MapLoader::bottomBlockY = 0;
+
 bool MapLoader::Load(
 	const std::string& path,
 	GameScene* scene) {
+
 	std::ifstream file(path);
 
 	if (!file.is_open()) {
@@ -25,23 +28,28 @@ bool MapLoader::Load(
 
 	constexpr int TILE_SIZE = 64;
 
-	while (std::getline(file, line)) {
-		std::stringstream ss(line);
+	bottomBlockY = 0;
 
+	while (std::getline(file, line)) {
+
+		std::stringstream ss(line);
 		std::string cell;
 
 		int x = 0;
 
 		while (std::getline(ss, cell, ',')) {
+
 			try {
 				int value = std::stoi(cell);
 
 				VECTOR pos = VGet(
-					x * TILE_SIZE,
-					y * TILE_SIZE,
-					0);
+						x * TILE_SIZE + TILE_SIZE / 2.0f,
+						y * TILE_SIZE + TILE_SIZE / 2.0f,
+						0
+				);
 
 				switch (value) {
+
 				case 1:
 					scene->AddBlock(
 						new Block(
@@ -49,7 +57,16 @@ bool MapLoader::Load(
 							VGet(
 								TILE_SIZE,
 								TILE_SIZE,
-								0)));
+								0
+							)
+						)
+					);
+
+					// 一番下のブロックの行を記録
+					if (y > bottomBlockY) {
+						bottomBlockY = y;
+					}
+
 					break;
 
 				case 2:
@@ -63,23 +80,30 @@ bool MapLoader::Load(
 							VGet(
 								TILE_SIZE,
 								TILE_SIZE,
-								0)));
+								0
+							)
+						)
+					);
 					break;
 
 				case 4:
 					scene->AddEnemy(
 						new Enemy(
 							pos,
-							"Enemy"));
+							"Enemy"
+						)
+					);
 					break;
 				}
 			}
 			catch (...) {
+
 				MessageBoxA(
 					NULL,
 					cell.c_str(),
 					"stoi Error",
-					MB_OK);
+					MB_OK
+				);
 
 				return false;
 			}
@@ -90,5 +114,19 @@ bool MapLoader::Load(
 		y++;
 	}
 
+	printfDx(
+		"Bottom Block Row : %d\n",
+		bottomBlockY
+	);
+
+	printfDx(
+		"Map Bottom Y : %d\n",
+		(bottomBlockY + 1) * TILE_SIZE
+	);
+
 	return true;
+}
+
+int MapLoader::GetMapBottom() {
+	return (bottomBlockY + 1) * 64;
 }

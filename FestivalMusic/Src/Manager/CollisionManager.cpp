@@ -1,8 +1,11 @@
+#include "../GameObject/Character/Player/Player.h"
+#include "../GameObject/Character/Enemy/Enemy.h"
 #include "CollisionManager.h"
 #include "../Difinition/Colors.h"
 #include "../Utility/CollisionUtility.h"
+#include <algorithm>
 
-//	静的メンバ変数の初期化
+// 静的メンバ変数の初期化
 CollisionManager* CollisionManager::pInstance = nullptr;
 
 CollisionManager::CollisionManager() {
@@ -15,6 +18,7 @@ void CollisionManager::CreateInstance() {
 CollisionManager* CollisionManager::GetInstance() {
 	if (pInstance == nullptr)
 		CreateInstance();
+
 	return pInstance;
 }
 
@@ -26,54 +30,196 @@ void CollisionManager::DestroyInstance() {
 }
 
 void CollisionManager::AddCollider(Collider* col) {
-    colliders.push_back(col);
+	colliders.push_back(col);
 }
 
 void CollisionManager::CheckCollision() {
-    DrawFormatString(
-        10,
-        50,
-        COLOR_WHITE,
-        "Collider Count : %d",
-        colliders.size()
-    );
 
-    for (int i = 0; i < colliders.size(); i++) {
-        for (int j = i + 1; j < colliders.size(); j++) {
-			if (colliders[i]->IsHit(colliders[j])) {
+	DrawFormatString(
+		10,
+		50,
+		COLOR_WHITE,
+		"Collider Count : %d",
+		colliders.size()
+	);
 
-				SquareCollider* a =
-					dynamic_cast<SquareCollider*>(colliders[i]);
+	for (int i = 0; i < colliders.size(); i++) {
 
-				SquareCollider* b =
-					dynamic_cast<SquareCollider*>(colliders[j]);
+		for (int j = i + 1; j < colliders.size(); j++) {
 
-				if (!a || !b) {
-					continue;
-				}
+			// ==========================================
+			// 当たっていなければ何もしない
+			// ==========================================
 
-				// ==============================
-				// 物理衝突
-				// ==============================
-
-				if (!a->IsTrigger() && !b->IsTrigger()) {
-					CollisionUtility::ResolveBoxCollision(a, b);
-				}
-
-				// ==============================
-				// 衝突通知
-				// ==============================
-
-				a->GetGameObject()->OnTriggerStay(colliders[j]);
-
-				b->GetGameObject()->OnTriggerStay(colliders[i]);
+			if (!colliders[i]->IsHit(colliders[j])) {
+				continue;
 			}
-        }
-    }
+
+			SquareCollider* a =
+				dynamic_cast<SquareCollider*>(colliders[i]);
+
+			SquareCollider* b =
+				dynamic_cast<SquareCollider*>(colliders[j]);
+
+			if (!a || !b) {
+				continue;
+			}
+
+			GameObject* objA =
+				a->GetGameObject();
+
+			GameObject* objB =
+				b->GetGameObject();
+
+			if (!objA || !objB) {
+				continue;
+			}
+
+
+			// ==========================================
+			// タグ取得
+			// ==========================================
+
+			std::string tagA = objA->GetTag();
+			std::string tagB = objB->GetTag();
+
+			// ==========================================
+			// ① 物理衝突
+			// ==========================================
+
+			if (!a->IsTrigger() && !b->IsTrigger()) {
+
+				bool enemyPlayer =
+					(tagA == "Enemy" && tagB == "Player") ||
+					(tagA == "Player" && tagB == "Enemy");
+
+				if (!enemyPlayer) {
+
+					CollisionUtility::ResolveBoxCollision(
+						a,
+						b
+					);
+				}
+			}
+
+
+			// ==========================================
+			// ② Enemy本体 × Player本体
+			// ==========================================
+
+			if (!a->IsTrigger() &&
+				!b->IsTrigger() &&
+				((tagA == "Enemy" && tagB == "Player") ||
+					(tagA == "Player" && tagB == "Enemy"))) {
+
+				Player* player = nullptr;
+
+				if (tagA == "Player") {
+					player = dynamic_cast<Player*>(objA);
+				}
+				else {
+					player = dynamic_cast<Player*>(objB);
+				}
+
+				if (player != nullptr) {
+					player->TakeDamage(1);
+				}
+			}
+
+
+			// ==========================================
+			// ② Enemy攻撃Collider → Player
+			// ==========================================
+
+			if (a->IsTrigger() &&
+				tagA == "Enemy" &&
+				tagB == "Player") {
+
+				Player* player =
+					dynamic_cast<Player*>(objB);
+
+				if (player != nullptr) {
+					player->TakeDamage(1);
+				}
+			}
+
+
+			// ==========================================
+			// ③ Enemy攻撃Collider → Player
+			// Colliderの順番が逆
+			// ==========================================
+
+			if (b->IsTrigger() &&
+				tagB == "Enemy" &&
+				tagA == "Player") {
+
+				Player* player =
+					dynamic_cast<Player*>(objA);
+
+				if (player != nullptr) {
+					player->TakeDamage(1);
+				}
+			}
+
+
+			// ==========================================
+			// ④ Player攻撃Collider → Enemy
+			// ==========================================
+
+			if (a->IsTrigger() &&
+				tagA == "Player" &&
+				tagB == "Enemy") {
+
+				Enemy* enemy =
+					dynamic_cast<Enemy*>(objB);
+
+				if (enemy != nullptr) {
+					enemy->TakeDamage(5);
+				}
+			}
+
+
+			// ==========================================
+			// ⑤ Player攻撃Collider → Enemy
+			// Colliderの順番が逆
+			// ==========================================
+
+			if (b->IsTrigger() &&
+				tagB == "Player" &&
+				tagA == "Enemy") {
+
+				Enemy* enemy =
+					dynamic_cast<Enemy*>(objA);
+
+				if (enemy != nullptr) {
+					enemy->TakeDamage(5);
+				}
+			}
+
+
+			// ==========================================
+			// ⑥ 通常の衝突通知
+			// ==========================================
+
+			objA->OnTriggerStay(colliders[j]);
+			objB->OnTriggerStay(colliders[i]);
+		}
+	}
 }
 
-
-
 void CollisionManager::Clear() {
-    colliders.clear();
+	colliders.clear();
+}
+
+void CollisionManager::RemoveColliders(GameObject* obj) {
+	colliders.erase(
+		std::remove_if(
+			colliders.begin(),
+			colliders.end(),
+			[obj](Collider* collider) {
+				return collider->GetGameObject() == obj;
+			}
+		),
+		colliders.end()
+	);
 }

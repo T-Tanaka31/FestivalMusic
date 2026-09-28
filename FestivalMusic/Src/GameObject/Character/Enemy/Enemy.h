@@ -30,6 +30,13 @@ private:
 	// 追跡するPlayer
 	Player* player;
 
+private:
+	bool isDying;
+	bool deathFinished;
+
+	int deathFrame;
+	int deathAnimTimer;
+
 public:
 	Enemy(VECTOR _pos = VZero, std::string _tag = "Enemy");
 
@@ -52,6 +59,11 @@ public:
 	}
 
 	void TakeDamage(int damage);
+
+public:
+	bool IsDead() const;
+	bool IsDying() const;
+
 public:
 	void OnTriggerEnter(Collider* _pOther) override;
 

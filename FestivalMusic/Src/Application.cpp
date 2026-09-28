@@ -55,7 +55,7 @@ int Application::DxLibInit() {
 	//  ウィンドウのタイトルを変更する
 	SetWindowText("FestivalMusic");
     //  背景色の設定
-	SetBackgroundColor(0, 0, 0);
+	SetBackgroundColor(0,0,0);
 	//  DxLibの初期化
     if (DxLib_Init() == -1)
         return 0;

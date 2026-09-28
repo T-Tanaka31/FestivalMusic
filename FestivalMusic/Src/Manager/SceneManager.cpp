@@ -25,8 +25,9 @@ void SceneManager::DestroyInstance() {
 }
 
 SceneManager::SceneManager()
-	: pScene(nullptr)
-    , isSceneChange(false){
+    : pScene(nullptr)
+    , isSceneChange(false)
+    , resultType(ResultScene::ResultType::GameOver) {
 }
 
 SceneManager::~SceneManager() {
@@ -39,35 +40,43 @@ void SceneManager::ChangeScene(SceneType sceneType) {
 }
 
 void SceneManager::Update() {
-    InputManager::GetInstance()->Update();
+	InputManager::GetInstance()->Update();
 
-    if (pScene) {
-        pScene->Update();
-    }
+	if (pScene) {
+		pScene->Update();
+	}
 
-    if (isSceneChange) {
-        delete pScene;
+	if (isSceneChange) {
+		delete pScene;
 
-        switch (nextScene) {
-        case SceneType::Title:
-            pScene = new TitleScene();
-            break;
+		switch (nextScene) {
+		case SceneType::Title:
+			pScene = new TitleScene();
+			break;
 
-        case SceneType::Game:
-            pScene = new GameScene();
-            break;
+		case SceneType::Game:
+			pScene = new GameScene();
+			break;
 
-        case SceneType::Result:
-            pScene = new ResultScene();
-            break;
-        }
+		case SceneType::Result:
+			pScene = new ResultScene();
+			((ResultScene*)pScene)->SetResult(resultType);
+			break;
+		}
 
-        isSceneChange = false;
-    }
+		isSceneChange = false;
+	}
 }
+
 
 void SceneManager::Draw() {
 	if (pScene) {
 		pScene->Draw();
 	}
+}
+
+void SceneManager::ChangeResultScene(ResultScene::ResultType result) {
+    resultType = result;
+    nextScene = SceneType::Result;
+    isSceneChange = true;
 }

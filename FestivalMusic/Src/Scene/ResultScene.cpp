@@ -3,7 +3,8 @@
 #include "../Manager/InputManager.h"
 #include <DxLib.h>
 
-ResultScene::ResultScene() {
+ResultScene::ResultScene()
+	: resultType(ResultType::GameOver) {
 }
 
 ResultScene::~ResultScene() {
@@ -19,5 +20,31 @@ void ResultScene::Update() {
 }
 
 void ResultScene::Draw() {
-	DrawString(100, 100, "ResultScene", GetColor(255, 255, 255));
+	if (resultType == ResultType::GameOver) {
+		DrawString(
+			100,
+			100,
+			"GAME OVER",
+			GetColor(255, 0, 0)
+		);
+	}
+	else {
+		DrawString(
+			100,
+			100,
+			"GAME CLEAR",
+			GetColor(255, 255, 0)
+		);
+	}
+
+	DrawString(
+		100,
+		150,
+		"Press ENTER",
+		GetColor(255, 255, 255)
+	);
+}
+
+void ResultScene::SetResult(ResultType type) {
+	resultType = type;
 }

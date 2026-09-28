@@ -6,6 +6,8 @@
 #include "../../../Difinition/Constant.h"
 #include "../../Camera/Camera.h"
 #include "../../../Manager/SceneManager.h"
+#include "../../../Map/MapLoader.h"
+#include "../../../Scene/ResultScene.h"
 
 Player::Player(VECTOR _pos, std::string _tag)
 	: Character(_pos, _tag)
@@ -35,16 +37,16 @@ void Player::Start() {
 		VGet(50, 50, 0)
 	));
 
-// 攻撃用Collider
-attackCollider = new SquareCollider(
-	this,
-	VGet(100, 60, 0)
-);
+	// 攻撃用Collider
+	attackCollider = new SquareCollider(
+		this,
+		VGet(100, 60, 0)
+	);
 
-// 攻撃Colliderは押し返しを発生させない
-attackCollider->SetTrigger(true);
+	// 攻撃Colliderは押し返しを発生させない
+	attackCollider->SetTrigger(true);
 
-attackCollider->SetEnable(false);
+	attackCollider->SetEnable(false);
 
 
 	LoadDivGraph(
@@ -72,6 +74,11 @@ attackCollider->SetEnable(false);
 }
 
 void Player::Update() {
+
+	if (velocity.y != 0.0f) {
+		isGround = false;
+	}
+
 	// ========================================
 	// 攻撃クールタイム
 	// ========================================
@@ -178,7 +185,7 @@ void Player::Update() {
 
 		AnimState newState;
 
-		if (!isGround) {
+		if (velocity.y != 0.0f) {
 			newState = AnimState::Jump;
 		}
 		else if (
@@ -251,6 +258,14 @@ void Player::Update() {
 	}
 
 	attackCollider->Update();
+
+	// マップの下に落ちたら死亡
+	float mapBottom = (float)MapLoader::GetMapBottom();
+
+	if (position.y > mapBottom + 100.0f) {
+		TakeDamage(hp);
+		return;
+	}
 
 	// ========================================
 	// Collider
@@ -351,6 +366,21 @@ void Player::Render() {
 	hpBar->Render();
 }
 
+void Player::TakeDamage(int damage) {
+	hp -= damage;
+
+	if (hp <= 0) {
+		hp = 0;
+
+		SceneManager::GetInstance()->ChangeResultScene(
+			ResultScene::ResultType::GameOver
+		);
+	}
+
+	printf("Player HP = %d\n", hp);
+}
+
+
 void Player::OnTriggerEnter(Collider* _pOther) {
 
 }
@@ -361,8 +391,8 @@ void Player::OnTriggerStay(Collider* other) {
 
 	if (other->GetGameObject()->GetTag() == "Goal") {
 
-		SceneManager::GetInstance()->ChangeScene(
-			SceneType::Result
+		SceneManager::GetInstance()->ChangeResultScene(
+			ResultScene::ResultType::GameClear
 		);
 
 		return;
@@ -404,7 +434,7 @@ void Player::OnTriggerStay(Collider* other) {
 		}
 
 	}
-	
+
 
 
 	// ========================================

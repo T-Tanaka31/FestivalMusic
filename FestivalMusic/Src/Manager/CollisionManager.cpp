@@ -34,7 +34,7 @@ void CollisionManager::AddCollider(Collider* col) {
 }
 
 void CollisionManager::CheckCollision() {
-
+#if _DEBUG
 	DrawFormatString(
 		10,
 		50,
@@ -42,6 +42,7 @@ void CollisionManager::CheckCollision() {
 		"Collider Count : %d",
 		colliders.size()
 	);
+#endif
 
 	for (int i = 0; i < colliders.size(); i++) {
 

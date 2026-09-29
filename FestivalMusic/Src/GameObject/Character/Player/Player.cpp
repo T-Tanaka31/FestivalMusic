@@ -378,14 +378,14 @@ void Player::Render() {
 		FALSE
 	);
 
-
+#if _DEBUG
 	DrawString(
 		drawX - 20,
 		drawY - 40,
 		tag.c_str(),
 		COLOR_AMETHYST
 	);
-
+#endif
 
 	pCollider->Render();
 
@@ -417,7 +417,9 @@ void Player::TakeDamage(int damage) {
 		);
 	}
 
+#if _DEBUG
 	printf("Player HP = %d\n", hp);
+#endif
 }
 
 
@@ -457,17 +459,18 @@ void Player::OnTriggerStay(Collider* other) {
 			dynamic_cast<Enemy*>(
 				other->GetGameObject()
 			);
-
+#if _DEBUG
 		printfDx(
 			"Tag = %s / EnemyPtr = %p\n",
 			other->GetGameObject()->GetTag().c_str(),
 			enemy
 		);
+#endif
 
 		if (enemy != nullptr) {
-
+#if _DEBUG
 			printfDx("TakeDamage CALL\n");
-
+#endif
 			enemy->TakeDamage(5);
 
 			attackHit = true;

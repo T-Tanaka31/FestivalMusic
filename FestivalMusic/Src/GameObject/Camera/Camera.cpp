@@ -20,12 +20,14 @@ void Camera::Start() {
 void Camera::Update() {
 
     if (pTarget == nullptr) {
+#if _DEBUG
         DrawFormatString(
             0,
             0,
             GetColor(255, 0, 0),
             "Target NULL"
         );
+#endif
         return;
     }
 
@@ -56,7 +58,7 @@ void Camera::Update() {
     if (position.y > maxCameraY) {
         position.y = maxCameraY;
     }
-
+#if _DEBUG
     DrawFormatString(
         0,
         20,
@@ -65,6 +67,7 @@ void Camera::Update() {
         position.x,
         position.y
     );
+#endif
 }
 
 void Camera::Render() {

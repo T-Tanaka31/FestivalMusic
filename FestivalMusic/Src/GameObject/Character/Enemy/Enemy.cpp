@@ -200,11 +200,13 @@ void Enemy::TakeDamage(int damage) {
 		if (pCollider != nullptr) {
 			pCollider->SetEnable(false);
 		}
-
+#if _DEBUG
 		printf("Enemy死亡アニメーション開始\n");
+#endif
 	}
-
+#if _DEBUG
 	printf("敵HP = %d\n", hp);
+#endif
 }
 void Enemy::OnTriggerEnter(Collider* _pOther) {
 

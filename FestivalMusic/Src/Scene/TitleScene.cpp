@@ -24,5 +24,7 @@ void TitleScene::Update() {
 
 void TitleScene::Draw() {
 	DrawExtendGraph(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, graphHandle, TRUE);
+#if _DEBUG
 	DrawString(100, 100, "TitleScene", GetColor(255, 255, 255));
+#endif
 }

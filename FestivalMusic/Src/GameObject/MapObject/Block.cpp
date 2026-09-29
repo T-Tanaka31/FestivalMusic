@@ -16,7 +16,7 @@ Block::~Block() {
 }
 
 void Block::Start() {
-    graphHandle = LoadGraph("Res/BlueBlock.png");
+    graphHandle = LoadGraph("Res/BrounBlock.png");
 }
 
 void Block::Update() {

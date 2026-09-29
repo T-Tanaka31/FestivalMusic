@@ -58,7 +58,17 @@ void Player::Start() {
 		128,
 		images
 	);
+	
 
+	LoadDivGraph(
+		"Res/Player_attack_effect.png",
+		11,
+		11,
+		1,
+		128,
+		128,
+		attackEffectImages
+	);
 	maxHp = 100;
 	hp = maxHp;
 
@@ -323,6 +333,36 @@ void Player::Render() {
 		break;
 	}
 
+	if (isAttacking && frame >= 4 && frame <= 7) {
+		int effectFrame = frame - 4;
+
+		VECTOR effectPos = position;
+
+		if (isRight)
+			effectPos.x += 60;
+		else
+			effectPos.x -= 60;
+
+		int effectX =
+			(int)(effectPos.x - camPos.x + WINDOW_WIDTH / 2);
+
+		int effectY =
+			(int)(effectPos.y - camPos.y + WINDOW_HEIGHT / 2);
+
+		DrawRotaGraph3(
+			effectX,
+			effectY,
+			64,
+			64,
+			0.5,
+			0.5,
+			0.0,
+			attackEffectImages[effectFrame],
+			TRUE,
+			isRight ? FALSE : TRUE,
+			FALSE
+		);
+	}
 
 	DrawRotaGraph3(
 		drawX,

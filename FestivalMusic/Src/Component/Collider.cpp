@@ -77,6 +77,7 @@ void SquareCollider::Update() {
 void SquareCollider::Render() {
 	VECTOR camPos = Camera::main->GetPosition();
 
+#if _DEBUG
 	DrawBox(
 		(int)(minPoint.x - camPos.x + WINDOW_WIDTH / 2),
 		(int)(minPoint.y - camPos.y + WINDOW_HEIGHT / 2),
@@ -85,6 +86,7 @@ void SquareCollider::Render() {
 		COLOR_RED,
 		FALSE
 	);
+#endif
 }
 
 bool SquareCollider::IsHit(Collider* other) {

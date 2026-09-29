@@ -48,6 +48,7 @@ private:
 	bool attackHit;
 	int attackTimer;
 	int attackCooldown;
+	int attackEffectImages[11];
 
 	// 攻撃用Collider
 	SquareCollider* attackCollider;

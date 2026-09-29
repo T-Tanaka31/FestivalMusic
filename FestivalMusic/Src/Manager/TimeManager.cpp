@@ -63,5 +63,7 @@ void TimeManager::Update() {
 }
 
 void TimeManager::Render() {
+#if _DEBUG
 	DrawFormatStringToHandle(100, 100, COLOR_RED, 0, "%02d %d", deltaTime, ms);
+#endif
 }

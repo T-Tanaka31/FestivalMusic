@@ -16,12 +16,14 @@ bool MapLoader::Load(
 	std::ifstream file(path);
 
 	if (!file.is_open()) {
+#if _DEBUG
 		printfDx("OPEN FAILED : %s\n", path.c_str());
+#endif
 		return false;
 	}
-
+#if _DEBUG
 	printfDx("OPEN SUCCESS\n");
-
+#endif
 	std::string line;
 
 	int y = 0;
@@ -114,6 +116,7 @@ bool MapLoader::Load(
 		y++;
 	}
 
+#if _DEBUG
 	printfDx(
 		"Bottom Block Row : %d\n",
 		bottomBlockY
@@ -123,7 +126,7 @@ bool MapLoader::Load(
 		"Map Bottom Y : %d\n",
 		(bottomBlockY + 1) * TILE_SIZE
 	);
-
+#endif
 	return true;
 }
 

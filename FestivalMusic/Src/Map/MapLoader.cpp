@@ -5,6 +5,10 @@
 
 #include "../Scene/GameScene.h"
 #include "../GameObject/MapObject/Block.h"
+#include "../GameObject/MapObject/Floor.h"
+#include "../GameObject/MapObject/Brick.h"
+#include "../GameObject/MapObject/Question.h"
+#include "../GameObject/MapObject/Rock.h"
 #include "../GameObject/Goal/Goal.h"
 
 int MapLoader::bottomBlockY = 0;
@@ -63,15 +67,8 @@ bool MapLoader::Load(
 							)
 						)
 					);
-
-					// 一番下のブロックの行を記録
-					if (y > bottomBlockY) {
-						bottomBlockY = y;
-					}
-
 					break;
-
-				case 2:
+				case  2:
 					scene->SetPlayerPosition(pos);
 					break;
 
@@ -96,7 +93,66 @@ bool MapLoader::Load(
 						)
 					);
 					break;
+
+				case 10:
+					scene->AddFloor(
+						new Floor(
+							pos,
+							VGet(
+								TILE_SIZE,
+								TILE_SIZE,
+								0
+							)
+						)
+					);
+					// 一番下のブロックの行を記録
+					if (y > bottomBlockY) {
+						bottomBlockY = y;
+					}
+
+					break;
+
+				case 11:
+					scene->AddRock(
+						new Rock(
+							pos,
+							VGet(
+								TILE_SIZE,
+								TILE_SIZE,
+								0
+							)
+						)
+					);
+					break;
+
+				case 12:
+					scene->AddBrick(
+						new Brick(
+							pos,
+							VGet(
+								TILE_SIZE,
+								TILE_SIZE,
+								0
+							)
+						)
+					);
+					break;
+
+				case 15:
+					scene->AddQues(
+						new Question(
+							pos,
+							VGet(
+								TILE_SIZE,
+								TILE_SIZE,
+								0
+							)
+						)
+					);
+					break;
 				}
+
+
 			}
 			catch (...) {
 

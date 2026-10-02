@@ -27,7 +27,8 @@ void SceneManager::DestroyInstance() {
 SceneManager::SceneManager()
     : pScene(nullptr)
     , isSceneChange(false)
-    , resultType(ResultScene::ResultType::GameOver) {
+    , resultType(ResultScene::ResultType::GameOver)
+	, selectedStage(1) {
 }
 
 SceneManager::~SceneManager() {
@@ -54,13 +55,16 @@ void SceneManager::Update() {
 			pScene = new TitleScene();
 			break;
 
+		case SceneType::Select:
+			pScene = new SelectScene();
+			break;
+
 		case SceneType::Game:
-			pScene = new GameScene();
+			pScene = new GameScene(selectedStage);
 			break;
 
 		case SceneType::Result:
 			pScene = new ResultScene();
-			((ResultScene*)pScene)->SetResult(resultType);
 			break;
 		}
 
@@ -79,4 +83,11 @@ void SceneManager::ChangeResultScene(ResultScene::ResultType result) {
     resultType = result;
     nextScene = SceneType::Result;
     isSceneChange = true;
+}
+
+void SceneManager::ChangeGameScene(int stage) {
+	selectedStage = stage;
+
+	nextScene = SceneType::Game;
+	isSceneChange = true;
 }

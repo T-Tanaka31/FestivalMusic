@@ -69,7 +69,7 @@ void Player::Start() {
 		128,
 		attackEffectImages
 	);
-	maxHp = 100;
+	maxHp = 1;
 	hp = maxHp;
 
 	if (hpBar == nullptr)

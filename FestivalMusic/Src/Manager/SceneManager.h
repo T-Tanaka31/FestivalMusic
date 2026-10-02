@@ -2,9 +2,11 @@
 
 #include "../Scene/Scene.h"
 #include "../Scene/ResultScene.h"
+#include "../Scene/SelectScene.h"
 
 enum class SceneType {
 	Title,
+	Select,
 	Game,
 	Result
 };
@@ -19,6 +21,8 @@ private:
 
 	ResultScene::ResultType resultType;
 
+	int selectedStage;
+
 	SceneManager();
 	~SceneManager();
 public:
@@ -30,6 +34,8 @@ public:
 
 	// ResultScene用
 	void ChangeResultScene(ResultScene::ResultType result);
+
+	void ChangeGameScene(int stage);
 
 	void Update();
 	void Draw();

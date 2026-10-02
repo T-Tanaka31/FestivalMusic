@@ -6,6 +6,10 @@
 #include "Scene.h"
 class Camera;
 class Block;
+class Floor;
+class Question;
+class Brick;
+class Rock;
 class Goal;
 
 class GameScene : public Scene {
@@ -15,12 +19,18 @@ private:
     Goal* goal;
 
     std::vector<Block*> blocks;
+    std::vector<Floor*> floors;
+    std::vector<Brick*> bricks;
+    std::vector<Question*> queses;
+    std::vector<Rock*> rocks;
     std::vector<Enemy*> enemies;
 
     int graphHandle;
 
+    int stage;
+
 public:
-    GameScene();
+    GameScene(int _stage);
     ~GameScene();
 
 public:
@@ -30,6 +40,10 @@ public:
 
 public:
     void AddBlock(Block* block);
+    void AddFloor(Floor* floor);
+    void AddBrick(Brick* brick);
+    void AddQues(Question* ques);
+    void AddRock(Rock* rock);
     
     void AddEnemy(Enemy* enemy);
 

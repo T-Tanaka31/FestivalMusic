@@ -1,5 +1,6 @@
 #include "../GameObject/Character/Player/Player.h"
 #include "../GameObject/Character/Enemy/Enemy.h"
+#include "../GameObject/MapObject/Spike.h"
 #include "CollisionManager.h"
 #include "../Difinition/Colors.h"
 #include "../Utility/CollisionUtility.h"
@@ -34,6 +35,7 @@ void CollisionManager::AddCollider(Collider* col) {
 }
 
 void CollisionManager::CheckCollision() {
+
 #if _DEBUG
 	DrawFormatString(
 		10,
@@ -76,13 +78,41 @@ void CollisionManager::CheckCollision() {
 				continue;
 			}
 
-
 			// ==========================================
 			// タグ取得
 			// ==========================================
 
 			std::string tagA = objA->GetTag();
 			std::string tagB = objB->GetTag();
+
+
+			// ==========================================
+			// Player × Spike
+			// トゲに触れたら即ゲームオーバー
+			// ==========================================
+
+			if ((tagA == "Player" && tagB == "Spike") ||
+				(tagA == "Spike" && tagB == "Player")) {
+
+				Player* player = nullptr;
+
+				if (tagA == "Player") {
+					player = dynamic_cast<Player*>(objA);
+				}
+				else {
+					player = dynamic_cast<Player*>(objB);
+				}
+
+				if (player != nullptr) {
+					// 即死
+					player->TakeDamage(9999);
+				}
+
+				// Spikeとの衝突では
+				// 通常の物理衝突処理をしない
+				continue;
+			}
+
 
 			// ==========================================
 			// ① 物理衝突
@@ -94,7 +124,10 @@ void CollisionManager::CheckCollision() {
 					(tagA == "Enemy" && tagB == "Player") ||
 					(tagA == "Player" && tagB == "Enemy");
 
-				if (!enemyPlayer) {
+				bool blockBlock =
+					(tagA == "Block" && tagB == "Block");
+
+				if (!enemyPlayer && !blockBlock) {
 
 					CollisionUtility::ResolveBoxCollision(
 						a,
@@ -129,7 +162,7 @@ void CollisionManager::CheckCollision() {
 
 
 			// ==========================================
-			// ② Enemy攻撃Collider → Player
+			// ③ Enemy攻撃Collider → Player
 			// ==========================================
 
 			if (a->IsTrigger() &&
@@ -146,7 +179,7 @@ void CollisionManager::CheckCollision() {
 
 
 			// ==========================================
-			// ③ Enemy攻撃Collider → Player
+			// ④ Enemy攻撃Collider → Player
 			// Colliderの順番が逆
 			// ==========================================
 
@@ -164,7 +197,7 @@ void CollisionManager::CheckCollision() {
 
 
 			// ==========================================
-			// ④ Player攻撃Collider → Enemy
+			// ⑤ Player攻撃Collider → Enemy
 			// ==========================================
 
 			if (a->IsTrigger() &&
@@ -181,7 +214,7 @@ void CollisionManager::CheckCollision() {
 
 
 			// ==========================================
-			// ⑤ Player攻撃Collider → Enemy
+			// ⑥ Player攻撃Collider → Enemy
 			// Colliderの順番が逆
 			// ==========================================
 
@@ -199,7 +232,7 @@ void CollisionManager::CheckCollision() {
 
 
 			// ==========================================
-			// ⑥ 通常の衝突通知
+			// ⑦ 通常の衝突通知
 			// ==========================================
 
 			objA->OnTriggerStay(colliders[j]);

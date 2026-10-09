@@ -169,6 +169,7 @@
     <ClCompile Include="Src\GameObject\MapObject\Floor.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Question.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Rock.cpp" />
+    <ClCompile Include="Src\GameObject\MapObject\Spike.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Wall.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="Src\Manager\CollisionManager.cpp" />
@@ -205,6 +206,7 @@
     <ClInclude Include="Src\GameObject\MapObject\Floor.h" />
     <ClInclude Include="Src\GameObject\MapObject\Question.h" />
     <ClInclude Include="Src\GameObject\MapObject\Rock.h" />
+    <ClInclude Include="Src\GameObject\MapObject\Spike.h" />
     <ClInclude Include="Src\GameObject\MapObject\Wall.h" />
     <ClInclude Include="Src\Manager\CollisionManager.h" />
     <ClInclude Include="Src\Manager\InputManager.h" />

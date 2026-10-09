@@ -28,7 +28,7 @@ void ResultScene::Draw() {
 			GetColor(255, 0, 0)
 		);
 	}
-	else {
+	else if(resultType == ResultType::GameClear) {
 		DrawString(
 			100,
 			100,

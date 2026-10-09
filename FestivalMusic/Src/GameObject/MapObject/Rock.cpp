@@ -16,7 +16,7 @@ Rock::~Rock() {
 }
 
 void Rock::Start() {
-    graphHandle = LoadGraph("Res/Block/block.png");
+    graphHandle = LoadGraph("Res/Block/tall_grass_block.png");
 }
 
 void Rock::Update() {

@@ -11,6 +11,7 @@ class Question;
 class Brick;
 class Rock;
 class Goal;
+class Spike;
 
 class GameScene : public Scene {
 private:
@@ -23,6 +24,7 @@ private:
     std::vector<Brick*> bricks;
     std::vector<Question*> queses;
     std::vector<Rock*> rocks;
+	std::vector<Spike*> spikes;
     std::vector<Enemy*> enemies;
 
     int graphHandle;
@@ -44,6 +46,7 @@ public:
     void AddBrick(Brick* brick);
     void AddQues(Question* ques);
     void AddRock(Rock* rock);
+	void AddSpike(Spike* spike);
     
     void AddEnemy(Enemy* enemy);
 

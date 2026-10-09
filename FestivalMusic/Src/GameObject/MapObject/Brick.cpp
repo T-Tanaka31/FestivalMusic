@@ -16,7 +16,7 @@ Brick::~Brick() {
 }
 
 void Brick::Start() {
-    graphHandle = LoadGraph("Res/Block/Block5.png");
+    graphHandle = LoadGraph("Res/Block/FloatingBlock.png");
 }
 
 void Brick::Update() {

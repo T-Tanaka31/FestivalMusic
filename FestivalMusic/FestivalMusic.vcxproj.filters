@@ -165,16 +165,19 @@
     <ClCompile Include="Src\GameObject\Character\Enemy\Enemy.cpp">
       <Filter>ソース ファイル\GameObject\Character\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Scene\SelectScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="Src\GameObject\MapObject\Brick.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\GameObject\MapObject</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameObject\MapObject\Question.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\GameObject\MapObject</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameObject\MapObject\Rock.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\GameObject\MapObject</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Scene\SelectScene.cpp">
+    <ClCompile Include="Src\GameObject\MapObject\Spike.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -266,19 +269,22 @@
     <ClInclude Include="Src\GameObject\Goal\Goal.h">
       <Filter>ヘッダー ファイル\GameObject\Goal</Filter>
     </ClInclude>
-    <ClInclude Include="Src\GameObject\Character\Enemy\Enemy.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Src\GameObject\MapObject\Brick.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\GameObject\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Character\Enemy\Enemy.h">
+      <Filter>ヘッダー ファイル\GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\MapObject\Question.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GameObject\MapObject\Rock.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\GameObject\MapObject</Filter>
     </ClInclude>
     <ClInclude Include="Src\Scene\SelectScene.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\Rock.h">
+      <Filter>ヘッダー ファイル\GameObject\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\Spike.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

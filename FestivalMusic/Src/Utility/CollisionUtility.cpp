@@ -1,224 +1,96 @@
 #include "CollisionUtility.h"
+#include <algorithm>
 
 HitDirection CollisionUtility::ResolveBoxCollision(
     SquareCollider* a,
     SquareCollider* b) {
-
-    if (!a || !b) {
+    if (!a || !b)
         return HitDirection::None;
-    }
-
-    // ==============================
-    // 重なり量
-    // ==============================
-
-    float overlapLeft =
-        a->GetMaxPoint().x - b->GetMinPoint().x;
-
-    float overlapRight =
-        b->GetMaxPoint().x - a->GetMinPoint().x;
-
-    float overlapTop =
-        a->GetMaxPoint().y - b->GetMinPoint().y;
-
-    float overlapBottom =
-        b->GetMaxPoint().y - a->GetMinPoint().y;
-
-
-    // ==============================
-    // 一番小さい重なりを探す
-    // ==============================
-
-    float minOverlap = overlapLeft;
-
-    HitDirection direction = HitDirection::Left;
-
-    if (overlapRight < minOverlap) {
-        minOverlap = overlapRight;
-        direction = HitDirection::Right;
-    }
-
-    if (overlapTop < minOverlap) {
-        minOverlap = overlapTop;
-        direction = HitDirection::Top;
-    }
-
-    if (overlapBottom < minOverlap) {
-        minOverlap = overlapBottom;
-        direction = HitDirection::Bottom;
-    }
-
-
-    // ==============================
-    // GameObject取得
-    // ==============================
 
     GameObject* objA = a->GetGameObject();
     GameObject* objB = b->GetGameObject();
 
-    if (!objA || !objB) {
+    if (!objA || !objB)
+        return HitDirection::None;
+
+    SquareCollider* movingCollider = nullptr;
+    SquareCollider* blockCollider = nullptr;
+
+    if (objA->GetTag() == "Block") {
+        blockCollider = a;
+        movingCollider = b;
+    }
+    else if (objB->GetTag() == "Block") {
+        blockCollider = b;
+        movingCollider = a;
+    }
+    else {
         return HitDirection::None;
     }
 
+    VECTOR movingPos = movingCollider->GetGameObject()->GetPosition();
+    VECTOR blockPos = blockCollider->GetGameObject()->GetPosition();
 
-    // ==============================
-    // Blockは動かさない
-    // ==============================
+    float overlapLeft =
+        movingCollider->GetMaxPoint().x -
+        blockCollider->GetMinPoint().x;
 
-    GameObject* obj = objA;
+    float overlapRight =
+        blockCollider->GetMaxPoint().x -
+        movingCollider->GetMinPoint().x;
 
-    if (objA->GetTag() == "Block") {
-        obj = objB;
+    float overlapTop =
+        movingCollider->GetMaxPoint().y -
+        blockCollider->GetMinPoint().y;
+
+    float overlapBottom =
+        blockCollider->GetMaxPoint().y -
+        movingCollider->GetMinPoint().y;
+
+    // 本当に重なっているか確認
+    if (overlapLeft <= 0.0f ||
+        overlapRight <= 0.0f ||
+        overlapTop <= 0.0f ||
+        overlapBottom <= 0.0f) {
+        return HitDirection::None;
     }
 
+    // 横方向のめり込みが小さいなら横方向を解決
+    if (overlapLeft < overlapRight &&
+        overlapLeft < overlapTop &&
+        overlapLeft < overlapBottom) {
+        movingPos.x -= overlapLeft;
 
-    // ==============================
-    // Enemy × Block
-    // ==============================
+        movingCollider->GetGameObject()->SetPosition(movingPos);
+        movingCollider->Update();
 
-    if (objA->GetTag() == "Enemy" &&
-        objB->GetTag() == "Block") {
-
-        obj = objA;
-
-        switch (direction) {
-
-        case HitDirection::Left:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x - overlapLeft,
-                    obj->GetPosition().y,
-                    0));
-            break;
-
-        case HitDirection::Right:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x + overlapRight,
-                    obj->GetPosition().y,
-                    0));
-            break;
-
-        case HitDirection::Top:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x,
-                    obj->GetPosition().y - overlapTop,
-                    0));
-            break;
-
-        case HitDirection::Bottom:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x,
-                    obj->GetPosition().y + overlapBottom,
-                    0));
-            break;
-
-        default:
-            break;
-        }
-
-        a->Update();
-
-        return direction;
+        return HitDirection::Left;
     }
 
+    if (overlapRight < overlapTop &&
+        overlapRight < overlapBottom) {
+        movingPos.x += overlapRight;
 
-    // Block × Enemy
-    // bがEnemyなのでbだけ動かす
-    if (objA->GetTag() == "Block" &&
-        objB->GetTag() == "Enemy") {
+        movingCollider->GetGameObject()->SetPosition(movingPos);
+        movingCollider->Update();
 
-        obj = objB;
-
-        switch (direction) {
-
-        case HitDirection::Left:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x + overlapLeft,
-                    obj->GetPosition().y,
-                    0));
-            break;
-
-        case HitDirection::Right:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x - overlapRight,
-                    obj->GetPosition().y,
-                    0));
-            break;
-
-        case HitDirection::Top:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x,
-                    obj->GetPosition().y + overlapTop,
-                    0));
-            break;
-
-        case HitDirection::Bottom:
-            obj->SetPosition(
-                VGet(
-                    obj->GetPosition().x,
-                    obj->GetPosition().y - overlapBottom,
-                    0));
-            break;
-
-        default:
-            break;
-        }
-
-        b->Update();
-
-        return direction;
+        return HitDirection::Right;
     }
 
+    // 縦方向
+    if (overlapTop < overlapBottom) {
+        movingPos.y -= overlapTop;
 
-    // ==============================
-    // その他の衝突
-    // ==============================
+        movingCollider->GetGameObject()->SetPosition(movingPos);
+        movingCollider->Update();
 
-    switch (direction) {
-
-    case HitDirection::Left:
-        obj->SetPosition(
-            VGet(
-                obj->GetPosition().x - overlapLeft,
-                obj->GetPosition().y,
-                0));
-        break;
-
-    case HitDirection::Right:
-        obj->SetPosition(
-            VGet(
-                obj->GetPosition().x + overlapRight,
-                obj->GetPosition().y,
-                0));
-        break;
-
-    case HitDirection::Top:
-        obj->SetPosition(
-            VGet(
-                obj->GetPosition().x,
-                obj->GetPosition().y - overlapTop,
-                0));
-        break;
-
-    case HitDirection::Bottom:
-        obj->SetPosition(
-            VGet(
-                obj->GetPosition().x,
-                obj->GetPosition().y + overlapBottom,
-                0));
-        break;
-
-    default:
-        break;
+        return HitDirection::Top;
     }
 
-    a->Update();
+    movingPos.y += overlapBottom;
 
-    return direction;
+    movingCollider->GetGameObject()->SetPosition(movingPos);
+    movingCollider->Update();
+
+    return HitDirection::Bottom;
 }

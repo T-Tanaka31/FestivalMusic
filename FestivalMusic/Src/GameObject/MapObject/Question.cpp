@@ -16,7 +16,7 @@ Question::~Question() {
 }
 
 void Question::Start() {
-    graphHandle = LoadGraph("Res/Block/hatena.png");
+    graphHandle = LoadGraph("Res/Block/FloatingSoil.png");
 }
 
 void Question::Update() {

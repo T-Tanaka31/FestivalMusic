@@ -8,7 +8,7 @@
 
 SelectScene::SelectScene()
 	: selectedStage(0)
-	, stageCount(3) {
+	, stageCount(5) {
 }
 
 SelectScene::~SelectScene() {

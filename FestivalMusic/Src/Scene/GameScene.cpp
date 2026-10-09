@@ -13,6 +13,7 @@
 #include "../GameObject/MapObject/Rock.h"
 #include "../GameObject/MapObject/Brick.h"
 #include "../GameObject/Goal/Goal.h"
+#include "../GameObject/MapObject/Spike.h"
 
 GameScene::GameScene(int _stage)
 	: player(new Player(
@@ -52,6 +53,10 @@ GameScene::~GameScene() {
 		delete rock;
 	}
 
+	for (Spike* spike : spikes) {
+		delete spike;
+	}
+
 	for (Enemy* enemy : enemies) {
 		delete enemy;
 	}
@@ -61,12 +66,13 @@ GameScene::~GameScene() {
 	bricks.clear();
 	queses.clear();
 	rocks.clear();
+	spikes.clear();
 	enemies.clear();
 }
 
 void GameScene::Init() {
 	graphHandle =
-		LoadGraph("Res/fix.png");
+		LoadGraph("Res/Background.png");
 
 	camera->SetTarget(player);
 
@@ -99,70 +105,29 @@ void GameScene::Update() {
 
 	// Block
 	for (Block* block : blocks) {
-
-		VECTOR pos = block->GetPosition();
-
-		if (pos.x >= screenLeft &&
-			pos.x <= screenRight &&
-			pos.y >= screenTop &&
-			pos.y <= screenBottom) {
-
 			block->Update();
-		}
 	}
 
 	for (Floor* floor : floors) {
-		VECTOR pos = floor->GetPosition();
-
-
-		if (pos.x >= screenLeft &&
-			pos.x <= screenRight &&
-			pos.y >= screenTop &&
-			pos.y <= screenBottom) {
-
-			floor->Update();
-		}
+			floor->Update();	
 	}
 
 	for (Brick* brick : bricks) {
-		VECTOR pos = brick->GetPosition();
-
-
-		if (pos.x >= screenLeft &&
-			pos.x <= screenRight &&
-			pos.y >= screenTop &&
-			pos.y <= screenBottom) {
-
 			brick->Update();
-		}
+	
 	}
 
 	for (Question* ques : queses) {
-		VECTOR pos = ques->GetPosition();
-
-
-		if (pos.x >= screenLeft &&
-			pos.x <= screenRight &&
-			pos.y >= screenTop &&
-			pos.y <= screenBottom) {
-
-			ques->Update();
-		}
+			ques->Update();	
 	}
 
 	for (Rock* rock : rocks) {
-		VECTOR pos = rock->GetPosition();
-
-
-		if (pos.x >= screenLeft &&
-			pos.x <= screenRight &&
-			pos.y >= screenTop &&
-			pos.y <= screenBottom) {
-
 			rock->Update();
-		}
 	}
 
+	for (Spike* spike : spikes) {
+			spike->Update();
+	}
 
 	// Enemy
 	for (auto it = enemies.begin(); it != enemies.end(); ) {
@@ -216,6 +181,15 @@ void GameScene::Update() {
 	CollisionManager::GetInstance()->CheckCollision();
 }
 void GameScene::Draw() {
+	
+
+	DrawExtendGraph(
+		0, 0,
+		1920, 1080,
+		graphHandle,
+		TRUE
+	);
+
 	for (Block* block : blocks) {
 		block->Render();
 	}
@@ -230,6 +204,9 @@ void GameScene::Draw() {
 	}
 	for (Rock* rock : rocks) {
 		rock->Render();
+	}
+	for (Spike* spike : spikes) {
+		spike->Render();
 	}
 	for (Enemy* enemy : enemies) {
 		enemy->Render();
@@ -257,6 +234,10 @@ void GameScene::AddQues(Question* ques) {
 
 void GameScene::AddRock(Rock* rock) {
 	rocks.push_back(rock);
+}
+
+void GameScene::AddSpike(Spike* spike) {
+	spikes.push_back(spike);
 }
 
 void GameScene::AddEnemy(Enemy* enemy) {

@@ -133,18 +133,23 @@ bool MapLoader::Load(
 
 				break;
 
-
 			case 4:
-
 				scene->AddEnemy(
 					new Enemy(
 						pos,
 						"Enemy"
 					)
 				);
-
 				break;
 
+			case 5:
+				scene->AddFlyingEnemy(
+					new Enemy(
+						pos,
+						"Enemy"
+					)
+				);
+				break;
 
 			case 11:
 

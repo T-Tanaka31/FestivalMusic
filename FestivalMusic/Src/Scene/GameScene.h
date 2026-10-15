@@ -50,6 +50,8 @@ public:
     
     void AddEnemy(Enemy* enemy);
 
+    void AddFlyingEnemy(Enemy* enemy);
+
     void SetGoal(Goal* pGoal) { goal = pGoal; }
 
     Player* GetPlayer() {

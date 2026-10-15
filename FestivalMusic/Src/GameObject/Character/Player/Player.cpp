@@ -58,7 +58,7 @@ void Player::Start() {
 		128,
 		images
 	);
-	
+
 
 	LoadDivGraph(
 		"Res/Player_attack_effect.png",
@@ -69,7 +69,7 @@ void Player::Start() {
 		128,
 		attackEffectImages
 	);
-	maxHp = 1;
+	maxHp = 100;
 	hp = maxHp;
 
 	if (hpBar == nullptr)
@@ -84,6 +84,45 @@ void Player::Start() {
 }
 
 void Player::Update() {
+
+	// ========================================
+	// ゲームパッド入力
+	// ========================================
+
+	// 左スティック・十字キー
+	float stickX = input->IsJoypadSthick("L_Horizontal");
+
+	bool moveLeft =
+		input->IsKey(KEY_INPUT_A) ||
+		input->IsButton(XINPUT_GAMEPAD_DPAD_LEFT) ||
+		stickX < -0.2f;
+
+	bool moveRight =
+		input->IsKey(KEY_INPUT_D) ||
+		input->IsButton(XINPUT_GAMEPAD_DPAD_RIGHT) ||
+		stickX > 0.2f;
+
+	// ジャンプ
+	bool jumpDown =
+		input->IsKeyDown(KEY_INPUT_SPACE) ||
+		input->IsButtonDown(XINPUT_GAMEPAD_A);
+
+	// 高いジャンプ
+	bool highJump =
+		(input->IsKey(KEY_INPUT_W) &&
+		 input->IsKey(KEY_INPUT_SPACE)) ||
+		input->IsButtonDown(XINPUT_GAMEPAD_Y);
+
+	// 低いジャンプ
+	bool lowJump =
+		(input->IsKey(KEY_INPUT_S) &&
+		 input->IsKey(KEY_INPUT_SPACE)) ||
+		input->IsButtonDown(XINPUT_GAMEPAD_B);
+
+	// 攻撃
+	bool attackDown =
+		input->IsKeyDown(KEY_INPUT_J) ||
+		input->IsButtonDown(XINPUT_GAMEPAD_X);
 
 	if (velocity.y != 0.0f) {
 		isGround = false;
@@ -102,9 +141,9 @@ void Player::Update() {
 	// 攻撃
 	// ========================================
 
-	if (input->IsKeyDown(KEY_INPUT_J) &&
-		attackCooldown <= 0 &&
-		!isAttacking) {
+	if (attackDown &&
+	attackCooldown <= 0 &&
+	!isAttacking) {
 
 		isAttacking = true;
 		attackHit = false;
@@ -150,35 +189,29 @@ void Player::Update() {
 	else {
 
 		// ========================================
-		// 左移動
+		// 左右移動
 		// ========================================
 
-		if (input->IsKey(KEY_INPUT_A)) {
+		if (moveLeft && !moveRight) {
 			position.x -= moveSpeed;
 			isRight = false;
 		}
 
-
-		// ========================================
-		// 右移動
-		// ========================================
-
-		if (input->IsKey(KEY_INPUT_D)) {
+		if (moveRight && !moveLeft) {
 			position.x += moveSpeed;
 			isRight = true;
 		}
-
 
 		// ========================================
 		// ジャンプ
 		// ========================================
 
-		if (input->IsKeyDown(KEY_INPUT_SPACE) && isGround) {
+		if ((jumpDown || highJump || lowJump) && isGround) {
 
-			if (input->IsKey(KEY_INPUT_W)) {
+			if (highJump) {
 				velocity.y = -jumpPower * 1.4f;
 			}
-			else if (input->IsKey(KEY_INPUT_S)) {
+			else if (lowJump) {
 				velocity.y = -jumpPower / 1.4f;
 			}
 			else {

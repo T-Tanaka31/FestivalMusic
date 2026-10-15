@@ -155,7 +155,7 @@ void GameScene::Update() {
 			delete enemy;
 
 			it = enemies.erase(it);
-		}
+		}	
 		else {
 			++it;
 		}
@@ -242,6 +242,11 @@ void GameScene::AddSpike(Spike* spike) {
 
 void GameScene::AddEnemy(Enemy* enemy) {
 	enemy->SetPlayer(player);
+	enemies.push_back(enemy);
+}
 
+void GameScene::AddFlyingEnemy(Enemy* enemy) {
+	enemy->SetFlying(30.0f, 0.05f);
+	enemy->SetPlayer(player);
 	enemies.push_back(enemy);
 }

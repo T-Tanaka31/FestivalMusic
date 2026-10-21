@@ -11,6 +11,7 @@
 #include "../GameObject/MapObject/Question.h"
 #include "../GameObject/MapObject/Rock.h"
 #include "../GameObject/MapObject/Spike.h"
+#include "../GameObject/MapObject/ReverseSpike.h"
 #include "../GameObject/Goal/Goal.h"
 
 int MapLoader::bottomBlockY = 0;
@@ -151,6 +152,12 @@ bool MapLoader::Load(
 				);
 				break;
 
+			case 6:
+				scene->AddBoss(
+					new Boss(pos)
+				);
+				break;
+
 			case 11:
 
 				scene->AddRock(
@@ -201,6 +208,19 @@ bool MapLoader::Load(
 			case 18:
 				scene->AddSpike(
 					new Spike(
+						pos,
+						VGet(
+							TILE_SIZE,
+							TILE_SIZE,
+							0
+						)
+					)
+				);
+				break;
+
+			case 19:
+				scene->AddReverseSpike(
+					new ReverseSpike(
 						pos,
 						VGet(
 							TILE_SIZE,

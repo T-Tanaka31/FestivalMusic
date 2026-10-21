@@ -1,16 +1,22 @@
 #include "ResultScene.h"
+#include "../Difinition/Constant.h"
 #include "../Manager/SceneManager.h"
 #include "../Manager/InputManager.h"
 #include <DxLib.h>
 
 ResultScene::ResultScene()
-	: resultType(ResultType::GameOver) {
+	: resultType(ResultType::GameOver)
+	, graphHandle(-1)
+{
+	Init();
 }
 
 ResultScene::~ResultScene() {
 }
 
 void ResultScene::Init() {
+	graphHandle =
+		LoadGraph("Res/StageClear.png");
 }
 
 void ResultScene::Update() {
@@ -20,6 +26,7 @@ void ResultScene::Update() {
 }
 
 void ResultScene::Draw() {
+
 	if (resultType == ResultType::GameOver) {
 		DrawString(
 			100,
@@ -29,6 +36,7 @@ void ResultScene::Draw() {
 		);
 	}
 	else if(resultType == ResultType::GameClear) {
+	DrawExtendGraph(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, graphHandle, TRUE);
 		DrawString(
 			100,
 			100,
@@ -43,6 +51,7 @@ void ResultScene::Draw() {
 		"Press ENTER",
 		GetColor(255, 255, 255)
 	);
+
 }
 
 void ResultScene::SetResult(ResultType type) {

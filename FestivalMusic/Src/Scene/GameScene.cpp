@@ -14,6 +14,7 @@
 #include "../GameObject/MapObject/Brick.h"
 #include "../GameObject/Goal/Goal.h"
 #include "../GameObject/MapObject/Spike.h"
+#include "../GameObject/MapObject/ReverseSpike.h"
 
 GameScene::GameScene(int _stage)
 	: player(new Player(
@@ -21,7 +22,7 @@ GameScene::GameScene(int _stage)
 		"Player"))
 	, camera(new Camera())
 	, goal(nullptr)
-	, graphHandle(0)
+	, graphHandle(-1)
 	, stage(_stage) {
 	Init();
 }
@@ -57,6 +58,10 @@ GameScene::~GameScene() {
 		delete spike;
 	}
 
+	for (ReverseSpike* reverseSpike : reverseSpikes) {
+		delete reverseSpike;
+	}
+
 	for (Enemy* enemy : enemies) {
 		delete enemy;
 	}
@@ -67,12 +72,13 @@ GameScene::~GameScene() {
 	queses.clear();
 	rocks.clear();
 	spikes.clear();
+	reverseSpikes.clear();
 	enemies.clear();
 }
 
 void GameScene::Init() {
 	graphHandle =
-		LoadGraph("Res/Background.png");
+		LoadGraph("Res/DesertForest.png");
 
 	camera->SetTarget(player);
 
@@ -127,6 +133,10 @@ void GameScene::Update() {
 
 	for (Spike* spike : spikes) {
 			spike->Update();
+	}
+
+	for (ReverseSpike* reverseSpike : reverseSpikes) {
+		reverseSpike->Update();
 	}
 
 	// Enemy
@@ -208,6 +218,9 @@ void GameScene::Draw() {
 	for (Spike* spike : spikes) {
 		spike->Render();
 	}
+	for (ReverseSpike* reverseSpike : reverseSpikes) {
+		reverseSpike->Render();
+	}
 	for (Enemy* enemy : enemies) {
 		enemy->Render();
 	}
@@ -240,9 +253,18 @@ void GameScene::AddSpike(Spike* spike) {
 	spikes.push_back(spike);
 }
 
+void GameScene::AddReverseSpike(ReverseSpike* reverseSpike) {
+	reverseSpikes.push_back(reverseSpike);
+}
+
 void GameScene::AddEnemy(Enemy* enemy) {
 	enemy->SetPlayer(player);
 	enemies.push_back(enemy);
+}
+
+void GameScene::AddBoss(Boss* boss) {
+	boss->SetTarget(player);
+	enemies.push_back(boss);
 }
 
 void GameScene::AddFlyingEnemy(Enemy* enemy) {

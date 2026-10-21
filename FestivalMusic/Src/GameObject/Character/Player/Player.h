@@ -22,6 +22,12 @@ private:
 	// ジャンプ力
 	float jumpPower;
 
+	// ジャンプボタンを押しているフレーム数
+	int jumpHoldFrames;
+
+	// 水平方向の速度
+	float horizontalVelocity;
+
 	// 地面に触れているか
 	bool isGround;
 

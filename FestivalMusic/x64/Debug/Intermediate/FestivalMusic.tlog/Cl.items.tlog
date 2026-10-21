@@ -2,6 +2,7 @@ C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Application.
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Component\Collider.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Collider.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Camera\Camera.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Camera.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Character.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Character.obj
+C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Enemy\Boss\Boss.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Boss.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Enemy\Enemy.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Enemy.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Player\Player.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Player.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\GameObject.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\GameObject.obj
@@ -10,6 +11,7 @@ C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\M
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\MapObject\Brick.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Brick.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\MapObject\Floor.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Floor.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\MapObject\Question.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Question.obj
+C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\MapObject\ReverseSpike.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\ReverseSpike.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\MapObject\Rock.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Rock.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\MapObject\Spike.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Spike.obj
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\MapObject\Wall.cpp;C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\x64\Debug\Intermediate\Wall.obj

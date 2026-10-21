@@ -3,6 +3,7 @@
 #include <vector>
 #include "../GameObject/Character/Player/Player.h"
 #include "../GameObject/Character/Enemy/Enemy.h"
+#include "../GameObject/Character/Enemy/Boss/Boss.h"
 #include "Scene.h"
 class Camera;
 class Block;
@@ -12,6 +13,7 @@ class Brick;
 class Rock;
 class Goal;
 class Spike;
+class ReverseSpike;
 
 class GameScene : public Scene {
 private:
@@ -25,7 +27,9 @@ private:
     std::vector<Question*> queses;
     std::vector<Rock*> rocks;
 	std::vector<Spike*> spikes;
+	std::vector<ReverseSpike*> reverseSpikes;
     std::vector<Enemy*> enemies;
+	std::vector<Boss*> bosses;
 
     int graphHandle;
 
@@ -47,8 +51,11 @@ public:
     void AddQues(Question* ques);
     void AddRock(Rock* rock);
 	void AddSpike(Spike* spike);
+	void AddReverseSpike(ReverseSpike* reverseSpike);
     
     void AddEnemy(Enemy* enemy);
+
+    void AddBoss(Boss* boss);
 
     void AddFlyingEnemy(Enemy* enemy);
 

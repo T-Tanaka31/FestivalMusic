@@ -160,6 +160,7 @@
     <ClCompile Include="Src\Component\Collider.cpp" />
     <ClCompile Include="Src\GameObject\Camera\Camera.cpp" />
     <ClCompile Include="Src\GameObject\Character\Character.cpp" />
+    <ClCompile Include="Src\GameObject\Character\Enemy\Boss\Boss.cpp" />
     <ClCompile Include="Src\GameObject\Character\Enemy\Enemy.cpp" />
     <ClCompile Include="Src\GameObject\Character\Player\Player.cpp" />
     <ClCompile Include="Src\GameObject\GameObject.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Src\GameObject\MapObject\Brick.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Floor.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Question.cpp" />
+    <ClCompile Include="Src\GameObject\MapObject\ReverseSpike.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Rock.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Spike.cpp" />
     <ClCompile Include="Src\GameObject\MapObject\Wall.cpp" />
@@ -197,6 +199,7 @@
     <ClInclude Include="Src\Enum\SceneType.h" />
     <ClInclude Include="Src\GameObject\Camera\Camera.h" />
     <ClInclude Include="Src\GameObject\Character\Character.h" />
+    <ClInclude Include="Src\GameObject\Character\Enemy\Boss\Boss.h" />
     <ClInclude Include="Src\GameObject\Character\Enemy\Enemy.h" />
     <ClInclude Include="Src\GameObject\Character\Player\Player.h" />
     <ClInclude Include="Src\GameObject\GameObject.h" />
@@ -205,6 +208,7 @@
     <ClInclude Include="Src\GameObject\MapObject\Brick.h" />
     <ClInclude Include="Src\GameObject\MapObject\Floor.h" />
     <ClInclude Include="Src\GameObject\MapObject\Question.h" />
+    <ClInclude Include="Src\GameObject\MapObject\ReverseSpike.h" />
     <ClInclude Include="Src\GameObject\MapObject\Rock.h" />
     <ClInclude Include="Src\GameObject\MapObject\Spike.h" />
     <ClInclude Include="Src\GameObject\MapObject\Wall.h" />

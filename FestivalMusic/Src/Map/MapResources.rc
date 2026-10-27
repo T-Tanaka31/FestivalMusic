@@ -1,0 +1,7 @@
+#include "Resource.h"
+
+IDR_STAGE1_CSV RCDATA "Res/Map/stage1.csv"
+IDR_STAGE2_CSV RCDATA "Res/Map/stage2.csv"
+IDR_STAGE3_CSV RCDATA "Res/Map/stage3.csv"
+IDR_STAGE4_CSV RCDATA "Res/Map/stage4.csv"
+IDR_STAGE5_CSV RCDATA "Res/Map/stage5.csv"

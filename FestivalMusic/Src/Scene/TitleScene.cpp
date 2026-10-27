@@ -16,9 +16,10 @@ void TitleScene::Init() {
 	graphHandle = LoadGraph("Res/Title.png");
 }
 
+
 void TitleScene::Update() {
 	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_RETURN)) {
-		SceneManager::GetInstance()->ChangeScene(SceneType::Select);
+		SceneManager::GetInstance()->ChangeGameScene(1);
 	}
 }
 

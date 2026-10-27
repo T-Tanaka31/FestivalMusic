@@ -64,8 +64,13 @@ void SceneManager::Update() {
 			break;
 
 		case SceneType::Result:
-			pScene = new ResultScene();
+		{
+			ResultScene* resultScene = new ResultScene();
+			resultScene->SetResult(resultType);
+			pScene = resultScene;
 			break;
+		}
+
 		}
 
 		isSceneChange = false;

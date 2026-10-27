@@ -217,6 +217,7 @@
     <ClInclude Include="Src\Manager\SceneManager.h" />
     <ClInclude Include="Src\Manager\TimeManager.h" />
     <ClInclude Include="Src\Map\MapLoader.h" />
+    <ClInclude Include="Src\Map\Resource.h" />
     <ClInclude Include="Src\Scene\GameScene.h" />
     <ClInclude Include="Src\Scene\ResultScene.h" />
     <ClInclude Include="Src\Scene\Scene.h" />

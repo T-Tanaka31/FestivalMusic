@@ -31,6 +31,9 @@ private:
 	// 地面に触れているか
 	bool isGround;
 
+	// ゴールに到達したか
+	bool isGoalReached = false;
+
 	// 入力マネージャー
 	InputManager* input;
 
@@ -103,6 +106,15 @@ public:
 
 	void TakeDamage(int damage);
 
+	// ゴールに到達したかを取得
+	bool IsGoalReached() const {
+		return isGoalReached;
+	}
+
+	// ゴール到達状態にする
+	void SetGoalReached() {
+		isGoalReached = true;
+	}
 
 	// ==============================
 	// 攻撃関連

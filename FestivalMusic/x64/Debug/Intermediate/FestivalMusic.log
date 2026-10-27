@@ -1,47 +1,24 @@
-﻿  MapLoader.cpp
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Map\MapLoader.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Player\Player.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
+﻿  TitleScene.cpp
+C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Difinition\Constant.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Src/Scene/TitleScene.cpp' をコンパイルしています)
   
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Scene/TitleScene.cpp' をコンパイルしています)
   
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(112,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Scene/TitleScene.cpp' をコンパイルしています)
   
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(117,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Scene/TitleScene.cpp' をコンパイルしています)
   
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(124,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Scene/TitleScene.cpp' をコンパイルしています)
   
 C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\InputManager.h(131,33): warning C4244: '=': 'float' から 'SHORT' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Scene/TitleScene.cpp' をコンパイルしています)
   
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Character.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\GameObject.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Difinition\VectorDifines.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\UI\Gauge.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Manager\TimeManager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Enemy\Enemy.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\GameObject\Character\Enemy\Boss\Boss.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Src/Map/MapLoader.cpp' をコンパイルしています)
-  
-C:\Users\student2\Desktop\就活用\FestivalMusic\FestivalMusic\Src\Map\MapLoader.cpp(269,16): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
   コード生成しています。
-  0 of 2331 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  0 of 2334 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。

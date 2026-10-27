@@ -1,0 +1,7 @@
+#pragma once
+
+#define IDR_STAGE1_CSV 101
+#define IDR_STAGE2_CSV 102
+#define IDR_STAGE3_CSV 103
+#define IDR_STAGE4_CSV 104
+#define IDR_STAGE5_CSV 105

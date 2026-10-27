@@ -3,6 +3,8 @@
 #include "../Manager/SceneManager.h"
 #include <DxLib.h>
 #include <string>
+#include <cstdio>
+#include <cstring>
 #include "../Difinition/Constant.h"
 #include "../Manager/CollisionManager.h"
 #include "../Map/MapLoader.h"
@@ -17,13 +19,15 @@
 #include "../GameObject/MapObject/ReverseSpike.h"
 
 GameScene::GameScene(int _stage)
-	: player(new Player(
-		VGet(400, 300, 0),
-		"Player"))
+	: player(new Player(VGet(400, 300, 0), "Player"))
 	, camera(new Camera())
 	, goal(nullptr)
 	, graphHandle(-1)
-	, stage(_stage) {
+	, stage(_stage)
+	, isStageStarting(true)
+	, stageStartTimer(0)
+	, isStageClearing(false)
+	, stageClearTimer(0) {
 	Init();
 }
 
@@ -94,8 +98,46 @@ void GameScene::Init() {
 
 void GameScene::Update() {
 
-	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_RETURN)) {
-		SceneManager::GetInstance()->ChangeScene(SceneType::Game);
+	// ========================================
+	// ステージ開始演出
+	// ========================================
+	if (isStageStarting) {
+		stageStartTimer++;
+
+		if (stageStartTimer >= 150) {
+			isStageStarting = false;
+		}
+
+		return;
+	}
+
+	// ========================================
+	// ステージクリア演出
+	// ========================================
+	if (isStageClearing) {
+		stageClearTimer++;
+
+		if (stageClearTimer >= 120) {
+			if (stage < 5) {
+				// 次のステージへ
+				SceneManager::GetInstance()->ChangeGameScene(stage + 1);
+			}
+			else {
+				// 最終ステージをクリア
+				SceneManager::GetInstance()->ChangeResultScene(
+					ResultScene::ResultType::GameClear
+				);
+			}
+		}
+
+		return;
+	}
+
+	// ゴール到達を確認
+	if (player->IsGoalReached()) {
+		isStageClearing = true;
+		stageClearTimer = 0;
+		return;
 	}
 
 	// プレイヤーは常に更新
@@ -225,7 +267,69 @@ void GameScene::Draw() {
 		enemy->Render();
 	}
 
-	goal->Render(); player->Render();
+	// ゴールが存在する場合だけ描画
+	if (goal != nullptr) {
+		goal->Render();
+	}
+
+	player->Render();
+
+	// ========================================
+// ステージ開始演出
+// ========================================
+	if (isStageStarting) {
+		int alpha = 255;
+
+		// 最初の90フレームは真っ暗。
+		// その後60フレームかけてフェードインする。
+		if (stageStartTimer > 90) {
+			alpha = 255 - (stageStartTimer - 90) * 255 / 60;
+		}
+
+		if (alpha < 0) alpha = 0;
+		if (alpha > 255) alpha = 255;
+
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
+		DrawBox(
+			0, 0,
+			WINDOW_WIDTH, WINDOW_HEIGHT,
+			GetColor(0, 0, 0),
+			TRUE
+		);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		// 暗転中にステージ番号を表示
+		if (stageStartTimer <= 90) {
+			DrawFormatString(
+				WINDOW_WIDTH / 2 - 60,
+				WINDOW_HEIGHT / 2,
+				GetColor(255, 255, 255),
+				"STAGE %d",
+				stage
+			);
+		}
+	}
+
+	// ========================================
+	// ステージクリア演出
+	// ========================================
+	if (isStageClearing) {
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 180);
+		DrawBox(
+			0, 0,
+			WINDOW_WIDTH, WINDOW_HEIGHT,
+			GetColor(0, 0, 0),
+			TRUE
+		);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawString(
+			WINDOW_WIDTH / 2 - 100,
+			WINDOW_HEIGHT / 2,
+			"STAGE CLEAR!",
+			GetColor(255, 255, 0)
+		);
+	}
 }
 
 void GameScene::AddBlock(

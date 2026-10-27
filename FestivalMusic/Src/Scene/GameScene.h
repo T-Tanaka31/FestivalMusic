@@ -35,6 +35,13 @@ private:
 
     int stage;
 
+    // ステージ開始演出
+    bool isStageStarting;
+    int stageStartTimer;
+
+    // ステージクリア演出
+    bool isStageClearing;
+    int stageClearTimer;
 public:
     GameScene(int _stage);
     ~GameScene();

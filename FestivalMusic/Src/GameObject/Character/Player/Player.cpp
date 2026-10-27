@@ -561,10 +561,9 @@ void Player::OnTriggerEnter(Collider* _pOther) {
 
 void Player::OnTriggerStay(Collider* other) {
 	// ゴール判定
+	// ゴール判定
 	if (other->GetGameObject()->GetTag() == "Goal") {
-		SceneManager::GetInstance()->ChangeResultScene(
-			ResultScene::ResultType::GameClear
-		);
+		SetGoalReached();
 		return;
 	}
 

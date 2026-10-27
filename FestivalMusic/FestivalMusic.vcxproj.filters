@@ -305,5 +305,8 @@
     <ClInclude Include="Src\GameObject\MapObject\ReverseSpike.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Map\Resource.h">
+      <Filter>ヘッダー ファイル\Map</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

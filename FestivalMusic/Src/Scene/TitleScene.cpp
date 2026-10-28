@@ -18,7 +18,7 @@ void TitleScene::Init() {
 
 
 void TitleScene::Update() {
-	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_RETURN)) {
+	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_RETURN) || InputManager::GetInstance()->IsButtonDown(XINPUT_GAMEPAD_A)) {
 		SceneManager::GetInstance()->ChangeGameScene(1);
 	}
 }

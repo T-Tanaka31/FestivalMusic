@@ -85,14 +85,39 @@ void CollisionManager::CheckCollision() {
 			std::string tagA = objA->GetTag();
 			std::string tagB = objB->GetTag();
 
+			// ==========================================
+			// Playerの攻撃判定を通常のPlayer判定と区別
+			// ==========================================
+			
+			// Playerの攻撃ColliderはTriggerなので、
+			// Trigger × Block / Spike の物理処理を行わない
+
+			if ((a->IsTrigger() && tagA == "Player") ||
+				(b->IsTrigger() && tagB == "Player")) {
+
+				bool hitBlock =
+					(tagA == "Block" || tagB == "Block");
+
+				bool hitSpike =
+					(tagA == "Spike" || tagB == "Spike");
+
+				bool hitGoal =
+					(tagA == "Goal" || tagB == "Goal");
+
+				if (hitBlock || hitSpike || hitGoal) {
+					continue;
+				}
+			}
 
 			// ==========================================
-			// Player × Spike
+			// Player本体 × Spike
 			// トゲに触れたら即ゲームオーバー
 			// ==========================================
 
-			if ((tagA == "Player" && tagB == "Spike") ||
-				(tagA == "Spike" && tagB == "Player")) {
+			if (!a->IsTrigger() &&
+				!b->IsTrigger() &&
+				((tagA == "Player" && tagB == "Spike") ||
+					(tagA == "Spike" && tagB == "Player"))) {
 
 				Player* player = nullptr;
 
@@ -104,20 +129,17 @@ void CollisionManager::CheckCollision() {
 				}
 
 				if (player != nullptr) {
-					// 即死
 					player->TakeDamage(9999);
 				}
 
-				// Spikeとの衝突では
-				// 通常の物理衝突処理をしない
+				// Spikeとの通常の物理衝突処理はしない
 				continue;
 			}
 
-
 			// ==========================================
 			// ① 物理衝突
+			// Trigger判定は物理衝突させない
 			// ==========================================
-
 			if (!a->IsTrigger() && !b->IsTrigger()) {
 
 				bool enemyPlayer =
@@ -128,11 +150,7 @@ void CollisionManager::CheckCollision() {
 					(tagA == "Block" && tagB == "Block");
 
 				if (!enemyPlayer && !blockBlock) {
-
-					CollisionUtility::ResolveBoxCollision(
-						a,
-						b
-					);
+					CollisionUtility::ResolveBoxCollision(a, b);
 				}
 			}
 

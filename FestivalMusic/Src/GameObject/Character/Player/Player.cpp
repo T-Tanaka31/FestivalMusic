@@ -394,6 +394,7 @@ void Player::Update() {
 	// デバッグ用HP減少
 	// ========================================
 
+#if _DEBUG
 	if (input->IsKeyDown(KEY_INPUT_2)) {
 		Damage(this, 10 + def);
 	}
@@ -406,6 +407,7 @@ void Player::Update() {
 		input->IsKeyDown(KEY_INPUT_1)) {
 		AddHp(maxHp / 10);
 	}
+#endif
 }
 
 // ========================================

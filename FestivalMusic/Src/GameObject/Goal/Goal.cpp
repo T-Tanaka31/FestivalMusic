@@ -16,7 +16,7 @@ Goal::~Goal() {
 }
 
 void Goal::Start() {
-	graphHandle = LoadGraph("Res/goal.png");
+	graphHandle = LoadGraph("Res/LivesUp.png");
 }
 
 void Goal::Update() {

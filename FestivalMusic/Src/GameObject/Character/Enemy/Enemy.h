@@ -103,7 +103,8 @@ public:
         isGround = value;
     }
 
-    void TakeDamage(int damage);
+    // 敵を倒した場合はtrueを返す
+    bool TakeDamage(int damage);
 
     bool IsDead() const;
     bool IsDying() const;

@@ -25,10 +25,11 @@ void SceneManager::DestroyInstance() {
 }
 
 SceneManager::SceneManager()
-    : pScene(nullptr)
-    , isSceneChange(false)
-    , resultType(ResultScene::ResultType::GameOver)
-	, selectedStage(1) {
+	: pScene(nullptr)
+	, isSceneChange(false)
+	, resultType(ResultScene::ResultType::GameOver)
+	, selectedStage(1)
+	, nextScene(SceneType::Title) {
 }
 
 SceneManager::~SceneManager() {
@@ -85,9 +86,9 @@ void SceneManager::Draw() {
 }
 
 void SceneManager::ChangeResultScene(ResultScene::ResultType result) {
-    resultType = result;
-    nextScene = SceneType::Result;
-    isSceneChange = true;
+	resultType = result;
+	nextScene = SceneType::Result;
+	isSceneChange = true;
 }
 
 void SceneManager::ChangeGameScene(int stage) {

@@ -30,7 +30,8 @@ void Application::DestroyInstance() {
 Application::Application() 
     : time(0)
 	, isGameEnd(true)
-	, pSceneManager(SceneManager::GetInstance()) {
+	, pSceneManager(SceneManager::GetInstance())
+	, pAudioManager(AudioManager::GetInstance()) {
 }
 
 int Application::Init() {
@@ -39,6 +40,7 @@ int Application::Init() {
     SRand(static_cast<int>(mt()));
 
 	pSceneManager->ChangeScene(SceneType::Title);
+	pAudioManager->LoadAll();
     return 0;
 }
 
@@ -90,6 +92,7 @@ int Application::DxLibInit() {
 
 bool Application::Update() {
 	pSceneManager->Update();
+	pAudioManager->Update();
 	
 	if (InputManager::GetInstance()->IsKeyDown(KEY_INPUT_ESCAPE))
 		isGameEnd = true;

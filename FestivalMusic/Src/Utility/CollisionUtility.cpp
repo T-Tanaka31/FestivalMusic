@@ -94,3 +94,89 @@ HitDirection CollisionUtility::ResolveBoxCollision(
 
     return HitDirection::Bottom;
 }
+
+
+// ========================================
+// 敵同士の衝突
+// 両方の敵を半分ずつ押し戻す
+// ========================================
+HitDirection CollisionUtility::ResolveEnemyCollision(
+    SquareCollider* a,
+    SquareCollider* b) {
+
+    if (!a || !b)
+        return HitDirection::None;
+
+    GameObject* objA = a->GetGameObject();
+    GameObject* objB = b->GetGameObject();
+
+    if (!objA || !objB)
+        return HitDirection::None;
+
+    VECTOR posA = objA->GetPosition();
+    VECTOR posB = objB->GetPosition();
+
+    float overlapLeft =
+        a->GetMaxPoint().x - b->GetMinPoint().x;
+    float overlapRight =
+        b->GetMaxPoint().x - a->GetMinPoint().x;
+    float overlapTop =
+        a->GetMaxPoint().y - b->GetMinPoint().y;
+    float overlapBottom =
+        b->GetMaxPoint().y - a->GetMinPoint().y;
+
+    if (overlapLeft <= 0.0f ||
+        overlapRight <= 0.0f ||
+        overlapTop <= 0.0f ||
+        overlapBottom <= 0.0f) {
+        return HitDirection::None;
+    }
+
+    float overlapX = (overlapLeft < overlapRight)
+        ? overlapLeft : overlapRight;
+    float overlapY = (overlapTop < overlapBottom)
+        ? overlapTop : overlapBottom;
+
+    if (overlapX < overlapY) {
+        float half = overlapX * 0.5f;
+
+        if (posA.x < posB.x) {
+            posA.x -= half;
+            posB.x += half;
+            objA->SetPosition(posA);
+            objB->SetPosition(posB);
+            a->Update();
+            b->Update();
+            return HitDirection::Right;
+        }
+
+        posA.x += half;
+        posB.x -= half;
+        objA->SetPosition(posA);
+        objB->SetPosition(posB);
+        a->Update();
+        b->Update();
+        return HitDirection::Left;
+    }
+
+    float half = overlapY * 0.5f;
+
+    if (posA.y < posB.y) {
+        posA.y -= half;
+        posB.y += half;
+        objA->SetPosition(posA);
+        objB->SetPosition(posB);
+        a->Update();
+        b->Update();
+        return HitDirection::Top;
+    }
+
+    posA.y += half;
+    posB.y -= half;
+    objA->SetPosition(posA);
+    objB->SetPosition(posB);
+    a->Update();
+    b->Update();
+    return HitDirection::Bottom;
+}
+

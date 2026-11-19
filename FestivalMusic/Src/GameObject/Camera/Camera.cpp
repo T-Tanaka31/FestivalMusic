@@ -5,10 +5,10 @@
 Camera* Camera::main = nullptr;
 
 Camera::Camera(VECTOR _pos, VECTOR _offset)
-    : GameObject(_pos, "Camera")
-    , pTarget(nullptr)
-    , offset(_offset) {
-    main = this;
+	: GameObject(_pos, "Camera")
+	, pTarget(nullptr)
+	, offset(_offset) {
+	main = this;
 }
 
 Camera::~Camera() {
@@ -19,54 +19,76 @@ void Camera::Start() {
 
 void Camera::Update() {
 
-    if (pTarget == nullptr) {
+	if (pTarget == nullptr) {
 #if _DEBUG
-        DrawFormatString(
-            0,
-            0,
-            GetColor(255, 0, 0),
-            "Target NULL"
-        );
+		DrawFormatString(
+			0,
+			0,
+			GetColor(255, 0, 0),
+			"Target NULL"
+		);
 #endif
-        return;
-    }
+		return;
+	}
 
-    // プレイヤーの位置をカメラ位置にする
-    position = pTarget->GetPosition();
+	// プレイヤーの位置をカメラ位置にする
+	position = pTarget->GetPosition();
 
-    // =========================
-    // 左端
-    // =========================
+	// =========================
+	// 左端
+	// =========================
 
-    float minCameraX =
-        CAMERA_WIDTH * 0.5f;
+	// =========================
+	// マップ左右端
+	// =========================
 
-    if (position.x < minCameraX) {
-        position.x = minCameraX;
-    }
+	float mapLeft = (float)MapLoader::GetMapLeft();
+	float mapRight = (float)MapLoader::GetMapRight();
 
-    // =========================
-    // マップ下端
-    // =========================
+	// 画面の横幅の半分
+	float halfScreenWidth = WINDOW_WIDTH * 0.5f;
 
-    float mapBottom =
-        (float)MapLoader::GetMapBottom();
+	// マップが画面より狭い場合は中央に固定
+	if (mapRight - mapLeft <= WINDOW_WIDTH) {
 
-    float maxCameraY =
-        mapBottom - CAMERA_HEIGHT * 0.5f;
+		position.x = (mapLeft + mapRight) * 0.5f;
+	}
+	else {
 
-    if (position.y > maxCameraY) {
-        position.y = maxCameraY;
-    }
+		float minCameraX = mapLeft + halfScreenWidth;
+		float maxCameraX = mapRight - halfScreenWidth;
+
+		if (position.x < minCameraX) {
+			position.x = minCameraX;
+		}
+
+		if (position.x > maxCameraX) {
+			position.x = maxCameraX;
+		}
+	}
+
+	// =========================
+	// マップ下端
+	// =========================
+
+	float mapBottom =
+		(float)MapLoader::GetMapBottom();
+
+	float maxCameraY =
+		mapBottom - CAMERA_HEIGHT * 0.5f;
+
+	if (position.y > maxCameraY) {
+		position.y = maxCameraY;
+	}
 #if _DEBUG
-    DrawFormatString(
-        0,
-        20,
-        GetColor(255, 255, 255),
-        "Cam : %.1f %.1f",
-        position.x,
-        position.y
-    );
+	DrawFormatString(
+		0,
+		20,
+		GetColor(255, 255, 255),
+		"Cam : %.1f %.1f",
+		position.x,
+		position.y
+	);
 #endif
 }
 

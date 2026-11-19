@@ -13,6 +13,11 @@ public:
 
 	static int GetMapBottom();
 
+	static int GetMapLeft();
+	static int GetMapRight();
+
 private:
 	static int bottomBlockY;
+	static int mapLeft;
+	static int mapRight;
 };

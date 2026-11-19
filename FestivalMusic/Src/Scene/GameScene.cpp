@@ -10,6 +10,7 @@
 #include "../Map/MapLoader.h"
 #include "../GameObject/Camera/Camera.h"
 #include "../GameObject/MapObject/Block.h"
+#include "../GameObject/MapObject/MovingBlock.h"
 #include "../GameObject/MapObject/Floor.h"
 #include "../GameObject/MapObject/Question.h"
 #include "../GameObject/MapObject/Rock.h"
@@ -17,6 +18,10 @@
 #include "../GameObject/Goal/Goal.h"
 #include "../GameObject/MapObject/Spike.h"
 #include "../GameObject/MapObject/ReverseSpike.h"
+#include "../GameObject/MapObject/MovingSpike.h"
+#include "../GameObject/MapObject/MovingRightSpike.h"
+#include "../GameObject/MapObject/MovingLeftSpike.h"
+#include "../GameObject/Effect/NoiseEffect.h"
 
 GameScene::GameScene(int _stage)
 	: player(new Player(VGet(400, 300, 0), "Player"))
@@ -27,7 +32,16 @@ GameScene::GameScene(int _stage)
 	, isStageStarting(true)
 	, stageStartTimer(0)
 	, isStageClearing(false)
-	, stageClearTimer(0) {
+	, stageClearTimer(0)
+	, noiseEffect() 
+	, isDeathTransition(false) {
+	// ステージ1から新しくゲームを始める場合だけ残機を3に戻す。
+	// ステージ1で倒れた直後の再読み込みでは残機を維持する。
+	bool preserveLives = Player::ConsumePreserveLivesFlag();
+	if (_stage == 1 && !preserveLives) {
+		Player::ResetLives();
+	}
+
 	Init();
 }
 
@@ -40,6 +54,11 @@ GameScene::~GameScene() {
 
 	for (Block* block : blocks) {
 		delete block;
+	}
+
+
+	for (MovingBlock* movingBlock : movingBlocks) {
+		delete movingBlock;
 	}
 
 	for (Floor* floor : floors) {
@@ -62,6 +81,18 @@ GameScene::~GameScene() {
 		delete spike;
 	}
 
+	for (MovingSpike* movingSpike : movingSpikes) {
+		delete movingSpike;
+	}
+
+	for (MovingRightSpike* movingRightSpike : movingRightSpikes) {
+		delete movingRightSpike;
+	}
+
+	for (MovingLeftSpike* movingLeftSpike : movingLeftSpikes) {
+		delete movingLeftSpike;
+	}
+
 	for (ReverseSpike* reverseSpike : reverseSpikes) {
 		delete reverseSpike;
 	}
@@ -71,12 +102,16 @@ GameScene::~GameScene() {
 	}
 
 	blocks.clear();
+	movingBlocks.clear();
 	floors.clear();
 	bricks.clear();
 	queses.clear();
 	rocks.clear();
 	spikes.clear();
+	movingSpikes.clear();
 	reverseSpikes.clear();
+	movingRightSpikes.clear();
+	movingLeftSpikes.clear();
 	enemies.clear();
 }
 
@@ -94,10 +129,50 @@ void GameScene::Init() {
 	MapLoader::Load(
 		mapPath,
 		this);
+
 }
 
 void GameScene::Update() {
 
+	// ========================================
+	// 死亡演出開始判定
+	// ========================================
+
+	if (!isDeathTransition &&
+		player->ConsumeStageRestartRequest()) {
+
+		isDeathTransition = true;
+		noiseEffect.StartDeath();
+	}
+
+	// ========================================
+	// 死亡ノイズ演出中
+	// ========================================
+
+	if (isDeathTransition) {
+
+		noiseEffect.UpdateDeath();
+
+		if (noiseEffect.IsDeathFinished()) {
+
+			// 残機が残っている場合はリトライ
+			if (Player::GetRemainingLives() > 0) {
+
+				Player::PreserveLivesForStageRestart();
+
+				SceneManager::GetInstance()->ChangeGameScene(stage);
+			}
+			// 残機が0ならゲームオーバー
+			else {
+
+				SceneManager::GetInstance()->ChangeResultScene(
+					ResultScene::ResultType::GameOver
+				);
+			}
+		}
+
+		return;
+	}
 	// ========================================
 	// ステージ開始演出
 	// ========================================
@@ -118,7 +193,7 @@ void GameScene::Update() {
 		stageClearTimer++;
 
 		if (stageClearTimer >= 120) {
-			if (stage < 5) {
+			if (stage < 7) {
 				// 次のステージへ
 				SceneManager::GetInstance()->ChangeGameScene(stage + 1);
 			}
@@ -140,45 +215,73 @@ void GameScene::Update() {
 		return;
 	}
 
-	// プレイヤーは常に更新
+	// プレイヤー更新
 	player->Update();
+
+	// HPに応じて通常ノイズを更新
+	noiseEffect.Update(stage, player->GetHP());
+
+	// Player::Update内で死亡した場合
+	if (player->ConsumeStageRestartRequest()) {
+
+		isDeathTransition = true;
+		noiseEffect.StartDeath();
+
+		return;
+	}
 
 	// カメラの中心位置
 	VECTOR camPos = camera->GetPosition();
 
-	float screenLeft = camPos.x - CAMERA_WIDTH * 0.5f;
+	float screenLeft = camPos.x - CAMERA_WIDTH;
 	float screenRight = camPos.x + CAMERA_WIDTH;
-	float screenTop = camPos.y - CAMERA_HEIGHT * 0.32f;
+	float screenTop = camPos.y - CAMERA_HEIGHT;
 	float screenBottom = camPos.y + CAMERA_HEIGHT;
 
 	// Block
 	for (Block* block : blocks) {
-			block->Update();
+		block->Update();
+	}
+
+	for (MovingBlock* movingBlock : movingBlocks) {
+		movingBlock->Update();
 	}
 
 	for (Floor* floor : floors) {
-			floor->Update();	
+		floor->Update();
 	}
 
 	for (Brick* brick : bricks) {
-			brick->Update();
-	
+		brick->Update();
+
 	}
 
 	for (Question* ques : queses) {
-			ques->Update();	
+		ques->Update();
 	}
 
 	for (Rock* rock : rocks) {
-			rock->Update();
+		rock->Update();
 	}
 
 	for (Spike* spike : spikes) {
-			spike->Update();
+		spike->Update();
 	}
 
 	for (ReverseSpike* reverseSpike : reverseSpikes) {
 		reverseSpike->Update();
+	}
+
+	for (MovingSpike* movingSpike : movingSpikes) {
+		movingSpike->Update();
+	}
+
+	for (MovingRightSpike* movingRightSpike : movingRightSpikes) {
+		movingRightSpike->Update();
+	}
+
+	for (MovingLeftSpike* movingLeftSpike : movingLeftSpikes) {
+		movingLeftSpike->Update();
 	}
 
 	// Enemy
@@ -207,7 +310,7 @@ void GameScene::Update() {
 			delete enemy;
 
 			it = enemies.erase(it);
-		}	
+		}
 		else {
 			++it;
 		}
@@ -233,7 +336,7 @@ void GameScene::Update() {
 	CollisionManager::GetInstance()->CheckCollision();
 }
 void GameScene::Draw() {
-	
+
 
 	DrawExtendGraph(
 		0, 0,
@@ -244,6 +347,9 @@ void GameScene::Draw() {
 
 	for (Block* block : blocks) {
 		block->Render();
+	}
+	for (MovingBlock* movingBlock : movingBlocks) {
+		movingBlock->Render();
 	}
 	for (Floor* floor : floors) {
 		floor->Render();
@@ -263,6 +369,15 @@ void GameScene::Draw() {
 	for (ReverseSpike* reverseSpike : reverseSpikes) {
 		reverseSpike->Render();
 	}
+	for (MovingSpike* movingSpike : movingSpikes) {
+		movingSpike->Render();
+	}
+	for (MovingRightSpike* movingRightSpike : movingRightSpikes) {
+		movingRightSpike->Render();
+	}
+	for (MovingLeftSpike* movingLeftSpike : movingLeftSpikes) {
+		movingLeftSpike->Render();
+	}
 	for (Enemy* enemy : enemies) {
 		enemy->Render();
 	}
@@ -273,6 +388,11 @@ void GameScene::Draw() {
 	}
 
 	player->Render();
+
+	// ゲーム画面全体に薄いデジタルノイズを重ねる
+	noiseEffect.Draw();
+	// 死亡時の全画面ノイズ
+	noiseEffect.DrawDeath();
 
 	// ========================================
 // ステージ開始演出
@@ -337,6 +457,10 @@ void GameScene::AddBlock(
 	blocks.push_back(block);
 }
 
+void GameScene::AddMovingBlock(MovingBlock* movingBlock) {
+	movingBlocks.push_back(movingBlock);
+}
+
 void GameScene::AddFloor(Floor* floor) {
 	floors.push_back(floor);
 }
@@ -357,8 +481,20 @@ void GameScene::AddSpike(Spike* spike) {
 	spikes.push_back(spike);
 }
 
+void GameScene::AddMovingSpike(MovingSpike* movingSpike) {
+	movingSpikes.push_back(movingSpike);
+}
+
 void GameScene::AddReverseSpike(ReverseSpike* reverseSpike) {
 	reverseSpikes.push_back(reverseSpike);
+}
+
+void GameScene::AddMovingRightSpike(MovingRightSpike* movingRightSpike) {
+	movingRightSpikes.push_back(movingRightSpike);
+}
+
+void GameScene::AddMovingLeftSpike(MovingLeftSpike* movingLeftSpike) {
+	movingLeftSpikes.push_back(movingLeftSpike);
 }
 
 void GameScene::AddEnemy(Enemy* enemy) {

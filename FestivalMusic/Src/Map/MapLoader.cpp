@@ -3,18 +3,26 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <algorithm>
+#include <limits>
 
 #include "../Scene/GameScene.h"
 #include "../GameObject/MapObject/Block.h"
+#include "../GameObject/MapObject/MovingBlock.h"
 #include "../GameObject/MapObject/Floor.h"
 #include "../GameObject/MapObject/Brick.h"
 #include "../GameObject/MapObject/Question.h"
 #include "../GameObject/MapObject/Rock.h"
 #include "../GameObject/MapObject/Spike.h"
+#include "../GameObject/MapObject/MovingSpike.h"
 #include "../GameObject/MapObject/ReverseSpike.h"
+#include "../GameObject/MapObject/MovingRightSpike.h"
+#include "../GameObject/MapObject/MovingLeftSpike.h"
 #include "../GameObject/Goal/Goal.h"
 
 int MapLoader::bottomBlockY = 0;
+int MapLoader::mapLeft = 0;
+int MapLoader::mapRight = 0;
 
 bool MapLoader::Load(
 	const std::string& path,
@@ -42,7 +50,19 @@ bool MapLoader::Load(
 
 	std::string line;
 
+
 	while (std::getline(file, line)) {
+
+		// UTF-8 BOMを削除（Stage6.csv対策）
+		if (!line.empty() &&
+			(unsigned char)line[0] == 0xEF &&
+			line.size() >= 3 &&
+			(unsigned char)line[1] == 0xBB &&
+			(unsigned char)line[2] == 0xBF) {
+
+			line.erase(0, 3);
+		}
+
 		std::stringstream ss(line);
 		std::string cell;
 
@@ -67,6 +87,7 @@ bool MapLoader::Load(
 		map.push_back(row);
 	}
 
+
 	//==================================================
 	// マップサイズ
 	//==================================================
@@ -80,6 +101,8 @@ bool MapLoader::Load(
 	const int mapWidth = (int)map[0].size();
 
 	bottomBlockY = 0;
+	mapLeft = (std::numeric_limits<int>::max)();
+	mapRight = 0;
 
 	//==================================================
 	// 通常オブジェクトを生成
@@ -88,6 +111,17 @@ bool MapLoader::Load(
 	for (int y = 0; y < mapHeight; y++) {
 		for (int x = 0; x < (int)map[y].size(); x++) {
 			int value = map[y][x];
+
+			// ステージの左右端を取得
+			// 1 = Block、10 = Floor
+			if (value == 1 || value == 10) {
+
+				int left = x * TILE_SIZE;
+				int right = (x + 1) * TILE_SIZE;
+
+				mapLeft = (std::min)(mapLeft, left);
+				mapRight = (std::max)(mapRight, right);
+			}
 
 			VECTOR pos = VGet(
 				x * TILE_SIZE + TILE_SIZE / 2.0f,
@@ -125,8 +159,8 @@ bool MapLoader::Load(
 					new Goal(
 						pos,
 						VGet(
-							TILE_SIZE,
-							TILE_SIZE,
+							TILE_SIZE * 3,
+							TILE_SIZE * 3,
 							0
 						)
 					)
@@ -230,10 +264,159 @@ bool MapLoader::Load(
 					)
 				);
 				break;
+
+
+				// 横移動 64px
+			case 20:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Horizontal,
+						64.0f,
+						1.0f
+					)
+				);
+				break;
+
+				// 縦移動 64px
+			case 21:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Vertical,
+						64.0f,
+						2.0f
+					)
+				);
+				break;
+
+				// 横移動 128px
+			case 22:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Horizontal,
+						128.0f,
+						2.0f
+					)
+				);
+				break;
+
+				// 縦移動 128px
+			case 23:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Vertical,
+						128.0f,
+						2.0f
+					)
+				);
+				break;
+
+				// 横移動 192px
+			case 24:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Horizontal,
+						192.0f,
+						2.0f
+					)
+				);
+				break;
+
+				// 縦移動 192px
+			case 25:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Vertical,
+						192.0f,
+						2.0f
+					)
+				);
+				break;
+
+				// 横移動 256px
+			case 26:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Horizontal,
+						256.0f,
+						2.0f
+					)
+				);
+				break;
+
+				// 縦移動 256px
+			case 27:
+				scene->AddMovingBlock(
+					new MovingBlock(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveAxis::Vertical,
+						256.0f,
+						2.0f
+					)
+				);
+				break;
+
+				// 横移動 64px
+			case 30:
+				scene->AddMovingRightSpike(
+					new MovingRightSpike(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveRightAxis::Horizontal,
+						64.0f,
+						1.0f
+					)
+				);
+				break;
+
+				// 縦移動 64px
+			case 31:
+				scene->AddMovingLeftSpike(
+					new MovingLeftSpike(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveLeftAxis::Horizontal,
+						64.0f,
+						1.0f
+					)
+				);
+				break;
+
+			case 50:
+				scene->AddMovingSpike(
+					new MovingSpike(
+						pos,
+						VGet(TILE_SIZE, TILE_SIZE, 0),
+						MoveDefaultAxis::Horizontal,
+						128.0f,
+						2.0f
+					)
+				);
+				break;
+
 			}
 		}
 	}
 
+	// ブロック・床が見つからなかった場合
+	if (mapLeft == (std::numeric_limits<int>::max)()) {
+		mapLeft = 0;
+		mapRight = mapWidth * TILE_SIZE;
+	}
 
 	//==================================================
 	// Floorを横方向にまとめる
@@ -323,4 +506,12 @@ bool MapLoader::Load(
 
 int MapLoader::GetMapBottom() {
 	return (bottomBlockY + 1) * 64;
+}
+
+int MapLoader::GetMapLeft() {
+	return mapLeft;
+}
+
+int MapLoader::GetMapRight() {
+	return mapRight;
 }

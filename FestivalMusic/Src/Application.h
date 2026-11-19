@@ -1,5 +1,6 @@
 #pragma once
 #include "Manager/SceneManager.h"
+#include "Manager/AudioManager.h"
 #include "Component/Collider.h"
 
 constexpr double FRAME_TIME = 1.0 / 60.0;
@@ -56,6 +57,7 @@ private:
 	bool isGameEnd;
 
 	SceneManager* pSceneManager;
+	AudioManager* pAudioManager;
 
 private:
 	//	初期化

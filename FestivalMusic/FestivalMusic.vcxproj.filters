@@ -103,6 +103,15 @@
     <Filter Include="ヘッダー ファイル\GameObject\Character\Enemy\Boss">
       <UniqueIdentifier>{451531f0-13d0-49e3-bff4-beba97956ca2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameObject\Effect">
+      <UniqueIdentifier>{3b5b27f4-235d-430b-9e85-9adc54852114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\Audio">
+      <UniqueIdentifier>{2cd5d3ef-1475-4cd9-a84d-7d252c5583f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Audio">
+      <UniqueIdentifier>{65d72179-0c44-47e4-87ce-7f95b68be9cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp">
@@ -190,6 +199,27 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameObject\MapObject\ReverseSpike.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\MapObject\MovingBlock.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\MapObject\MovingRightSpike.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\MapObject\MovingLeftSpike.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\MapObject\MovingSpike.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Effect\NoiseEffect.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Audio\Audio.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Manager\AudioManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -307,6 +337,30 @@
     </ClInclude>
     <ClInclude Include="Src\Map\Resource.h">
       <Filter>ヘッダー ファイル\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\MovingBlock.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\MovingRightSpike.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\MovingLeftSpike.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\MapObject\MovingSpike.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Effect\NoiseEffect.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Difinition\AudioDefine.h">
+      <Filter>ヘッダー ファイル\Difinition</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Audio\Audio.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Manager\AudioManager.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

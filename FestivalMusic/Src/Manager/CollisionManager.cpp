@@ -88,7 +88,7 @@ void CollisionManager::CheckCollision() {
 			// ==========================================
 			// Playerの攻撃判定を通常のPlayer判定と区別
 			// ==========================================
-			
+
 			// Playerの攻撃ColliderはTriggerなので、
 			// Trigger × Block / Spike の物理処理を行わない
 
@@ -129,7 +129,7 @@ void CollisionManager::CheckCollision() {
 				}
 
 				if (player != nullptr) {
-					player->TakeDamage(9999);
+					player->DieImmediately();
 				}
 
 				// Spikeとの通常の物理衝突処理はしない
@@ -137,10 +137,25 @@ void CollisionManager::CheckCollision() {
 			}
 
 			// ==========================================
-			// ① 物理衝突
+			// 敵同士の物理衝突
+			// 両方の敵を押し戻して、重ならないようにする
+			// ==========================================
+			if (!a->IsTrigger() &&
+				!b->IsTrigger() &&
+				tagA == "Enemy" &&
+				tagB == "Enemy") {
+
+				CollisionUtility::ResolveEnemyCollision(a, b);
+			}
+
+			// ==========================================
+			// ① 通常の物理衝突
 			// Trigger判定は物理衝突させない
 			// ==========================================
 			if (!a->IsTrigger() && !b->IsTrigger()) {
+
+				bool enemyEnemy =
+					(tagA == "Enemy" && tagB == "Enemy");
 
 				bool enemyPlayer =
 					(tagA == "Enemy" && tagB == "Player") ||
@@ -149,7 +164,7 @@ void CollisionManager::CheckCollision() {
 				bool blockBlock =
 					(tagA == "Block" && tagB == "Block");
 
-				if (!enemyPlayer && !blockBlock) {
+				if (!enemyPlayer && !enemyEnemy && !blockBlock) {
 					CollisionUtility::ResolveBoxCollision(a, b);
 				}
 			}
@@ -210,41 +225,6 @@ void CollisionManager::CheckCollision() {
 
 				if (player != nullptr) {
 					player->TakeDamage(1);
-				}
-			}
-
-
-			// ==========================================
-			// ⑤ Player攻撃Collider → Enemy
-			// ==========================================
-
-			if (a->IsTrigger() &&
-				tagA == "Player" &&
-				tagB == "Enemy") {
-
-				Enemy* enemy =
-					dynamic_cast<Enemy*>(objB);
-
-				if (enemy != nullptr) {
-					enemy->TakeDamage(5);
-				}
-			}
-
-
-			// ==========================================
-			// ⑥ Player攻撃Collider → Enemy
-			// Colliderの順番が逆
-			// ==========================================
-
-			if (b->IsTrigger() &&
-				tagB == "Player" &&
-				tagA == "Enemy") {
-
-				Enemy* enemy =
-					dynamic_cast<Enemy*>(objA);
-
-				if (enemy != nullptr) {
-					enemy->TakeDamage(5);
 				}
 			}
 

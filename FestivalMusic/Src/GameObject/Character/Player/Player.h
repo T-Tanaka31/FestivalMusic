@@ -1,10 +1,11 @@
 #pragma once
 #include "../../../Manager/InputManager.h"
 #include "../Character.h"
-#include "../../../UI/Gauge.h"
 #include "../../../Component/Collider.h"
+#include <vector>
 
 class Enemy;
+class MovingBlock;
 
 enum class AnimState {
 	Idle,
@@ -16,149 +17,101 @@ enum class AnimState {
 	Victory
 };
 
+// 攻撃の種類
+enum class AttackType {
+	Normal,
+	Up,
+	Down
+};
+
 class Player : public Character {
 private:
-
-	// ジャンプ力
 	float jumpPower;
-
-	// ジャンプボタンを押しているフレーム数
 	int jumpHoldFrames;
-
-	// 水平方向の速度
 	float horizontalVelocity;
-
-	// 地面に触れているか
 	bool isGround;
-
-	// ゴールに到達したか
 	bool isGoalReached = false;
-
-	// 入力マネージャー
 	InputManager* input;
-
 	const float GROUND_Y = 1000.0f;
-
 	bool isHit = false;
-
-	int images[84];
-
+	AttackType attackType;
 	AnimState animState;
-
+	int images[84];
 	int frame;
 	int animTimer;
-
-	// 向いている方向
 	bool isRight;
+	int invincibleTimer;
 
-	// 攻撃関連
+	static int remainingLives;
+	static bool preserveLivesOnNextScene;
+	bool stageRestartRequested;
+	static int killCount;
+	int oneUpTimer = 0;
+	int neonStarTimer = 0;
+	MovingBlock* ridingMovingBlock = nullptr;
+
 private:
 	bool isAttacking;
-	bool attackHit;
+	bool attackHit; // 互換性のため保持。敵ごとの判定にはhitEnemiesを使用
 	int attackTimer;
 	int attackCooldown;
 	int attackEffectImages[11];
-
-	// 攻撃用Collider
+	int downAttackInvincibleTimer;
+	bool isDownAttackLanding;
+	int dedicatedAttackImages[88];
 	SquareCollider* attackCollider;
 
-
-#pragma region ゲージ関連
-
-	Gauge<int>* hpBar;
-
-	int hpBarPosX = 145;
-	int hpBarPosY = 100;
-	int hpBarWidth = 300;
-	int hpBarHeight = 25;
-
-	int uX = 100;
-	int uY = 100;
-	int lX = 100;
-	int lY = 70;
-
-#pragma endregion
-
+	// 現在の攻撃でダメージを与えた敵。敵ごとに1回だけ当てる
+	std::vector<Enemy*> hitEnemies;
 
 public:
-
-	// コンストラクタ
-	Player(
-		VECTOR _pos = VZero,
-		std::string _tag = "Player"
-	);
-
-	// デストラクタ
+	Player(VECTOR _pos = VZero, std::string _tag = "Player");
 	~Player();
-
 	void Start() override;
-
 	void Update() override;
-
 	void Render() override;
 
-
-public:
-
-	void SetGround(bool value) {
-		isGround = value;
+	// 現在のHPを取得
+	int GetHP() const {
+		return hp;
 	}
 
+	void SetGround(bool value) { isGround = value; }
 	void TakeDamage(int damage);
+	void DieImmediately();
 
-	// ゴールに到達したかを取得
-	bool IsGoalReached() const {
-		return isGoalReached;
+	static void ResetLives() {
+		remainingLives = 3;
+		killCount = 0;
+	}
+	static int GetRemainingLives() { return remainingLives; }
+	static void PreserveLivesForStageRestart() { preserveLivesOnNextScene = true; }
+	static bool ConsumePreserveLivesFlag() {
+		bool value = preserveLivesOnNextScene;
+		preserveLivesOnNextScene = false;
+		return value;
+	}
+	bool ConsumeStageRestartRequest() {
+		bool value = stageRestartRequested;
+		stageRestartRequested = false;
+		return value;
 	}
 
-	// ゴール到達状態にする
-	void SetGoalReached() {
-		isGoalReached = true;
-	}
+	void AddKillCount();
+	static int GetKillCount() { return killCount; }
 
-	// ==============================
-	// 攻撃関連
-	// ==============================
+	bool IsGoalReached() const { return isGoalReached; }
+	void SetGoalReached() { isGoalReached = true; }
 
-	bool IsAttacking() const {
-		return isAttacking;
-	}
+	bool IsAttacking() const { return isAttacking; }
+	bool IsRight() const { return isRight; }
+	int GetAttackFrame() const { return frame; }
 
-	bool IsRight() const {
-		return isRight;
-	}
+	// 攻撃全体ではなく敵ごとに命中を管理するため、攻撃中は常に判定可能
+	bool CanAttackHit() const { return isAttacking; }
+	void SetAttackHit() { attackHit = true; }
 
-	int GetAttackFrame() const {
-		return frame;
-	}
-
-	bool CanAttackHit() const {
-		return !attackHit;
-	}
-
-	void SetAttackHit() {
-		attackHit = true;
-	}
-
-
-public:
-
-	// ==============================
-	// 衝突判定
-	// ==============================
-
-	// 入ったとき
-	void OnTriggerEnter(
-		Collider* _pOther
-	) override;
-
-	// 入っているとき
-	void OnTriggerStay(
-		Collider* _pOther
-	) override;
-
-	// 出たとき
-	void OnTriggerExit(
-		Collider* _pOther
-	) override;
+	void OnTriggerEnter(Collider* _pOther) override;
+	void OnTriggerStay(Collider* _pOther) override;
+	void OnTriggerExit(Collider* _pOther) override;
 };

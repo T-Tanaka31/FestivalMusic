@@ -90,8 +90,9 @@ void AudioManager::PlayBGM(std::string _name, float volume) {
 	pAudioList.push_back(pAudioObj);
 }
 
-void AudioManager::PlayOneShot(std::string _name) {
+void AudioManager::PlayOneShot(std::string _name, float _volume) {
 	int sound = INVALID;
+
 	if (GetSoundTotalTime(audioResourceMap[_name]) >= 1000 * 60 * 3) {
 		sound = audioResourceMap[_name];
 	}
@@ -101,6 +102,10 @@ void AudioManager::PlayOneShot(std::string _name) {
 
 	Audio* pAudioObj = new Audio(sound);
 	pAudioObj->SetTag(_name);
+
+	// 音量設定
+	pAudioObj->SetVolume(_volume);
+
 	pAudioObj->Start();
 	pAudioList.push_back(pAudioObj);
 }

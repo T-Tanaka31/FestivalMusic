@@ -349,7 +349,7 @@ void Player::Update() {
 			attackType = AttackType::Normal;
 		}
 
-		AudioManager::GetInstance()->PlayOneShot("Naruko");
+		AudioManager::GetInstance()->PlayOneShot("Naruko", 0.5f);
 		animState = AnimState::Attack;
 		attackCooldown = 20;
 	}
@@ -530,8 +530,8 @@ void Player::Update() {
 	}
 
 	// ========================================
-// 攻撃判定
-// ========================================
+	// 攻撃判定
+	// ========================================
 
 	bool canAttack = false;
 
@@ -550,7 +550,7 @@ void Player::Update() {
 		}
 		else {
 			// 通常攻撃・上攻撃
-			canAttack = (frame >= 4 && frame <= 7);
+			canAttack = (frame >= 1 && frame <= 7);
 		}
 	}
 

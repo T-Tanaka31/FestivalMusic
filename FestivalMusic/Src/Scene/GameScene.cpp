@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "../Manager/InputManager.h"
 #include "../Manager/SceneManager.h"
+#include "../Manager/AudioManager.h"
 #include <DxLib.h>
 #include <string>
 #include <cstdio>
@@ -116,6 +117,8 @@ GameScene::~GameScene() {
 }
 
 void GameScene::Init() {
+	AudioManager::GetInstance()->PlayBGM("BGM", 0.5f);
+
 	graphHandle =
 		LoadGraph("Res/DesertForest.png");
 
@@ -133,6 +136,7 @@ void GameScene::Init() {
 }
 
 void GameScene::Update() {
+
 
 	// ========================================
 	// 死亡演出開始判定
@@ -193,7 +197,7 @@ void GameScene::Update() {
 		stageClearTimer++;
 
 		if (stageClearTimer >= 120) {
-			if (stage < 7) {
+			if (stage < 8) {
 				// 次のステージへ
 				SceneManager::GetInstance()->ChangeGameScene(stage + 1);
 			}
@@ -395,9 +399,9 @@ void GameScene::Draw() {
 	noiseEffect.DrawDeath();
 
 	// ========================================
-// ステージ開始演出
-// ========================================
-	if (isStageStarting) {
+	if (isStageStarting) {	// ステージ開始演出
+	// ========================================
+
 		int alpha = 255;
 
 		// 最初の90フレームは真っ暗。

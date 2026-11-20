@@ -71,7 +71,7 @@ public:
 
 	void PlayBGM(std::string _name, float volume = 1.0f);
 
-	void PlayOneShot(std::string _name);
+	void PlayOneShot(std::string _name, float _volume = 1.0f);
 
 	void PlayClipAtPoint(std::string _name, VECTOR _pos, float _volume = 1.0f, bool _isLoop = false);
 

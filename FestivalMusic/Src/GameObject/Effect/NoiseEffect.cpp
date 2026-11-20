@@ -109,7 +109,30 @@ void NoiseEffect::Update(int stage, int playerHP) {
     if (playerHP <= 1) duration += 4;
 
     glitchDuration = duration;
-	AudioManager::GetInstance()->PlayOneShot("Noise");
+
+    // HPに応じてノイズ音量を変更
+    float noiseVolume = 1.0f;
+
+    if (playerHP == 5) {
+        noiseVolume = 0.05f;
+    }
+    else if (playerHP == 4) {
+        noiseVolume = 0.3f;
+    }
+    else if (playerHP == 3) {
+        noiseVolume = 0.45f;
+    }
+    else if (playerHP == 2) {
+        noiseVolume = 0.6f;
+    }
+    else if (playerHP <= 1) {
+        noiseVolume = 0.8f;
+    }
+
+    AudioManager::GetInstance()->PlayOneShot(
+        "Noise",
+        noiseVolume
+    );
     
     blocks.clear();
 

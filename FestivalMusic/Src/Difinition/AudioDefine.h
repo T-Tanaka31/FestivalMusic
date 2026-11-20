@@ -12,6 +12,7 @@ const AudioData AudioList[] = {
     {"Res/Audio/Goal.mp3", "Goal", false},
     {"Res/Audio/Naruko.mp3", "Naruko", false},
     {"Res/Audio/Noise.mp3", "Noise", false},
+    {"Res/Audio/BGM.ogg", "BGM", false}
 };
 
 const int AudioCount = sizeof(AudioList) / sizeof(AudioData);

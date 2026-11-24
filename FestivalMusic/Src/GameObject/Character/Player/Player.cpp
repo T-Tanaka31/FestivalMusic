@@ -18,6 +18,9 @@ int Player::remainingLives = 99;
 int Player::killCount = 0;
 bool Player::preserveLivesOnNextScene = false;
 
+// 上攻撃専用エフェクト画像（Player.hへの追加宣言は不要）
+static int upAttackEffectImages[11] = {};
+
 
 // ========================================
 // コンストラクタ
@@ -107,6 +110,17 @@ void Player::Start() {
 		128,
 		128,
 		dedicatedAttackImages
+	);
+
+	// 上攻撃専用エフェクト：11コマ横一列（198×365）
+	LoadDivGraph(
+		"Res/Up_attack_effect_aligned.png",
+		11,
+		11,
+		1,
+		256,
+		256,
+		upAttackEffectImages
 	);
 
 	// HPはハート5個分
@@ -748,6 +762,30 @@ void Player::Render() {
 			FALSE
 		);
 	}
+	// ========================================
+	// 上攻撃エフェクト（虹のアーチ）
+	// ========================================
+
+	if (isAttacking && attackType == AttackType::Up) {
+		int effectX = drawX;
+		int effectY = drawY - 10;
+
+		// 0～10コマを攻撃アニメーションに合わせて再生
+		DrawRotaGraph3(
+			effectX,
+			effectY,
+			128,
+			238,
+			0.35,
+			0.35,
+			0.0,
+			upAttackEffectImages[frame],
+			TRUE,
+			FALSE,
+			FALSE
+		);
+	}
+
 	// ========================================
 	// プレイヤー描画（ダメージ時の点滅）
 	// ========================================

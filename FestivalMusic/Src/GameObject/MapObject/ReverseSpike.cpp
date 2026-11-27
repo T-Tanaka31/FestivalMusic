@@ -8,7 +8,7 @@ ReverseSpike::ReverseSpike(VECTOR _pos, VECTOR _size)
 	: GameObject(_pos, "Spike")
 	, size(_size)
 	, graphHandle(0) {
-	pCollider = new SquareCollider(this, size);
+	pCollider = new SquareCollider(this, VGet(size.x * 0.85f, size.y * 0.85f, size.z));
 	Start();
 }
 

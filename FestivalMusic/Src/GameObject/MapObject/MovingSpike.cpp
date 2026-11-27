@@ -20,7 +20,7 @@ MovingSpike::MovingSpike(
     , moveSpeed(_speed)
     , moveDirection(1)
     , frameDelta(VZero) {
-    pCollider = new SquareCollider(this, size);
+    pCollider = new SquareCollider(this, VGet(size.x * 0.85f, size.y * 0.85f, size.z));
     Start();
 }
 
